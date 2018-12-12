@@ -14,11 +14,18 @@
   <body>
 
     <header>
+     <h1>Lunardo</h1>
       <div>Put company logo and name here</div>
     </header>
 
     <nav>
-      <div>Put website navigation links here</div>
+      <ul>
+            <li><a href='#home'>Home</a></li>
+            <li><a href='#about-us'>About Us</a></li>
+            <li><a href='#seats-and-prices'>Seats and Prices</a></li>
+            <li><a href='#now-showing'>Now Showing</a></li>
+            <li><a href='#bookings'>Bookings</a></li>
+        </ul>
     </nav>
 
     <main>
@@ -26,6 +33,129 @@
     <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
         <img src='../../media/website-under-construction.png' alt='Website Under Construction' />
       </article>
+      <!--about us-->
+        <section class='about-us'>
+            <h2>About Us</h2>
+            <p>Lunardo is a local cinema who puts customers first</p>
+            <p>To give the customer the best expreicnce possible we have recently made some upgrades, we have:</p>
+            <ul>
+                <li>Extensivly improved and renovated the whole cinema</li>
+                <li>New seat for all, including reclinable first class seats</li>
+                <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound.
+                    <br> <a href="https://www.dolby.com/us/en/cinema">Cick for more details</a></li>
+            </ul>
+        </section>
+        <!--seats and prices divided into 2 parts-->
+        <section class='seats-and-prices'>
+            <!-- seats -->
+            <h2>Seats and Prices</h2>
+            <h3>Seats</h3> 
+            <img src='standard-seats.png' alt='standard seats' width=30%> 
+            <img src='first-class-seats.png' alt='first class seats' width=25%>
+            <!-- all prices - set out in a table -->
+            <h3>Prices:</h3>
+            <table>
+                <theader>
+                    <tr>
+                        <th>Seat Type</th>
+                        <th>Seat Code</th>
+                        <th>All day Monday and Wednesday <strong>AND</strong> 12pm Weekdays </th>
+                        <th>All other Times</th>
+                    </tr>
+                </theader>
+                <tr>
+                    <th>Standard Adult</th>
+                    <td>STA</td>
+                    <td>$14.00</td>
+                    <td>$19.80</td>
+                </tr>
+                <tr>
+                    <th>Standard Concession</th>
+                    <td>STP</td>
+                    <td>$12.50</td>
+                    <td>$17.50</td>
+                </tr>
+                <tr>
+                    <th>Standard Child</th>
+                    <td>STC</td>
+                    <td>$11.00</td>
+                    <td>$15.30</td>
+                </tr>
+                <tr>
+                    <th>First Class Adult</th>
+                    <td>FCA</td>
+                    <td>$24.00</td>
+                    <td>$30.00</td>
+                </tr>
+                <tr>
+                    <th>First Class Concession</th>
+                    <td>FCP</td>
+                    <td>$22.50</td>
+                    <td>$27.00</td>
+                </tr>
+                <tr>
+                    <th>First Class Child</th>
+                    <td>FCC</td>
+                    <td>$21.00</td>
+                    <td>$24.00</td>
+                </tr>
+            </table>
+        </section>
+        <!--now showing-->
+        <section class='now-showing'>
+            <h2>Now Showing</h2>
+            <div id='movie1'>
+                <p>The Girl in the Spider's web</p>
+                <p>MA15+</p>
+                <button type="button">Wednesday 9:00pm</button>
+                <button type="button">Thursday 9:00pm</button>
+                <button type="button">Friday 9:00pm</button>
+                <button type="button">Saturday 6:00pm</button>
+                <button type="button">Sunday 6:00pm</button>
+            </div>
+            <div id='movie2'>
+                <p>A Start is Born</p>
+                <p>M</p>
+                <button type="button">Monday 6:00pm</button>
+                <button type="button">Tuesday 6:00pm</button>
+                <button type="button">Saturday 3:00pm</button>
+                <button type="button">Sunday 3:00pm</button>
+            </div>
+            <div id='movie3'>
+                <p>Ralph Breaks the Internet</p>
+                <p>PG</p>
+                <button type="button">Monday 12:00pm</button>
+                <button type="button">Tuesday 12:00pm</button>
+                <button type="button">Wednesday 6:00pm</button>
+                <button type="button">Thursday 6:00pm</button>
+                <button type="button">Friday 6:00pm</button>
+                <button type="button">Saturday 12:00pm</button>
+                <button type="button">Sunday 12:00pm</button>
+            </div>
+            <div id='movie3'>
+                <p>Boy Erased</p>
+                <p>MA15+</p>
+                <button type="button">Wednesday 12:00pm</button>
+                <button type="button">Thursday 12:00pm</button>
+                <button type="button">Friday 12:00pm</button>
+                <button type="button">Saturday 9:00pm</button>
+                <button type="button">Sunday 9:00pm</button>
+            </div>
+            <h3>Ralph Breaks the Internet</h3>
+            <p>PG</p>
+            <h4>Plot Description</h4>
+            <!-- plot taken from: https://www.imdb.com/title/tt5848272/?ref_=nv_sr_1 -->
+            <p>Taking place six years after saving the arcade from Turbo's vengeance, the Sugar Rush arcade cabinet has broken, forcing Ralph and Vanellope to travel to the Internet via the newly-installed Wi-Fi router in Litwak's Arcade to retrieve the piece capable of saving the game.</p>
+            <!-- video trailer-->
+            <!-- below code snippet taken from youtube.com-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_BcYBFC6zfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <!--bookings-->
+        <section class='bookings'>
+            <h2>Bookings</h2>
+            
+        </section>
+      
     </main>
 
     <footer>
