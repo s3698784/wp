@@ -12,6 +12,7 @@
 </head>
 
 <body>
+   <p> testing git</p>
     <header id='home'>
         <div>Put company logo here  </div>
         <h1>Lunardo</h1> 
