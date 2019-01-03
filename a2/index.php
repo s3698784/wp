@@ -55,13 +55,16 @@
 
         <!--seats and prices divided into 2 parts-->
         <section id='seats-and-prices'>
+            <div class="seats-prices-grid">
             <!-- seats -->
-            <h2>Seats and Prices</h2>
-            <h3>Seats</h3> <img src='../../media/standard-seats.png' alt='standard seats' width=30%> <img src='../../media/first-class-seats.png' alt='first class seats' width=25%>
+            
+            <h2 class="seats-h2">Seats</h2> 
+            <img class="stand-seat" src='../../media/standard-seats.png' alt='standard seats' width=30%> 
+            <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=25%>
 
             <!-- all prices - set out in a table -->
-            <h3>Prices:</h3>
-            <table>
+            <h2 class="price-h2">Prices:</h2>
+            <table class="price-table">
                 <theader>
                     <tr>
                         <th>Seat Type</th>
@@ -107,6 +110,7 @@
                     <td>$24.00</td>
                 </tr>
             </table>
+            </div>
         </section>
 
         <!--now showing-->

@@ -63,7 +63,8 @@ body{
 
 #about-grip-cont{
     display: grid;
-    grid-template-areas: 'about-heading about-heading'
+    grid-template-areas: '        .           .      '
+                         'about-heading about-heading'
                          'about-info about-image';
     margin: 0;
     padding:0;
@@ -85,13 +86,78 @@ body{
     grid-area: about-image;
 }
 
-/* -----Seats and Prices ---- */
+/* --------------Seats and Prices ------------ */
 
 #seats-and-prices{
     min-height: 100vh;
+    background-color: darkgray;
+    
 }
 
-/* -----Now showing ---- */
+.seats-prices-grid{
+    margin: 0 auto;
+    max-width: 80%;
+    color: red;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 50px auto auto auto auto;
+    grid-column-gap: 15px;
+    grid-template-areas:  "     .         .             .             .     "
+                          "seats-h2   seats-h2      price-h2        price-h2"
+                          "stand-seat stand-seat  price-table   price-table"
+                          "      .        .       price-table   price-table"
+                          "first-seat     .       price-table   price-table";
+}
+
+.seats-h2{
+    grid-area: seats-h2;
+    text-align: center;
+    background-color: black;
+    color: #FFF;
+    padding: 20px 0;
+}
+
+.price-h2{
+    grid-area: price-h2;
+    text-align: center;
+    background-color: black;
+    color: #FFF;
+    padding: 20px 0;
+}
+
+.stand-seat{
+    grid-area: stand-seat;
+}
+
+.first-seat{
+    grid-area: first-seat;
+}
+
+.price-table{
+    grid-area: price-table;
+    text-align: center;
+}
+
+/* ---- format table with prices ------ */
+
+table{
+    background-color: beige;
+}
+
+th{
+    font-size: 1.5em;
+    border-bottom: solid green;
+    padding: 15px;
+}
+
+td{
+    padding: 15px;
+    border-bottom: solid green;
+}
+
+
+
+/* -----------------------------------now showing -------------------------*/
 
 #now-showing{
     min-height: 100vh;
