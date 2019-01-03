@@ -1,0 +1,101 @@
+/* Insert your styles here */
+
+/* Insert your styles here */
+
+* {
+    box-sizing: border-box;
+}
+
+/*----- Header -----*/
+
+header{
+    height: 500px;
+    margin: 0;
+}
+
+
+/* ----- Navigation -----*/
+
+nav{
+    background-color: darkturquoise;
+    position: sticky;
+    top: 0;
+}
+
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    color: white;
+    align-content: center;
+}
+
+nav ul li{
+    display:inline-block;
+    padding: 20px;
+    border-color: white;
+    flex-basis: 20%;
+    text-decoration: none;
+    text-align: center;
+}
+
+main{
+    margin-top: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #white;
+    color:black;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    
+}
+
+/* -----About us ---- */
+
+#about-us{
+    min-height: 100vh;
+    background-color: bisque;
+}
+
+#about-grip-cont{
+    display: grid;
+    grid-template-areas: 'about-heading about-heading'
+                         'about-info about-image';
+    margin: 0;
+    padding:0;
+}
+
+.about-heading{
+    grid-area: about-heading;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+}
+
+.about-info{
+    grid-area: about-info;
+}
+
+.about-image{
+    grid-area: about-image;
+}
+
+/* -----Seats and Prices ---- */
+
+#seats-and-prices{
+    min-height: 100vh;
+}
+
+/* -----Now showing ---- */
+
+#now-showing{
+    min-height: 100vh;
+}
+/* -----Bookings ---- */
+
+

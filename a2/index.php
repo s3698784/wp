@@ -12,12 +12,13 @@
 </head>
 
 <body>
-   <p> testing git</p>
+
     <header id='home'>
-        <div>Put company logo here  </div>
-        <h1>Lunardo</h1> 
+        <div>Put company logo here </div>
+        <h1>Lunardo...</h1>
     </header>
-    
+
+
     <nav>
         <ul>
             <li><a href='#home'>Home</a></li>
@@ -27,29 +28,37 @@
             <li><a href='#bookings'>Bookings</a></li>
         </ul>
     </nav>
-    
     <main>
-        <article id='Website Under Construction'>
-            <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only --><img src='../../media/website-under-construction.png' alt='Website Under Construction' /> </article>
-        
+        <!--   <article id='Website Under Construction'>-->
+        <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
+        <!--  <img   src='../../media/website-under-construction.png' alt='Website Under Construction' /> </article> -->
+
         <!--about us-->
         <section id='about-us'>
-            <h2>About Us...</h2>
-            <p>Lunardo is a local cinema who puts customers first</p>
-            <p>To give the customer the best expreicnce possible we have recently made some upgrades, we have:</p>
-            <ul>
-                <li>Extensivly improved and renovated the whole cinema</li>
-                <li>New seat for all, including reclinable first class seats</li>
-                <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. <a href="https://www.dolby.com/us/en/cinema">Cick for more details</a></li>
-            </ul>
+            <div id="about-grip-cont">
+                
+                    <h2 class="about-heading">About Us...</h2>
+                
+                <div class="about-info">
+                    <p>Lunardo is a local cinema who puts customers first</p>
+                    <p>To give the customer the best expreicnce possible we have recently made some upgrades, we have:</p>
+                    <ul>
+                        <li>Extensivly improved and renovated the whole cinema</li>
+                        <li>New seat for all, including reclinable first class seats</li>
+                        <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. <a href="https://www.dolby.com/us/en/cinema">Cick for more details</a></li>
+                    </ul>
+                </div>
+                <img class="about-image " src='../../media/standard-seats.png' alt='standard seats' width=30%>
+
+            </div>
         </section>
-        
+
         <!--seats and prices divided into 2 parts-->
         <section id='seats-and-prices'>
             <!-- seats -->
             <h2>Seats and Prices</h2>
             <h3>Seats</h3> <img src='../../media/standard-seats.png' alt='standard seats' width=30%> <img src='../../media/first-class-seats.png' alt='first class seats' width=25%>
-            
+
             <!-- all prices - set out in a table -->
             <h3>Prices:</h3>
             <table>
@@ -99,7 +108,7 @@
                 </tr>
             </table>
         </section>
-        
+
         <!--now showing-->
         <section id='now-showing'>
             <h2>Now Showing</h2>
@@ -154,14 +163,14 @@
             <h2>Bookings</h2>
             <h3>Movie Title - Day - Time</h3>
             <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post' target="_blank">
-                  
-                  <!-- hidden form inputs -->
-                  <input name=moive[id] type='hidden' value='RMC'>
-                  <input name=moive[day] type='hidden' value='WED'>
-                  <input name=moive[hour] type='hidden' value='12'>
-                  
-                  <!-- standard booking -->
-                   <fieldset>
+
+                <!-- hidden form inputs -->
+                <input name=moive[id] type='hidden' value='RMC'>
+                <input name=moive[day] type='hidden' value='WED'>
+                <input name=moive[hour] type='hidden' value='12'>
+
+                <!-- standard booking -->
+                <fieldset>
                     <legend>Standard</legend>
                     <!-- select standard adult tickets-->
                     <label>Adults</label>
@@ -209,7 +218,7 @@
                         <option value='10'>10</option>
                     </select>
                 </fieldset>
-                
+
                 <!-- first class booking -->
                 <fieldset>
                     <legend>First Class</legend>
@@ -258,25 +267,25 @@
                         <option value='9'>9</option>
                         <option value='10'>10</option>
                     </select>
-                    </fieldset>
-                    
-                    <!-- enter customer details-->
-                    <fieldset>
-                       <legend>Customer Details</legend>
-                        <label for='name'>Name</label>
-                        <input name='cust[name]' type='text'id='name' placeholder='Enter name'>
-                        <label for='email'>Email</label>
-                        <input name='cust[email]'type='email' id='email' placeholder="Enter email">
-                        <label for='mob-num'>Mobile</label>
-                        <input name='cust[mobile]'type='tel' id='mob-num' placeholder="Enter mobile number">
-                        <label for='cred-card'>Credit Card</label>
-                        <input name='cust[card]' type='text'id='cred-card' placeholder='Enter credit card number'>
-                        <label for='expiry'>Expiry Date</label>
-                        <input name='cust[expiry]' type='month'id='expiry' placeholder='YYYY-MM'>
-                    </fieldset>
-                
-                    <button name='order' type='submit' value = 'order'>Order</button>
-                    
+                </fieldset>
+
+                <!-- enter customer details-->
+                <fieldset>
+                    <legend>Customer Details</legend>
+                    <label for='name'>Name</label>
+                    <input name='cust[name]' type='text' id='name' placeholder='Enter name'>
+                    <label for='email'>Email</label>
+                    <input name='cust[email]' type='email' id='email' placeholder="Enter email">
+                    <label for='mob-num'>Mobile</label>
+                    <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number">
+                    <label for='cred-card'>Credit Card</label>
+                    <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number'>
+                    <label for='expiry'>Expiry Date</label>
+                    <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM'>
+                </fieldset>
+
+                <button name='order' type='submit' value='order'>Order</button>
+
             </form>
         </section>
     </main>
@@ -284,6 +293,7 @@
         <div>&copy;
             <script>
                 document.write(new Date().getFullYear());
+
             </script> James Ciuciu, s3698784 and group name here. Last modified
             <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
         <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
