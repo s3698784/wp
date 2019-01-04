@@ -116,44 +116,57 @@
         <!--now showing-->
         <section id='now-showing'>
             <h2>Now Showing</h2>
-            <div id='movie1'>
+            
+               <div id='movie1'>
                 <p>The Girl in the Spider's web</p>
                 <p>MA15+</p>
-                <button type="button">Wednesday 9:00pm</button>
-                <button type="button">Thursday 9:00pm</button>
-                <button type="button">Friday 9:00pm</button>
-                <button type="button">Saturday 6:00pm</button>
-                <button type="button">Sunday 6:00pm</button>
+                <table>
+                <tr><td>Wednesday</td><td>9:00pm</td></tr>
+                <tr><td>Thursday</td><td>9:00pm</td></tr>
+                <tr><td>Friday</td><td>9:00pm</td></tr>
+                <tr><td>Saturday</td><td>6:00pm</td></tr>
+                <tr><td>Sunday</td><td>6:00pm</td></tr>
+                </table>
             </div>
-            <div id='movie2'>
+            
+               <div id='movie2'>
                 <p>A Start is Born</p>
                 <p>M</p>
-                <button type="button">Monday 6:00pm</button>
-                <button type="button">Tuesday 6:00pm</button>
-                <button type="button">Saturday 3:00pm</button>
-                <button type="button">Sunday 3:00pm</button>
+                <table>
+                <tr><td>Monday</td><td>6:00pm</td></tr>
+                <tr><td>Tuesday</td><td>6:00pm</td></tr>
+                <tr><td>Saturday</td><td>3:00pm</td></tr>
+                <tr><td>Sunday</td><td>3:00pm</td></tr>
+                </table>
             </div>
-            <div id='movie3'>
+           
+                <div id='movie3'>
                 <p>Ralph Breaks the Internet</p>
                 <p>PG</p>
-                <button type="button">Monday 12:00pm</button>
-                <button type="button">Tuesday 12:00pm</button>
-                <button type="button">Wednesday 6:00pm</button>
-                <button type="button">Thursday 6:00pm</button>
-                <button type="button">Friday 6:00pm</button>
-                <button type="button">Saturday 12:00pm</button>
-                <button type="button">Sunday 12:00pm</button>
+                <table>
+                <tr><td>Monday</td><td>12:00pm</td></tr>
+                <tr><td>Tuesday</td><td>12:00pm</td></tr>
+                <tr><td>Wednesday</td><td>6:00pm</td></tr>
+                <tr><td>Thursday</td><td>6:00pm</td></tr>
+                <tr><td>Friday</td><td>6:00pm</td></tr>
+                <tr><td>Saturday</td><td>12:00pm</td></tr>
+                <tr><td>Sunday</td><td>12:00pm</td></tr>
+                </table>
             </div>
-            <div id='movie3'>
+            
+               <div id='movie4'>
                 <p>Boy Erased</p>
                 <p>MA15+</p>
-                <button type="button">Wednesday 12:00pm</button>
-                <button type="button">Thursday 12:00pm</button>
-                <button type="button">Friday 12:00pm</button>
-                <button type="button">Saturday 9:00pm</button>
-                <button type="button">Sunday 9:00pm</button>
+                <table>
+                <tr><td>Wednesday</td><td>12:00pm</td></tr>
+                <tr><td>Thursday</td><td>12:00pm</td></tr>
+                <tr><td>Saturday</td><td>9:00pm</td></tr>
+                <tr><td>Sunday</td><td>9:00pm</td></tr>
+                </table>
             </div>
-            <h3>Ralph Breaks the Internet</h3>
+           
+            
+              <h3>Ralph Breaks the Internet</h3>
             <p>PG</p>
             <h4>Plot Description</h4>
             <!-- plot taken from: https://www.imdb.com/title/tt5848272/?ref_=nv_sr_1 -->
