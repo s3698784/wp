@@ -1,6 +1,14 @@
 /* Insert your styles here */
 
-/* Insert your styles here */
+/* --------------- global styles ------------*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    position: relative;
+}
 
 * {
     box-sizing: border-box;
@@ -20,11 +28,13 @@ a:hover, a:active {
     font-size: 2em;
 }
 
+section{
+    min-height: 103vh;
+    position: inherit;
+}
+
 /* ------ headings -------*/
 
-@font-face{
-    
-}
 
 h2{
     color: white;
@@ -36,6 +46,12 @@ h2{
     font-family: 'Staatliches', cursive;
 }
 
+h3{
+    font-size: 1.8em;
+    padding: 20px;
+    font-family: 'Staatliches', cursive;
+    }
+
 /*----- Header -----*/
 
 header{
@@ -43,6 +59,7 @@ header{
     margin: 0 auto;
     color: #fff;
     /* Photo by Felix Mooneeram on Unsplash */
+    /* https://www.pexels.com/photo/adult-amphitheater-armchair-balcony-458379/ */
     background-image: url(../../media/cinema-header-background.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -57,7 +74,6 @@ nav{
     background-color: #591617;
     position: sticky;
     top: 0;
-    margin: 0 auto;
     padding: 0;
 }
 
@@ -68,7 +84,6 @@ nav  ul{
     list-style-type: none;
     color: white;
     align-content: center;
-    margin: 0 auto;
 }
 
 nav ul li{
@@ -78,29 +93,43 @@ nav ul li{
     flex-basis: 20%;
     text-decoration: none;
     text-align: center;
-    margin: 0 auto;
 }
 
-main{
-    margin-top: 0;
-    padding: 0;
-}
 
-body{
-    background-color: #white;
-    color:black;
-    margin: auto;
-    position: relative;
-    
-}
+
 
 /* -----About us ---- */
 /* Photo by Thomas William on Unsplash */
 #about-us{
-    min-height: 100vh;
-    background-image: url(../../media/about-us-background.jpg);
+    background-image: url(../../media/about-back.jpg);
     background-size: cover;
     background-attachment: fixed;
+}
+
+.about-us-cont{
+    background-color: hsla(40, 4%, 85%, .7);
+    max-width: 600px;
+    min-height: 700px;
+    color: black;
+    margin: 5% 10% 5%;
+    padding: 40px;
+    overflow: auto;
+    border-radius: 6px;
+   
+}
+
+.about-us-cont p{
+    font-family: arial;
+    font-size: 1.2em;
+    padding: 8px;
+}
+
+.about-us-cont ul, .about-us-cont ul a{
+    font-family: arial;
+    font-size: 1.2em;
+    color: black;
+    padding: 8px;
+    margin: 0 20px;
 }
 
 
@@ -108,18 +137,11 @@ body{
 /* --------------Seats and Prices ------------ */
 /* https://www.pexels.com/photo/curve-industry-photography-vintage-65128/ */
 #seats-and-prices{
-    min-height: 100vh;
     background-image: url(../../media/seat-price-background.jpg);
     background-size: cover;
     background-attachment: fixed;
     
 }
-
-
-
-
-
-
 
 /* ---- format table with prices ------ */
 
@@ -143,7 +165,6 @@ td{
 /* -----------------------------------now showing -------------------------*/
 /* https://www.pexels.com/photo/board-cinema-cinematography-clapper-board-274937/ */
 #now-showing{
-    min-height: 100vh;
     background-image: url(../../media/now-showing-background.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -180,7 +201,6 @@ td{
 /* ------------------------Bookings --------------------------------- */
 /*Photo by rawpixel.com from Pexels*/
 #bookings{
-    min-height: 100vh;
     background-image: url(../../media/booking-background.jpg);
     background-size: cover;
     background-attachment: fixed;
