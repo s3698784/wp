@@ -3,32 +3,34 @@
 /* --------------- global styles ------------*/
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     position: relative;
 }
 
 * {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
-a:link, a:visited {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5em;
+a:link,
+a:visited {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
 }
 
-a:hover, a:active {
-  color: white;
-  text-decoration: none;
+a:hover,
+a:active {
+    color: white;
+    text-decoration: none;
     font-size: 2em;
 }
 
-section{
+section {
     min-height: 103vh;
     position: inherit;
 }
@@ -36,18 +38,18 @@ section{
 /* ------ headings -------*/
 
 
-h2{
+h2 {
     color: white;
     background-color: #8C2129;
     color: white;
     text-align: center;
     font-size: 2em;
-    padding: 65px 0 10px ;
+    padding: 65px 0 10px;
     font-family: 'Staatliches', cursive;
-   
+
 }
 
-h3{
+h3 {
     font-size: 1.8em;
     padding: 20px;
     font-family: 'Staatliches', cursive;
@@ -55,7 +57,7 @@ h3{
 
 /*----- Header -----*/
 
-header{
+header {
     min-height: 700px;
     margin: 0 auto;
     color: #fff;
@@ -71,7 +73,7 @@ header{
 
 /* ----- Navigation -----*/
 
-nav{
+nav {
     background-color: #591617;
     position: sticky;
     top: 0;
@@ -79,7 +81,7 @@ nav{
     z-index: 99;
 }
 
-nav  ul{
+nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -88,8 +90,8 @@ nav  ul{
     align-content: center;
 }
 
-nav ul li{
-    display:inline-block;
+nav ul li {
+    display: inline-block;
     padding: 10px;
     border-color: white;
     flex-basis: 20%;
@@ -102,13 +104,13 @@ nav ul li{
 
 /* -----About us ---- */
 /* Photo by Thomas William on Unsplash */
-#about-us{
+#about-us {
     background-image: url(../../media/about-back.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
-.about-us-cont{
+.about-us-cont {
     background-color: hsla(40, 4%, 85%, .7);
     max-width: 600px;
     min-height: 700px;
@@ -120,13 +122,14 @@ nav ul li{
     border: solid 3px #8C2129;
 }
 
-.about-us-cont p{
+.about-us-cont p {
     font-family: arial;
     font-size: 1.2em;
     padding: 8px;
 }
 
-.about-us-cont ul, .about-us-cont ul a{
+.about-us-cont ul,
+.about-us-cont ul a {
     font-family: arial;
     font-size: 1.2em;
     color: black;
@@ -138,45 +141,43 @@ nav ul li{
 
 /* --------------Seats and Prices ------------ */
 /* https://www.pexels.com/photo/curve-industry-photography-vintage-65128/ */
-#seats-and-prices{
+#seats-and-prices {
     background-image: url(../../media/seat-price-background.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
-.seat-cont{
-    display: inline-block;
-    background-color: hsla(40, 4%, 85%, .7);
+.seat-cont {
+    background-color: hsla(0, 0%, 97%, .7);
     max-width: 600px;
     color: black;
     padding: 40px;
     overflow: auto;
     border-radius: 6px;
     margin-bottom: 10px;
-     border: solid 3px #8C2129;
+    border: solid 3px #8C2129;
 }
 
-.seat-cont img{
+.seat-cont img {
     max-width: 70%;
 }
 
-.price-cont{
-    display: inline-block;
+.price-cont {
     background-color: hsla(40, 4%, 85%, .7);
-    max-width: 800px;
+    max-width: 700px;
     color: black;
     padding: 40px;
     overflow: auto;
     border-radius: 6px;
-     border: solid 3px #8C2129;
+    border: solid 3px #8C2129;
 }
 
-.seat-prices-flex{
+.seat-prices-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 1600px;
-    max-height: 90%;
+    max-height: 100%;
     margin: 0 auto;
     padding-top: 35px;
     padding-bottom: 35px;
@@ -184,14 +185,13 @@ nav ul li{
 
 
 /* ---- format table with prices ------ */
-/* ---- format table with prices ------ */
 
-table{
-    max-width: 90%;
+table {
+    max-width: 80%;
     margin: 0 auto;
 }
 
-th{
+th {
     font-size: 1.2em;
     border-bottom: solid #8C2129;
     padding: 10px;
@@ -199,7 +199,7 @@ th{
     text-align: center;
 }
 
-td{
+td {
     padding: 10px;
     border-bottom: solid #8C2129;
     max-width: 90%;
@@ -210,23 +210,26 @@ td{
 
 /* -----------------------------------now showing -------------------------*/
 /* https://www.pexels.com/photo/board-cinema-cinematography-clapper-board-274937/ */
-#now-showing{
+#now-showing {
     background-image: url(../../media/now-showing-background.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
-.flex-container-now-showing{
+.flex-container-now-showing {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 1600px;
     height: 100%;
     margin: 0 auto;
+    padding-bottom: 30px
 }
 
-.flex-movie1, .flex-movie2, 
-.flex-movie3, .flex-movie4{
+.flex-movie1,
+.flex-movie2,
+.flex-movie3,
+.flex-movie4 {
     background-color: hsla(40, 4%, 85%, .7);
     max-width: 600px;
     color: black;
@@ -241,52 +244,120 @@ td{
     border: solid 3px #8C2129;
 }
 
-#now-showing h3{
+#now-showing h3 {
     font-size: 1.5em;
 }
 
-.test{
+.test {
     margin: 0 auto;
 }
 
 
 /* ------ trailer ---- */
 
-.flex-container-trailer{
+.flex-container-trailer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 3em;
     max-width: 1400px;
-     margin: 0 auto;
+    margin: 0 auto;
 }
 
-.flex-item-trailer1{
-    display: inline-block;
-    max-width: 40%;
+.flex-item-trailer1 {
+    max-width: 350px;
 }
 
-.flex-item-trailer2{
-    display: inline-block;
+.flex-item-trailer1 h4 {
+    padding: 10px 10px 10px 0px;
+}
+
+.flex-item-trailer1 p {
+    padding-bottom: 30px;
+}
+
+
+.flex-item-trailer1 {
+    padding: 10px;
+}
+
+.flex-item-trailer2 iframe {
+    max-width: 100%;
+}
+
+
+.trailer-background-cont {
+    background-color: floralwhite;
+    padding: 30px;
 }
 
 /* ------------------------Bookings --------------------------------- */
 /*Photo by rawpixel.com from Pexels*/
-#bookings{
+#bookings {
     background-image: url(../../media/booking-background.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
-.booking-flex-container{
+.booking-wrap {
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: hsla(0, 0%, 90%, .9);
+    border-radius: 6px;
+
+}
+
+.ticket-flex-wraper {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 49%;
+}
+
+.cust-details {
+    flex-basis: 49%;
+}
+
+fieldset {
+    min-width: 400px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.booking-flex-wraper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 1400px;
-    margin: 0 auto;
+    flex-direction: row;
 }
 
-select, input{
-    display: block;
+legend {
+    font-size: 1.5em;
+    font-style:
 }
 
+input {
+    display: inline-block;
+    font-size: 1.5em;
+    width: 90%
+
+}
+
+select {
+    display: inline-block;
+    font-size: 1.5em;
+
+    width: 160px;
+}
+
+label {
+    display: inline-block;
+    font-size: 1.5em;
+
+    min-width: 60%;
+    padding: 20px 20px 20px 0px;
+}
+
+.booking-col-flex{
+    margin-top: 50px;
+}
