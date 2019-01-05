@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
     <title>Assignment 2</title>
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
@@ -36,9 +37,9 @@
         <!--about us-->
         <section id='about-us'>
             <div id="about-grip-cont">
-                
-                    <h2 class="about-heading">About Us...</h2>
-                
+
+                <h2 class="about-heading">About Us...</h2>
+
                 <div class="about-info">
                     <p>Lunardo is a local cinema who puts customers first</p>
                     <p>To give the customer the best expreicnce possible we have recently made some upgrades, we have:</p>
@@ -55,140 +56,218 @@
 
         <!--seats and prices divided into 2 parts-->
         <section id='seats-and-prices'>
-            <div class="seats-prices-grid">
-            <!-- seats -->
-            
-            <h2 class="seats-h2">Seats</h2> 
-            <img class="stand-seat" src='../../media/standard-seats.png' alt='standard seats' width=30%> 
-            <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=25%>
+            <h2 class="seats-h2">Seats and Prices</h2>
+               <div class="seats-prices-grid">
+                <!-- seats -->
 
-            <!-- all prices - set out in a table -->
-            <h2 class="price-h2">Prices:</h2>
-            <table class="price-table">
-                <theader>
+                
+                <img class="stand-seat" src='../../media/standard-seats.png' alt='standard seats' width=30%>
+                <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=25%>
+
+                <!-- all prices - set out in a table -->
+                <h3 class="price-h2">Prices:</h3>
+                <table class="price-table">
+                    <theader>
+                        <tr>
+                            <th>Seat Type</th>
+                            <th>Seat Code</th>
+                            <th>All day Monday and Wednesday <strong>AND</strong> 12pm Weekdays </th>
+                            <th>All other Times</th>
+                        </tr>
+                    </theader>
                     <tr>
-                        <th>Seat Type</th>
-                        <th>Seat Code</th>
-                        <th>All day Monday and Wednesday <strong>AND</strong> 12pm Weekdays </th>
-                        <th>All other Times</th>
+                        <th>Standard Adult</th>
+                        <td>STA</td>
+                        <td>$14.00</td>
+                        <td>$19.80</td>
                     </tr>
-                </theader>
-                <tr>
-                    <th>Standard Adult</th>
-                    <td>STA</td>
-                    <td>$14.00</td>
-                    <td>$19.80</td>
-                </tr>
-                <tr>
-                    <th>Standard Concession</th>
-                    <td>STP</td>
-                    <td>$12.50</td>
-                    <td>$17.50</td>
-                </tr>
-                <tr>
-                    <th>Standard Child</th>
-                    <td>STC</td>
-                    <td>$11.00</td>
-                    <td>$15.30</td>
-                </tr>
-                <tr>
-                    <th>First Class Adult</th>
-                    <td>FCA</td>
-                    <td>$24.00</td>
-                    <td>$30.00</td>
-                </tr>
-                <tr>
-                    <th>First Class Concession</th>
-                    <td>FCP</td>
-                    <td>$22.50</td>
-                    <td>$27.00</td>
-                </tr>
-                <tr>
-                    <th>First Class Child</th>
-                    <td>FCC</td>
-                    <td>$21.00</td>
-                    <td>$24.00</td>
-                </tr>
-            </table>
+                    <tr>
+                        <th>Standard Concession</th>
+                        <td>STP</td>
+                        <td>$12.50</td>
+                        <td>$17.50</td>
+                    </tr>
+                    <tr>
+                        <th>Standard Child</th>
+                        <td>STC</td>
+                        <td>$11.00</td>
+                        <td>$15.30</td>
+                    </tr>
+                    <tr>
+                        <th>First Class Adult</th>
+                        <td>FCA</td>
+                        <td>$24.00</td>
+                        <td>$30.00</td>
+                    </tr>
+                    <tr>
+                        <th>First Class Concession</th>
+                        <td>FCP</td>
+                        <td>$22.50</td>
+                        <td>$27.00</td>
+                    </tr>
+                    <tr>
+                        <th>First Class Child</th>
+                        <td>FCC</td>
+                        <td>$21.00</td>
+                        <td>$24.00</td>
+                    </tr>
+                </table>
             </div>
         </section>
 
         <!--now showing-->
         <section id='now-showing'>
+
             <h2>Now Showing</h2>
-            
-               <div id='movie1'>
-                <p>The Girl in the Spider's web</p>
+
+            <div class="flex-container-now-showing">
+
+            <div class='flex-movie1'>
+                <img src='../../media/standard-seats.png' alt='standard seats' width="300" height="400">
+                <h3>The Girl in the Spider's web</h3>
                 <p>MA15+</p>
                 <table>
-                <tr><td>Wednesday</td><td>9:00pm</td></tr>
-                <tr><td>Thursday</td><td>9:00pm</td></tr>
-                <tr><td>Friday</td><td>9:00pm</td></tr>
-                <tr><td>Saturday</td><td>6:00pm</td></tr>
-                <tr><td>Sunday</td><td>6:00pm</td></tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>9:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>9:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>9:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>6:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>6:00pm</td>
+                    </tr>
                 </table>
             </div>
-            
-               <div id='movie2'>
-                <p>A Start is Born</p>
+
+            <div class='flex-movie2'>
+                <img src='../../media/standard-seats.png' alt='standard seats' width="300" height="400">
+                <h3>A Start is Born</h3>
                 <p>M</p>
                 <table>
-                <tr><td>Monday</td><td>6:00pm</td></tr>
-                <tr><td>Tuesday</td><td>6:00pm</td></tr>
-                <tr><td>Saturday</td><td>3:00pm</td></tr>
-                <tr><td>Sunday</td><td>3:00pm</td></tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>6:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>6:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>3:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>3:00pm</td>
+                    </tr>
                 </table>
             </div>
-           
-                <div id='movie3'>
-                <p>Ralph Breaks the Internet</p>
+
+            <div class='flex-movie3'>
+                <img src='../../media/standard-seats.png' alt='standard seats' width="300" height="400">
+                <h3>Ralph Breaks the Internet</h3>
                 <p>PG</p>
                 <table>
-                <tr><td>Monday</td><td>12:00pm</td></tr>
-                <tr><td>Tuesday</td><td>12:00pm</td></tr>
-                <tr><td>Wednesday</td><td>6:00pm</td></tr>
-                <tr><td>Thursday</td><td>6:00pm</td></tr>
-                <tr><td>Friday</td><td>6:00pm</td></tr>
-                <tr><td>Saturday</td><td>12:00pm</td></tr>
-                <tr><td>Sunday</td><td>12:00pm</td></tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>12:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>12:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>6:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>6:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>6:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>12:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>12:00pm</td>
+                    </tr>
                 </table>
             </div>
-            
-               <div id='movie4'>
-                <p>Boy Erased</p>
+
+            <div class='flex-movie4'>
+                <img src='../../media/standard-seats.png' alt='standard seats' width="300" height="400">
+                <h3>Boy Erased</h3>
                 <p>MA15+</p>
                 <table>
-                <tr><td>Wednesday</td><td>12:00pm</td></tr>
-                <tr><td>Thursday</td><td>12:00pm</td></tr>
-                <tr><td>Saturday</td><td>9:00pm</td></tr>
-                <tr><td>Sunday</td><td>9:00pm</td></tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>12:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>12:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>9:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>9:00pm</td>
+                    </tr>
                 </table>
             </div>
-           
             
-              <h3>Ralph Breaks the Internet</h3>
+            </div>
+
+
+            <div class='flex-container-trailer'>
+            <div class='flex-item-trailer1'>
+            <h3>Ralph Breaks the Internet</h3>
             <p>PG</p>
             <h4>Plot Description</h4>
             <!-- plot taken from: https://www.imdb.com/title/tt5848272/?ref_=nv_sr_1 -->
             <p>Taking place six years after saving the arcade from Turbo's vengeance, the Sugar Rush arcade cabinet has broken, forcing Ralph and Vanellope to travel to the Internet via the newly-installed Wi-Fi router in Litwak's Arcade to retrieve the piece capable of saving the game.</p>
+            </div>
             <!-- video trailer-->
             <!-- below code snippet taken from youtube.com-->
+            <div class='flex-item-trailer2'>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/_BcYBFC6zfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            </div>
         </section>
         <!--bookings-->
         <section id='bookings'>
             <h2>Bookings</h2>
-            <h3>Movie Title - Day - Time</h3>
+            
             <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post' target="_blank">
 
                 <!-- hidden form inputs -->
                 <input name=moive[id] type='hidden' value='RMC'>
                 <input name=moive[day] type='hidden' value='WED'>
                 <input name=moive[hour] type='hidden' value='12'>
-
+             <div class="booking-flex-container">   
+            <div class="booking-flex-item">
+                 <h3>Movie Title - Day - Time</h3>
                 <!-- standard booking -->
                 <fieldset>
-                    <legend>Standard</legend>
+                   <legend>Standard</legend>
                     <!-- select standard adult tickets-->
                     <label>Adults</label>
                     <select name='seats[STA]'>
@@ -235,7 +314,8 @@
                         <option value='10'>10</option>
                     </select>
                 </fieldset>
-
+               
+               
                 <!-- first class booking -->
                 <fieldset>
                     <legend>First Class</legend>
@@ -285,9 +365,12 @@
                         <option value='10'>10</option>
                     </select>
                 </fieldset>
-
-                <!-- enter customer details-->
-                <fieldset>
+              </div>
+               
+                
+                  <!-- enter customer details-->
+                <div class="cust-dets-flex-item">
+                   <fieldset>
                     <legend>Customer Details</legend>
                     <label for='name'>Name</label>
                     <input name='cust[name]' type='text' id='name' placeholder='Enter name'>
@@ -302,7 +385,8 @@
                 </fieldset>
 
                 <button name='order' type='submit' value='order'>Order</button>
-
+                </div>
+                </div> 
             </form>
         </section>
     </main>

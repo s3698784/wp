@@ -4,31 +4,71 @@
 
 * {
     box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+a:hover, a:active {
+  color: white;
+  text-decoration: none;
+    font-size: 2em;
+}
+
+/* ------ headings -------*/
+
+@font-face{
+    
+}
+
+h2{
+    color: white;
+    background-color: #8C2129;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding: 85px 0 20px ;
+    font-family: 'Staatliches', cursive;
 }
 
 /*----- Header -----*/
 
 header{
-    height: 500px;
-    margin: 0;
+    min-height: 700px;
+    margin: 0 auto;
+    color: #fff;
+    /* Photo by Felix Mooneeram on Unsplash */
+    background-image: url(../../media/cinema-header-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
 }
 
+/* Photo by Felix Mooneeram on Unsplash */
 
 /* ----- Navigation -----*/
 
 nav{
-    background-color: darkturquoise;
+    background-color: #591617;
     position: sticky;
     top: 0;
+    margin: 0 auto;
+    padding: 0;
 }
 
-nav ul{
+nav  ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
     color: white;
     align-content: center;
+    margin: 0 auto;
 }
 
 nav ul li{
@@ -38,6 +78,7 @@ nav ul li{
     flex-basis: 20%;
     text-decoration: none;
     text-align: center;
+    margin: 0 auto;
 }
 
 main{
@@ -49,94 +90,36 @@ body{
     background-color: #white;
     color:black;
     margin: auto;
-    padding: 0;
     position: relative;
     
 }
 
 /* -----About us ---- */
-
+/* Photo by Thomas William on Unsplash */
 #about-us{
     min-height: 100vh;
-    background-color: bisque;
+    background-image: url(../../media/about-us-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-#about-grip-cont{
-    display: grid;
-    grid-template-areas: '        .           .      '
-                         'about-heading about-heading'
-                         'about-info about-image';
-    margin: 0;
-    padding:0;
-}
 
-.about-heading{
-    grid-area: about-heading;
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 20px 0;
-}
-
-.about-info{
-    grid-area: about-info;
-}
-
-.about-image{
-    grid-area: about-image;
-}
 
 /* --------------Seats and Prices ------------ */
-
+/* https://www.pexels.com/photo/curve-industry-photography-vintage-65128/ */
 #seats-and-prices{
     min-height: 100vh;
-    background-color: darkgray;
+    background-image: url(../../media/seat-price-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
     
 }
 
-.seats-prices-grid{
-    margin: 0 auto;
-    max-width: 90%;
-    color: red;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: 50px auto auto auto auto;
-    grid-column-gap: 15px;
-    grid-template-areas:  "     .         .             .             .     "
-                          "seats-h2   seats-h2      price-h2        price-h2"
-                          "stand-seat stand-seat  price-table   price-table"
-                          "      .        .       price-table   price-table"
-                          "first-seat     .       price-table   price-table";
-}
 
-.seats-h2{
-    grid-area: seats-h2;
-    text-align: center;
-    background-color: black;
-    color: #FFF;
-    padding: 20px 0;
-}
 
-.price-h2{
-    grid-area: price-h2;
-    text-align: center;
-    background-color: black;
-    color: #FFF;
-    padding: 20px 0;
-}
 
-.stand-seat{
-    grid-area: stand-seat;
-}
 
-.first-seat{
-    grid-area: first-seat;
-}
 
-.price-table{
-    grid-area: price-table;
-    text-align: center;
-}
 
 /* ---- format table with prices ------ */
 
@@ -158,10 +141,60 @@ td{
 
 
 /* -----------------------------------now showing -------------------------*/
-
+/* https://www.pexels.com/photo/board-cinema-cinematography-clapper-board-274937/ */
 #now-showing{
     min-height: 100vh;
+    background-image: url(../../media/now-showing-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
-/* -----Bookings ---- */
 
+.flex-container-now-showing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ------ trailer ---- */
+
+.flex-container-trailer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3em;
+    max-width: 1400px;
+     margin: 0 auto;
+}
+
+.flex-item-trailer1{
+    display: inline-block;
+    max-width: 40%;
+}
+
+.flex-item-trailer2{
+    display: inline-block;
+}
+
+/* ------------------------Bookings --------------------------------- */
+/*Photo by rawpixel.com from Pexels*/
+#bookings{
+    min-height: 100vh;
+    background-image: url(../../media/booking-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.booking-flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+select, input{
+    display: block;
+}
 
