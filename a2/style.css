@@ -43,15 +43,15 @@ h2 {
     background-color: #8C2129;
     color: white;
     text-align: center;
-    font-size: 2em;
-    padding: 65px 0 10px;
+    font-size: 1.8em;
+    padding: 58px 0 5px;
     font-family: 'Staatliches', cursive;
 
 }
 
 h3 {
     font-size: 1.8em;
-    padding: 20px;
+    padding: 10px;
     font-family: 'Staatliches', cursive;
 }
 
@@ -79,6 +79,7 @@ nav {
     top: 0;
     padding: 0;
     z-index: 99;
+    border-bottom: solid 2px white;
 }
 
 nav ul {
@@ -88,11 +89,13 @@ nav ul {
     list-style-type: none;
     color: white;
     align-content: center;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 nav ul li {
     display: inline-block;
-    padding: 10px;
+    padding: 5px;
     border-color: white;
     flex-basis: 20%;
     text-decoration: none;
@@ -111,15 +114,15 @@ nav ul li {
 }
 
 .about-us-cont {
-    background-color: hsla(40, 4%, 85%, .7);
+    background-color: hsla(0, 0%, 95%, .7);
     max-width: 600px;
     min-height: 700px;
     color: black;
-    margin: 5% 10% 5%;
+    margin: 5% 10% 0% 10%;
     padding: 40px;
     overflow: auto;
     border-radius: 6px;
-    border: solid 3px #8C2129;
+    border: solid 2px #8C2129;
 }
 
 .about-us-cont p {
@@ -147,6 +150,10 @@ nav ul li {
     background-attachment: fixed;
 }
 
+.seats-h2{
+    margin-bottom: 30px;
+}
+
 .seat-cont {
     background-color: hsla(0, 0%, 97%, .7);
     max-width: 600px;
@@ -155,7 +162,7 @@ nav ul li {
     overflow: auto;
     border-radius: 6px;
     margin-bottom: 10px;
-    border: solid 3px #8C2129;
+    border: solid 2px #8C2129;
 }
 
 .seat-cont img {
@@ -163,13 +170,13 @@ nav ul li {
 }
 
 .price-cont {
-    background-color: hsla(40, 4%, 85%, .7);
-    max-width: 700px;
+    background-color: hsla(0, 0%, 95%, .7);
+    max-width: 800px;
     color: black;
     padding: 40px;
     overflow: auto;
     border-radius: 6px;
-    border: solid 3px #8C2129;
+    border: solid 2px #8C2129;
 }
 
 .seat-prices-flex {
@@ -179,33 +186,44 @@ nav ul li {
     max-width: 1600px;
     max-height: 100%;
     margin: 0 auto;
-    padding-top: 35px;
+    padding-top: 60px;
     padding-bottom: 35px;
 }
 
 
 /* ---- format table with prices ------ */
 
+
+
 table {
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
+    border-collapse: collapse;
 }
 
 th {
-    font-size: 1.2em;
-    border-bottom: solid #8C2129;
-    padding: 10px;
-    max-width: 90%;
-    text-align: center;
+    font-size: 1.1em;
+    border-bottom: solid 2px #8C2129;
+    padding-top: 20px;
+    padding-bottom: 3px;
+    width: 500px;
+    text-align: left;
 }
 
 td {
-    padding: 10px;
-    border-bottom: solid #8C2129;
-    max-width: 90%;
-    text-align: center;
+    border-bottom: solid 2px #8C2129;
+    padding-bottom: 3px;
+    text-align: left;
+    padding-top: 10px;
 }
 
+.table-space {
+    padding-top: 60px;
+}
+
+.double-border{
+    border-bottom-style:double;
+}
 
 
 /* -----------------------------------now showing -------------------------*/
@@ -230,7 +248,7 @@ td {
 .flex-movie2,
 .flex-movie3,
 .flex-movie4 {
-    background-color: hsla(40, 4%, 85%, .7);
+    background-color: hsla(0, 0%, 95%, .7);
     max-width: 600px;
     color: black;
     padding-top: 30px;
@@ -241,7 +259,7 @@ td {
     margin-top: 30px;
     text-align: center;
     flex-basis: 300px;
-    border: solid 3px #8C2129;
+    border: solid 2px #8C2129;
 }
 
 #now-showing h3 {
@@ -289,6 +307,45 @@ td {
 .trailer-background-cont {
     background-color: floralwhite;
     padding: 30px;
+    position: relative;
+}
+
+/*------------------- buttons --------------*/
+.select-time-heading {
+    margin: 5px;
+    position: inherit;
+    left: 15%;
+}
+
+.slecect-day-time-buttons-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-basis: 10%;
+}
+
+button {
+    max-width: 100px;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+}
+
+button:link,
+button:visited {
+    color: #000;
+    font-size: 1em;
+    background-color: brown;
+}
+
+button:hover,
+button:active {
+    color: #000;
+    font-size: 1em;
+     background-color: brown;
 }
 
 /* ------------------------Bookings --------------------------------- */
@@ -301,11 +358,11 @@ td {
 
 .booking-wrap {
     height: 100%;
-    max-width: 1400px;
+    max-width: 1000px;
     margin: 0 auto;
-    background-color: hsla(0, 0%, 90%, .9);
+    background-color: hsla(0, 0%, 95%, .9);
     border-radius: 6px;
-
+    border: solid 2px #8C2129;
 }
 
 .ticket-flex-wraper {
@@ -339,7 +396,7 @@ legend {
 input {
     display: inline-block;
     font-size: 1.5em;
-    width: 90%
+    width: 100%
 
 }
 
@@ -352,12 +409,31 @@ select {
 
 label {
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1.2em;
 
-    min-width: 60%;
-    padding: 20px 20px 20px 0px;
+    min-width: 40%;
+    padding: 10px 20px 20px 0px;
 }
 
 .booking-col-flex{
     margin-top: 50px;
+}
+
+/* ----------- footer ----------- */
+
+footer{
+    background-color: grey;
+   flex-basis: 70%, 30%;
+}
+
+.footer-wrap-flex{
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-button{
+    margin-left: 20px;
 }

@@ -86,15 +86,15 @@
                             <tr>
                                 <th>Seat Type</th>
                                 <th>Seat Code</th>
-                                <th>All day Monday and Wednesday <strong>AND</strong> 12pm Weekdays </th>
-                                <th>All other Times</th>
+                                <th >All day Monday and Wednesday <strong>AND</strong> 12pm Weekdays </th>
+                                <th >All other Times</th>
                             </tr>
                         </theader>
                         <tr>
-                            <th>Standard Adult</th>
-                            <td>STA</td>
-                            <td>$14.00</td>
-                            <td>$19.80</td>
+                            <th class="table-space">Standard Adult</th>
+                            <td class="table-space">STA</td>
+                            <td class="table-space">$14.00</td>
+                            <td class="table-space">$19.80</td>
                         </tr>
                         <tr>
                             <th>Standard Concession</th>
@@ -108,11 +108,11 @@
                             <td>$11.00</td>
                             <td>$15.30</td>
                         </tr>
-                        <tr>
-                            <th>First Class Adult</th>
-                            <td>FCA</td>
-                            <td>$24.00</td>
-                            <td>$30.00</td>
+                        <tr >
+                            <th class="table-space">First Class Adult</th>
+                            <td class="table-space">FCA</td>
+                            <td class="table-space">$24.00</td>
+                            <td class="table-space">$30.00</td>
                         </tr>
                         <tr>
                             <th>First Class Concession</th>
@@ -267,6 +267,16 @@
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/_BcYBFC6zfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
+            <h3 class="select-time-heading">Select a time:</h3>
+            <div class="slecect-day-time-buttons-flex">
+                <button>Monday - 12:00pm</button>
+                <button>Tuesday - 12:00pm</button>
+                <button>Wednesday - 6:00pm</button>
+                <button>Thursday - 6:00pm</button>
+                <button>Friday - 6:00pm</button>
+                <button>Saturday - 12:00pm</button>
+                <button>Sunday - 12:00pm</button>
+            </div>
             </div>
         </section>
         <!--bookings-->
@@ -419,15 +429,21 @@
         </section>
     </main>
     <footer>
-        <div>&copy;
+      <div class="footer-wrap-flex">
+       <div class="footer-content">
+            <div>&copy;
             <script>
                 document.write(new Date().getFullYear());
 
-            </script> James Ciuciu, s3698784 and group name here. Last modified
-            <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
-        <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-        <div>
-            <button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button>
+            </script> James Ciuciu, s3698784. Last modified
+            <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.
+        </div>
+        <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.
+        </div>
+        </div>
+          <div class="footer-button"> 
+            <button  id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button>
+        </div> 
         </div>
     </footer>
 </body>
