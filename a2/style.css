@@ -21,6 +21,7 @@ a:visited {
     color: white;
     text-decoration: none;
     font-size: 1.5em;
+    font-family: 'Staatliches', cursive;
 }
 
 a:hover,
@@ -28,15 +29,29 @@ a:active {
     color: white;
     text-decoration: none;
     font-size: 2em;
+    font-family: 'Staatliches', cursive;
 }
 
 section {
     min-height: 103vh;
     position: inherit;
+    font-family: 'Molengo', sans-serif;
+}
+
+/* ------- fonts --------- */
+
+/*** font taken from https://www.dafont.com/cinema-st.font *****/
+@font-face{
+    font-family: cinema;
+    src: url(../../cinema_st.ttf);
+    font-weight: normal;
 }
 
 /* ------ headings -------*/
 
+.main-heading{
+    font-display: cinema;
+}
 
 h2 {
     color: white;
