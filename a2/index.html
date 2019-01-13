@@ -44,14 +44,14 @@
             <div class="about-us-cont">
 
                 <h3>So who are we?</h3>
-                <p>Lunardo is a local cinema located the small country city Traralgon. We do our best to give all customers a first first class exprience </p>
+                <p>Lunardo is a local cinema located in the small country city Traralgon. We do our best to give all customers a first class exprience </p>
                 <p>To really show this we have recently made some upgrades, we have:</p>
 
                 <ul>
                     <li>Extensivly improved and renovated the whole cinema</li><br>
                     <li>New seats for all, including reclinable first class seats</li><br>
                     <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. </li><br>
-                    <a href="https://www.dolby.com/us/en/cinema">Cick for more details</a>
+                    <a class="dolby" href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more details</a>
                 </ul>
 
                 <p>If you are a local or just visiting, you are always welcomt to come by our cinema and enjoy some pop corn and a relaxing film</p>
@@ -72,11 +72,14 @@
                     <h3>All new seating</h3>
                     <p>We have installed new seats through out the whole cinema</p>
 
+                   
                     <img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=400>
-                    <p>Spacious and comfortable standard seats</p>
-
+                    <div class="img-info">Spacious and comfortable standard seats</div>
+                    
+                    
                     <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=400>
-                    <p>Recline and watch in style with all new first class seating</p>
+                    <div class="img-info">Recline and watch in style with all new first class seating</div>
+                    
                 </div>
                 <!-- all prices - set out in a table -->
 
@@ -146,23 +149,23 @@
                     <table>
                         <tr>
                             <td>Wednesday</td>
-                            <td>9:00pm</td>
+                            <td><time>9:00pm</time></td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
-                            <td>9:00pm</td>
+                            <td><time>9:00pm</time></td>
                         </tr>
                         <tr>
                             <td>Friday</td>
-                            <td>9:00pm</td>
+                            <td><time>9:00pm</time></td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td>6:00pm</td>
+                            <td><time>6:00pm</time></td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td>6:00pm</td>
+                            <td><time>6:00pm</time></td>
                         </tr>
                     </table>
                 </div>
@@ -174,19 +177,19 @@
                     <table>
                         <tr>
                             <td>Monday</td>
-                            <td>6:00pm</td>
+                            <td><time>6:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Tuesday</td>
-                            <td>6:00pm</td>
+                            <td><time>6:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td>3:00pm</td>
+                            <td><time>3:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td>3:00pm</td>
+                            <td><time>3:00 pm</time></td>
                         </tr>
                     </table>
                 </div>
@@ -198,31 +201,31 @@
                     <table>
                         <tr>
                             <td>Monday</td>
-                            <td>12:00pm</td>
+                            <td><time>12:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Tuesday</td>
-                            <td>12:00pm</td>
+                            <td><time>12:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Wednesday</td>
-                            <td>6:00pm</td>
+                            <td><time>6:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
-                            <td>6:00pm</td>
+                            <td><time>6:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Friday</td>
-                            <td>6:00pm</td>
+                            <td><time>6:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td>12:00pm</td>
+                            <td><time>12:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td>12:00pm</td>
+                            <td><time>12:00 pm</time></td>
                         </tr>
                     </table>
                 </div>
@@ -234,19 +237,19 @@
                     <table>
                         <tr>
                             <td>Wednesday</td>
-                            <td>12:00pm</td>
+                            <td><time>12:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
-                            <td>12:00pm</td>
+                            <td><time>12:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td>9:00pm</td>
+                            <td><time>9:00 pm</time></td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td>9:00pm</td>
+                            <td><time>9:00 pm</time></td>
                         </tr>
                     </table>
                 </div>
@@ -320,7 +323,7 @@
                                 <!-- select standard concession tickets-->
                                 <label>Concession</label>
                                 <select name='seats[STP]'>
-                                    <option value=''></option>
+                                    <option value=''>0</option>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
                                     <option value='3'>3</option>
@@ -335,7 +338,7 @@
                                 <!-- select standard children tickets-->
                                 <label>Children</label>
                                 <select name='seats[STC]'>
-                                    <option value=''></option>
+                                    <option value=''>0</option>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
                                     <option value='3'>3</option>
@@ -356,7 +359,7 @@
                                 <!-- select number of first class adult tickets-->
                                 <label>Adults</label>
                                 <select name='seats[FCA]'>
-                                    <option value=''></option>
+                                    <option value=''>0</option>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
                                     <option value='3'>3</option>
@@ -371,7 +374,7 @@
                                 <!-- select number of first class concession tickets-->
                                 <label>Concession</label>
                                 <select name='seats[FCP]'>
-                                    <option value=''></option>
+                                    <option value=''>0</option>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
                                     <option value='3'>3</option>
@@ -386,7 +389,7 @@
                                 <!-- select number of first class children tickets-->
                                 <label>Children</label>
                                 <select name='seats[FCC]'>
-                                    <option value=''></option>
+                                    <option value=''>0</option>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
                                     <option value='3'>3</option>
@@ -420,6 +423,8 @@
 
                             
                         </div>
+<span class="total">Total:</span>
+<span><output>$ </output></span>
 <button name='order' type='submit' value='order'>Order</button>
                     </div>
                 

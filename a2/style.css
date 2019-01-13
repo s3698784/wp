@@ -141,18 +141,20 @@ nav ul li {
 }
 
 .about-us-cont p {
-    font-family: arial;
     font-size: 1.2em;
     padding: 8px;
+    
 }
 
-.about-us-cont ul,
-.about-us-cont ul a {
-    font-family: arial;
+.about-us-cont ul{
     font-size: 1.2em;
     color: black;
     padding: 8px;
     margin: 0 20px;
+}
+
+.about-us-cont ul a {
+    color: #000;
 }
 
 
@@ -182,13 +184,14 @@ nav ul li {
 
 .seat-cont img {
     max-width: 70%;
+    padding-top: 40px;
 }
 
 .price-cont {
     background-color: hsla(0, 0%, 95%, .7);
     max-width: 800px;
     color: black;
-    padding: 40px;
+    padding: 30px;
     overflow: auto;
     border-radius: 6px;
     border: solid 2px #8C2129;
@@ -201,10 +204,28 @@ nav ul li {
     max-width: 1600px;
     max-height: 100%;
     margin: 0 auto;
-    padding-top: 60px;
+    padding-top: 0px;
     padding-bottom: 35px;
 }
 
+.seat-center{
+    margin: 0 auto;
+    border: solid 2px;
+}
+
+.stand-seat,
+.first-seat{
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 100%
+}
+
+.img-info{
+    text-align: center;
+    font-size: 1.2em;
+}
 
 /* ---- format table with prices ------ */
 
@@ -228,6 +249,7 @@ th {
 td {
     border-bottom: solid 2px #8C2129;
     padding-bottom: 3px;
+    padding-left: 7px;
     text-align: left;
     padding-top: 10px;
 }
@@ -347,20 +369,22 @@ button {
     padding-left: 10px;
     padding-right: 10px;
     margin: 5px;
+    background-color: #4CAF50;
+    border-radius: 6px;
+    font-weight: bold;
+    border: solid darkgreen 3px;
 }
 
 button:link,
 button:visited {
-    color: #000;
-    font-size: 1em;
-    background-color: brown;
+    
 }
 
 button:hover,
 button:active {
     color: #000;
     font-size: 1em;
-     background-color: brown;
+    
 }
 
 /* ------------------------Bookings --------------------------------- */
@@ -450,5 +474,10 @@ footer{
 }
 
 .footer-button{
-    margin-left: 20px;
+    margin-left: 20px;  
+}
+
+#toggleWireframeCSS{
+    background-color: darkgray;
+    border-color: black;
 }
