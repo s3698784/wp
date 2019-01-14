@@ -119,7 +119,6 @@ nav ul {
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
-    color: white;
     align-content: center;
     max-width: 90%;
     margin: 0 auto;
@@ -128,12 +127,22 @@ nav ul {
 nav ul li {
     display: inline-block;
     padding: 5px;
-    border-color: white;
     flex-basis: 20%;
     text-decoration: none;
     text-align: center;
 }
 
+@media screen and (max-width: 550px) {
+    nav ul{
+        flex-direction: column;
+        
+    }
+    
+    .about-us-cont{
+        min-width: 100%
+         margin: 0;
+    }
+}
 
 
 
@@ -400,6 +409,7 @@ button:hover,
 button:active {
     background-color: #FFF171;
     border: solid #FFE00C 3px;
+    cursor: pointer;
 }
 
 /* ------------------------Bookings --------------------------------- */
@@ -453,6 +463,7 @@ input {
     width: 100%;
     border: none;
     border-bottom: solid #8C2129 3px;
+    cursor: pointer;
 }
 
 input:focus {
@@ -466,6 +477,7 @@ select {
     border: none;
     border-bottom: solid #8C2129 3px;
     width: 160px;
+    cursor: pointer;
 }
 
 label {
@@ -474,7 +486,13 @@ label {
 
     min-width: 40%;
     padding: 10px 20px 20px 0px;
+    
 }
+
+.cust-details label{
+    cursor: pointer;
+}
+
 
 .booking-col-flex{
     margin-top: 50px;
@@ -527,3 +545,4 @@ footer{
     background-color: darkgray;
     border-color: black;
 }
+

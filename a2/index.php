@@ -73,11 +73,11 @@
                     <p>We have installed new seats through out the whole cinema</p>
 
 
-                    <img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=400>
+                    <img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=300>
                     <div class="img-info">Spacious and comfortable standard seats</div>
 
 
-                    <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=400>
+                    <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=300>
                     <div class="img-info">Recline and watch in style with all new first class seating</div>
 
                 </div>
