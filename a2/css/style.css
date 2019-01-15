@@ -38,213 +38,11 @@ a:active {
 section {
     min-height: 103vh;
     position: inherit;
-    font-family: 'Molengo', ariel, sans-serif;
-}
-
-
-/* ---------------------------------- headings -------------------------------
--------------------------------------------------------------------------------*/
-
-h2 {
-    color: #FFBD59;
-    background-color: #8C2129;
-    text-align: center;
-    font-size: 1.8em;
-    padding: 58px 0 5px;
-    font-family: 'Staatliches', cursive;
-
-}
-
-h3 {
-    font-size: 1.8em;
-    padding: 10px;
-    font-family: 'Staatliches', cursive;
-}
-
-.main-heading{
-    display: none;
-}
-
-/*----------------------------------- Header ---------------------------------
--------------------------------------------------------------------------------*/
-
-header {
-    min-height: 700px;
-    margin: 0 auto;
-    color: #fff;
-    /* Photo by Felix Mooneeram on Unsplash */
-    /* https://www.pexels.com/photo/adult-amphitheater-armchair-balcony-458379/ */
-    background-image: url(../../media/cinema-header-background.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: bottom;
-}
-
-.logo{
-    padding-top: 5%; 
-}
-
-/* logo created at https://www.canva.com/ */
-.logo img{
-    display: block;
-    margin: 0 auto;  
-    border: solid 5px  white;
-}
-
-/* --------------------------------- Navigation ------------------------------------
-------------------------------------------------------------------------------------*/
-
-nav {
-    background-color: #591617;
-    position: sticky;
-    top: 0;
-    padding: 0;
-    z-index: 99;
-    border-bottom: solid 2px white;
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    align-content: center;
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-nav ul li {
-    display: inline-block;
-    padding: 5px;
-    flex-basis: 20%;
-    text-decoration: none;
-    text-align: center;
-}
-
-/*  change flex to column when viewport is smaller than 550px */
-@media screen and (max-width: 550px) {
-    nav ul{
-        flex-direction: column;   
-    }
-    
-    .about-us-cont{
-        min-width: 100%
-         margin: 0;
-    }
-}
-
-
-
-/* -----About us ---- */
-/* Photo by Thomas William on Unsplash */
-#about-us {
-    background-image: url(../../media/about-back.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.about-us-cont {
-    background-color: hsla(0, 0%, 95%, .7);
-    max-width: 600px;
-    min-height: 700px;
-    color: black;
-    margin: 5% 10% 0% 10%;
-    padding: 40px;
-    overflow: auto;
-    border-radius: 6px;
-    border: solid 2px #8C2129;
-}
-
-.about-us-cont p {
-    font-size: 1.2em;
-    padding: 8px;
-    
-}
-
-.about-us-cont ul{
-    font-size: 1.2em;
-    color: black;
-    padding: 8px;
-    margin: 0 20px;
-}
-
-.about-us-cont ul a {
+    font-family: 'Molengo', Arial, sans-serif;
     color: #000;
 }
 
-
-
-/* --------------Seats and Prices ------------ */
-/* https://www.pexels.com/photo/curve-industry-photography-vintage-65128/ */
-#seats-and-prices {
-    background-image: url(../../media/seat-price-background.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.seats-h2{
-    margin-bottom: 30px;
-}
-
-.seat-cont {
-    background-color: hsla(0, 0%, 97%, .7);
-    max-width: 600px;
-    color: black;
-    padding: 40px;
-    overflow: auto;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    border: solid 2px #8C2129;
-}
-
-.seat-cont img {
-    max-width: 70%;
-    padding-top: 40px;
-}
-
-.price-cont {
-    background-color: hsla(0, 0%, 95%, .7);
-    max-width: 800px;
-    color: black;
-    padding: 30px;
-    overflow: auto;
-    border-radius: 6px;
-    border: solid 2px #8C2129;
-}
-
-.seat-prices-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1600px;
-    max-height: 100%;
-    margin: 0 auto;
-    padding-top: 0px;
-    padding-bottom: 35px;
-}
-
-.seat-center{
-    margin: 0 auto;
-    border: solid 2px;
-}
-
-.stand-seat,
-.first-seat{
-    border: none;
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-    max-width: 100%
-}
-
-.img-info{
-    text-align: center;
-    font-size: 1.2em;
-}
-
-/* ---- format table with prices ------ */
-
-
+/* ---- format tables ------ */
 
 table {
     max-width: 100%;
@@ -273,14 +71,217 @@ td {
     padding-top: 60px;
 }
 
-.double-border{
-    border-bottom-style:double;
+/*--------------- buttons --------------*/
+
+button {
+    width: 150px;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    background-color: #FFBD59;
+    font-weight: bold;
+    border: solid #FF9D1D 3px;
 }
 
+button:hover,
+button:active {
+    background-color: #FFF171;
+    border: solid #FFE00C 3px;
+    cursor: pointer;
+}
 
-/* -----------------------------------now showing -------------------------*/
-/* https://www.pexels.com/photo/board-cinema-cinematography-clapper-board-274937/ */
+/* ---------------------------------- headings -------------------------------
+-------------------------------------------------------------------------------*/
+
+h2 {
+    color: #FFBD59;
+    background-color: #8C2129;
+    text-align: center;
+    font-size: 1.8em;
+    padding: 58px 0 5px;
+    font-family: 'Staatliches', cursive, sans-serif;
+}
+
+h3 {
+    font-size: 1.8em;
+    padding: 10px;
+    font-family: 'Staatliches', cursive, sans-serif;
+}
+
+.main-heading{
+    display: none;
+}
+
+/*----------------------------------- Header ---------------------------------
+-------------------------------------------------------------------------------*/
+
+header {
+    min-height: 700px;
+    /* Photo by Felix Mooneeram on Unsplash */
+    /* https://www.pexels.com/photo/adult-amphitheater-armchair-balcony-458379/ */
+    background-image: url(../../media/cinema-header-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+}
+
+.logo{
+    padding-top: 5%; 
+}
+
+/* logo created at https://www.canva.com/ */
+.logo img{
+    display: block;
+    margin: 0 auto;  
+    border: solid 5px  white;
+}
+
+/* ------------------------------------ Navigation --------------------------------------
+-----------------------------------------------------------------------------------------*/
+
+nav {
+    background-color: #591617;
+    position: sticky;
+    top: 0;
+    padding: 0;
+    border-bottom: solid 2px white;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    align-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 5px;
+    flex-basis: 20%;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*  change flex to column when viewport is smaller than 550px */
+@media screen and (max-width: 550px) {
+    nav ul{
+        flex-direction: column;
+    }
+}
+
+/* -----------------------------------------About us --------------------------------------------- 
+--------------------------------------------------------------------------------------------------*/
+
+
+#about-us {
+    /* Photo by Thomas William on Unsplash */
+    background-image: url(../../media/about-back.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.about-us-cont {
+    background-color: hsla(0, 0%, 95%, .7);
+    max-width: 600px;
+    min-height: 700px;
+    margin: 5% 10% 0% 10%;
+    padding: 40px;
+    overflow: auto;
+    border-radius: 6px;
+    border: solid 2px #8C2129;
+}
+
+.about-us-cont p {
+    font-size: 1.2em;
+    padding: 8px;
+}
+
+.about-us-cont ul{
+    font-size: 1.2em;
+    padding: 8px;
+    margin: 0 20px;
+}
+
+.about-us-cont ul a {
+    color: #000;
+}
+
+/* --------------Seats and Prices ------------ */
+
+#seats-and-prices {
+    /* https://www.pexels.com/photo/curve-industry-photography-vintage-65128/ */
+    background-image: url(../../media/seat-price-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.seats-h2{
+    margin-bottom: 30px;
+}
+
+.seat-cont {
+    background-color: hsla(0, 0%, 97%, .7);
+    max-width: 600px;
+    padding: 40px;
+    overflow: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: solid 2px #8C2129;
+    font-size: 1.1em;
+}
+
+.seat-cont img {
+    max-width: 70%;
+    padding-top: 40px;
+}
+
+.price-cont {
+    background-color: hsla(0, 0%, 95%, .7);
+    max-width: 800px;
+    padding: 30px;
+    overflow: auto;
+    border-radius: 6px;
+    border: solid 2px #8C2129;
+}
+
+.seat-prices-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1600px;
+    max-height: 100%;
+    margin: 0 auto;
+    padding-top: 0px;
+    padding-bottom: 35px;
+}
+
+.seat-center{
+    margin: 0 auto;
+    border: solid 2px;
+}
+
+.stand-seat,
+.first-seat{
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 100%
+}
+
+.img-info{
+    text-align: center;
+}
+
+/* -------------------------------------- now showing -----------------------------------------
+---------------------------------------------------------------------------------------------*/
+
+
 #now-showing {
+    /* https://www.pexels.com/photo/board-cinema-cinematography-clapper-board-274937/ */
     background-image: url(../../media/now-showing-background.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -302,7 +303,6 @@ td {
 .flex-movie4 {
     background-color: hsla(0, 0%, 95%, .7);
     max-width: 600px;
-    color: black;
     padding-top: 30px;
     padding-bottom: 20px;
     overflow: auto;
@@ -318,12 +318,7 @@ td {
     font-size: 1.5em;
 }
 
-.test {
-    margin: 0 auto;
-}
-
-
-/* ------ trailer ---- */
+/* --------------- trailer --------------- */
 
 .flex-container-trailer {
     display: flex;
@@ -346,7 +341,6 @@ td {
     padding-bottom: 30px;
 }
 
-
 .flex-item-trailer1 {
     padding: 10px;
 }
@@ -355,14 +349,12 @@ td {
     max-width: 100%;
 }
 
-
 .trailer-background-cont {
     background-color: floralwhite;
     padding: 30px;
     position: relative;
 }
 
-/*------------------- buttons --------------*/
 .select-time-heading {
     margin: 5px;
     position: inherit;
@@ -378,32 +370,12 @@ td {
     flex-basis: 10%;
 }
 
-button {
-    width: 150px;
-    height: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px;
-    background-color: #FFBD59;
-    font-weight: bold;
-    border: solid #FF9D1D 3px;
-}
+/* ----------------------------------------Bookings ---------------------------------------- 
+--------------------------------------------------------------------------------------------*/
 
-button:link,
-button:visited {
-    
-}
 
-button:hover,
-button:active {
-    background-color: #FFF171;
-    border: solid #FFE00C 3px;
-    cursor: pointer;
-}
-
-/* ------------------------Bookings --------------------------------- */
-/*Photo by rawpixel.com from Pexels*/
 #bookings {
+    /*Photo by rawpixel.com from Pexels*/
     background-image: url(../../media/booking-background.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -443,7 +415,6 @@ fieldset {
 
 legend {
     font-size: 1.5em;
-    font-style:
 }
 
 input {
@@ -462,7 +433,7 @@ input:focus {
 
 select {
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1.1em;
     border: none;
     border-bottom: solid #8C2129 3px;
     width: 160px;
@@ -472,16 +443,13 @@ select {
 label {
     display: inline-block;
     font-size: 1.2em;
-
     min-width: 40%;
     padding: 10px 20px 20px 0px;
-    
 }
 
 .cust-details label{
     cursor: pointer;
 }
-
 
 .booking-col-flex{
     margin-top: 50px;
@@ -499,7 +467,7 @@ label {
     height: 50px;
     padding: 12px 150px 15px 12px;
     margin: 5px 25px 5px 5px;
-    background-color: white;
+    background-color: #fff;
     font-weight: bold;
     border: solid #8C2129 3px;
 }
@@ -511,27 +479,28 @@ label {
     font-weight: bold;
 }
 
-/* ----------- footer ----------- */
+/* ----------------------------------------- footer -------------------------------------- 
+-------------------------------------------------------------------------------------------*/
 
 footer{
     background-color: grey;
-   flex-basis: 70%, 30%;
 }
 
 .footer-wrap-flex{
     display: flex;
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-button{
-    margin-left: 20px;  
+    margin-left: 20px;
 }
 
 #toggleWireframeCSS{
     background-color: darkgray;
-    border-color: black;
+    border-color: #000;
 }
 
