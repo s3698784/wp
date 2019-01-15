@@ -1,6 +1,5 @@
-/* Insert your styles here */
-
-/* --------------- global styles ------------*/
+/* ------------------------------ global styles -----------------------------------
+-----------------------------------------------------------------------------------*/
 
 html {
     scroll-behavior: smooth;
@@ -10,18 +9,21 @@ body {
     position: relative;
 }
 
+/* set all margins and padding to 0 */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+/* styles pseduo elements for links */
 a:link,
 a:visited {
     color: #FFBD59;
     text-decoration: none;
     font-size: 1.5em;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Staatliches', cursive, sans-serif;
 }
 
 a:hover,
@@ -29,29 +31,19 @@ a:active {
     color: #FFF171;
     text-decoration: none;
     font-size: 2em;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Staatliches', cursive, sans-serif;
 }
 
+/*set height and standard font for each section */
 section {
     min-height: 103vh;
     position: inherit;
-    font-family: 'Molengo', sans-serif;
+    font-family: 'Molengo', ariel, sans-serif;
 }
 
-/* ------- fonts --------- */
 
-/*** font taken from https://www.dafont.com/cinema-st.font *****/
-@font-face{
-    font-family: cinema;
-    src: url(../../cinema_st.ttf);
-    font-weight: normal;
-}
-
-/* ------ headings -------*/
-
-.main-heading{
-    font-display: cinema;
-}
+/* ---------------------------------- headings -------------------------------
+-------------------------------------------------------------------------------*/
 
 h2 {
     color: #FFBD59;
@@ -69,7 +61,12 @@ h3 {
     font-family: 'Staatliches', cursive;
 }
 
-/*----- Header -----*/
+.main-heading{
+    display: none;
+}
+
+/*----------------------------------- Header ---------------------------------
+-------------------------------------------------------------------------------*/
 
 header {
     min-height: 700px;
@@ -83,27 +80,19 @@ header {
     background-position: bottom;
 }
 
-/*** logo created at https://www.canva.com/ **/
-
 .logo{
-    padding-top: 5%;
-   
+    padding-top: 5%; 
 }
 
+/* logo created at https://www.canva.com/ */
 .logo img{
     display: block;
-    margin: 0 auto;
-    
-    border: solid 5px white;
+    margin: 0 auto;  
+    border: solid 5px  white;
 }
 
-.main-heading{
-    display: none;
-}
-
-/* Photo by Felix Mooneeram on Unsplash */
-
-/* ----- Navigation -----*/
+/* --------------------------------- Navigation ------------------------------------
+------------------------------------------------------------------------------------*/
 
 nav {
     background-color: #591617;
@@ -132,10 +121,10 @@ nav ul li {
     text-align: center;
 }
 
+/*  change flex to column when viewport is smaller than 550px */
 @media screen and (max-width: 550px) {
     nav ul{
-        flex-direction: column;
-        
+        flex-direction: column;   
     }
     
     .about-us-cont{
