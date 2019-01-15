@@ -2,14 +2,18 @@
 <html lang='en'>
 
 <head>
+    <!-- Student name: James Ciuciu, Student number: s3698784 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- import google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
-    <title>Assignment 2</title>
+    <title>Assignment 2 by James Ciuciu</title>
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-    <link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
+    <!-- the follow 2 lines of code was used to overcome server problems-->
+    <style><?php include("css/style.css");  ?></style>
+    <script><?php include("js/tools.js"); ?></script>
     <script src='../wireframe.js'></script>
 </head>
 
@@ -20,7 +24,8 @@
         <h1 class="main-heading">Lunardo</h1>
     </header>
 
-
+    <!---------------------------- Navigation ------------------------------------>
+    <!---------------------------------------------------------------------------->
     <nav>
         <ul>
             <li><a href='#home'>Home</a></li>
@@ -31,18 +36,14 @@
         </ul>
     </nav>
     <main>
-        <!--   <article id='Website Under Construction'>-->
-        <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
-        <!--  <img   src='../../media/website-under-construction.png' alt='Website Under Construction' /> </article> -->
 
-        <!--about us-->
+        <!------------------------about us-------------------------->
+        <!---------------------------------------------------------->
+        <!-- contains a description of Lunardo -->
         <section id='about-us'>
-
-
-            <h2>About Us...</h2>
+            <h2>About Us</h2>
 
             <div class="about-us-cont">
-
                 <h3>So who are we?</h3>
                 <p>Lunardo is a local cinema located in the small country city of Traralgon. We do our best to give all customers a first class exprience </p>
                 <p>To really show this we have recently made some upgrades, we have:</p>
@@ -51,41 +52,40 @@
                     <li>Extensivly improved and renovated the whole cinema</li><br>
                     <li>New seats for all, including reclinable first class seats</li><br>
                     <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. </li><br>
-                    <a class="dolby" href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more details</a>
+                    <!-- external link aout the sound system upgrades-->
+                    <a href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more details</a>
                 </ul>
 
                 <p>If you are a local or just visiting, you are always welcomt to come by our cinema and enjoy some pop corn and a relaxing film</p>
-
             </div>
-
-
-
         </section>
 
-        <!--seats and prices divided into 2 parts-->
+        <!---------------seats and prices divided into 2 parts--------------------->
+        <!------------------------------------------------------------------------->
         <section id='seats-and-prices'>
             <h2 class="seats-h2">Seats and Prices</h2>
 
+            <!----------- seats -------------->
             <div class="seat-prices-flex">
-                <!-- seats -->
                 <div class="seat-cont">
                     <h3>All new seating</h3>
                     <p>We have installed new seats through out the whole cinema</p>
 
-
+                    <!-- images of seats -->
                     <img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=300>
                     <div class="img-info">Spacious and comfortable standard seats</div>
 
 
                     <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=300>
                     <div class="img-info">Recline and watch in style with all new first class seating</div>
-
                 </div>
-                <!-- all prices - set out in a table -->
 
+                <!------ all prices - set out in a table ------>
                 <div class="price-cont">
-                    <h3 class="price-h2">Prices:</h3>
-                    <table class="price-table">
+                    <h3>Prices:</h3>
+
+                    <table>
+                        <!-- table headings -->
                         <theader>
                             <tr>
                                 <th>Seat Type</th>
@@ -94,6 +94,8 @@
                                 <th>All other Times</th>
                             </tr>
                         </theader>
+
+                        <!-- standard tickets -->
                         <tr>
                             <th class="table-space">Standard Adult</th>
                             <td class="table-space">STA</td>
@@ -112,6 +114,7 @@
                             <td>$11.00</td>
                             <td>$15.30</td>
                         </tr>
+                        <!-- first class tickets -->
                         <tr>
                             <th class="table-space">First Class Adult</th>
                             <td class="table-space">FCA</td>
@@ -135,15 +138,15 @@
             </div>
         </section>
 
-        <!--now showing-->
+        <!-------------------------------now showing---------------------------------->
+        <!---------------------------------------------------------------------------->
         <section id='now-showing'>
-
             <h2>Now Showing</h2>
 
             <div class="flex-container-now-showing">
-
+                <!-- featured movies -->
                 <div class='flex-movie1'>
-                    <img class="test" src='../../media/spiders-web.jpg' alt="The girl in the spiders's web">
+                    <img src='../../media/spiders-web.jpg' alt="The girl in the spiders's web">
                     <h3>The Girl in the Spider's web</h3>
                     <p>MA15+</p>
                     <table>
@@ -256,6 +259,8 @@
 
             </div>
 
+
+            <!-- trailer and description of a featured moive -->
             <div class="trailer-background-cont">
                 <div class='flex-container-trailer'>
                     <div class='flex-item-trailer1'>
@@ -283,24 +288,40 @@
                 </div>
             </div>
         </section>
-        <!--bookings-->
+
+        <!-----------------------------------bookings--------------------------------->
+        <!---------------------------------------------------------------------------->
         <section id='bookings'>
             <h2>Bookings</h2>
-
-
-
 
             <div class="booking-col-flex">
                 <div class="booking-wrap">
 
-                    <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post' target="_blank">
+                    <!-- booking form -->
+                    <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post'>
 
                         <!-- hidden form inputs -->
-                        <input name=moive[id] type='hidden' value='RMC'>
-                        <input name=moive[day] type='hidden' value='WED'>
-                        <input name=moive[hour] type='hidden' value='12'>
+                        <input name='movie[id]' type='hidden' value='ACT'>
+                        <!--    <input name='moive[id]' type='hidden' value='AHF'>
+                        <input name='moive[id]' type='hidden' value='ANM'>
+                        <input name='moive[id]' type='hidden' value='RMC'> -->
+
+                        <input name='movie[day]' type='hidden' value='MON'>
+                        <!--  <input name='moive[day]' type='hidden' value='TUE'>
+                         <input name='moive[day]' type='hidden' value='WED'>
+                         <input name='moive[day]' type='hidden' value='THU'>
+                         <input name='moive[day]' type='hidden' value='FRI'>
+                         <input name='moive[day]' type='hidden' value='SAT'>
+                         <input name='moive[day]' type='hidden' value='SUN'> -->
+
+                        <input name='movie[hour]' type='hidden' value='09'>
+                        <!--     <input name='movie[hour]' type='hidden' value='12'>
+                           <input name='movie[hour]' type='hidden' value='18'>
+                            <input name='movie[hour]' type='hidden' value='21'> -->
+
+                        <!-- this below heading will be changeable in a3 -->
                         <h3>Movie Title - Day - Time</h3>
-                        <!-- standard booking -->
+                        <!-------------------- standard booking ------------->
                         <div class="booking-flex-wraper">
                             <div class="ticket-flex-wraper">
                                 <fieldset>
@@ -308,7 +329,7 @@
                                     <!-- select standard adult tickets-->
                                     <label>Adults</label>
                                     <select name='seats[STA]'>
-                                        <option value=''>0</option>
+                                        <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
                                         <option value='3'>3</option>
@@ -323,7 +344,7 @@
                                     <!-- select standard concession tickets-->
                                     <label>Concession</label>
                                     <select name='seats[STP]'>
-                                        <option value=''>0</option>
+                                        <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
                                         <option value='3'>3</option>
@@ -338,7 +359,7 @@
                                     <!-- select standard children tickets-->
                                     <label>Children</label>
                                     <select name='seats[STC]'>
-                                        <option value=''>0</option>
+                                        <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
                                         <option value='3'>3</option>
@@ -352,14 +373,13 @@
                                     </select>
                                 </fieldset>
 
-
-                                <!-- first class booking -->
+                                <!--------------- first class booking --------------->
                                 <fieldset>
                                     <legend>First Class</legend>
                                     <!-- select number of first class adult tickets-->
                                     <label>Adults</label>
                                     <select name='seats[FCA]'>
-                                        <option value=''>0</option>
+                                        <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
                                         <option value='3'>3</option>
@@ -374,7 +394,7 @@
                                     <!-- select number of first class concession tickets-->
                                     <label>Concession</label>
                                     <select name='seats[FCP]'>
-                                        <option value=''>0</option>
+                                        <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
                                         <option value='3'>3</option>
@@ -389,7 +409,7 @@
                                     <!-- select number of first class children tickets-->
                                     <label>Children</label>
                                     <select name='seats[FCC]'>
-                                        <option value=''>0</option>
+                                        <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
                                         <option value='3'>3</option>
@@ -404,43 +424,38 @@
                                 </fieldset>
                             </div>
 
-
                             <!-- enter customer details-->
                             <div class="cust-details">
                                 <fieldset>
                                     <legend>Customer Details</legend>
                                     <label for='name'>Name</label>
-                                    <input name='cust[name]' type='text' id='name' placeholder='Enter name'>
+                                    <input name='cust[name]' type='text' id='name' placeholder='Enter name' value="" required>
                                     <label for='email'>Email</label>
-                                    <input name='cust[email]' type='email' id='email' placeholder="Enter email">
+                                    <input name='cust[email]' type='email' id='email' placeholder="Enter email" required>
                                     <label for='mob-num'>Mobile</label>
-                                    <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number">
+                                    <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number" required>
                                     <label for='cred-card'>Credit Card</label>
-                                    <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number'>
+                                    <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number' required>
                                     <label for='expiry'>Expiry Date</label>
-                                    <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM'>
+                                    <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' required>
                                 </fieldset>
-
-
                             </div>
-
                         </div>
-                        
-                           <div class="total-order-wrap">
-                            
-                            
+
+                        <!-- total amount and order button -->
+                        <div class="total-order-wrap">
                             <span>Total:</span>
                             <output>$</output>
-                           
-                        
-                        <button class="order-button" name='order' type='submit' value='order'>Order</button>
+                            <button class="order-button" name='order' type='submit' value='order'>Order</button>
                         </div>
                     </form>
                 </div>
             </div>
-
         </section>
     </main>
+
+    <!-------------------------------- footer ---------------------------------------->
+    <!-------------------------------------------------------------------------------->
     <footer>
         <div class="footer-wrap-flex">
             <div class="footer-content">
