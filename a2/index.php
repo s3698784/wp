@@ -8,6 +8,7 @@
     <!-- import google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Condiment" rel="stylesheet">
     <title>Assignment 2 by James Ciuciu</title>
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
@@ -20,7 +21,8 @@
 <body>
 
     <header id='home'>
-        <div class="logo"><img src="../../media/Lunardo.png" alt="Lunardo" width="230" height="230"> </div>
+       <!-- logo was made at https://www.freelogodesign.org/ -->
+        <div class="logo"><img src="../../media/logo.png" alt="logo" width="200" height="200"> </div>
         <h1 class="main-heading">Lunardo</h1>
     </header>
 
@@ -45,7 +47,7 @@
 
             <div class="about-us-cont">
                 <h3>So who are we?</h3>
-                <p>Lunardo is a local cinema located in the small country city of Traralgon. We do our best to give all customers a first class exprience </p>
+                <p>Lunardo is a local cinema located in the small country city of Traralgon. We do our best to give all customers a great exprience </p>
                 <p>To really show this we have recently made some upgrades, we have:</p>
 
                 <ul>
@@ -56,7 +58,7 @@
                     <a href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more details</a>
                 </ul>
 
-                <p>If you are a local or just visiting, you are always welcomt to come by our cinema and enjoy some pop corn and a relaxing film</p>
+                <p>If you are a local or just visiting, you are always welcome to come by our cinema to enjoy some popcorn and a relaxing film</p>
             </div>
         </section>
 
@@ -77,7 +79,7 @@
 
 
                     <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=300>
-                    <div class="img-info">Recline and watch in style with all new first class seating</div>
+                    <div class="img-info">Recline to watch in style with all new first class seating</div>
                 </div>
 
                 <!------ all prices - set out in a table ------>
@@ -89,7 +91,7 @@
                         <theader>
                             <tr>
                                 <th>Seat Type</th>
-                                <th>Seat Code</th>
+                                <!--   <th>Seat Code</th> -->
                                 <th>All day Monday and Wednesday <strong>AND</strong> 12pm Weekdays </th>
                                 <th>All other Times</th>
                             </tr>
@@ -98,38 +100,38 @@
                         <!-- standard tickets -->
                         <tr>
                             <th class="table-space">Standard Adult</th>
-                            <td class="table-space">STA</td>
+                            <!--  <td class="table-space">STA</td> -->
                             <td class="table-space">$14.00</td>
                             <td class="table-space">$19.80</td>
                         </tr>
                         <tr>
                             <th>Standard Concession</th>
-                            <td>STP</td>
+                            <!-- <td>STP</td> -->
                             <td>$12.50</td>
                             <td>$17.50</td>
                         </tr>
                         <tr>
                             <th>Standard Child</th>
-                            <td>STC</td>
+                            <!-- <td>STC</td> -->
                             <td>$11.00</td>
                             <td>$15.30</td>
                         </tr>
                         <!-- first class tickets -->
                         <tr>
                             <th class="table-space">First Class Adult</th>
-                            <td class="table-space">FCA</td>
+                            <!-- <td class="table-space">FCA</td> -->
                             <td class="table-space">$24.00</td>
                             <td class="table-space">$30.00</td>
                         </tr>
                         <tr>
                             <th>First Class Concession</th>
-                            <td>FCP</td>
+                            <!-- <td>FCP</td> -->
                             <td>$22.50</td>
                             <td>$27.00</td>
                         </tr>
                         <tr>
                             <th>First Class Child</th>
-                            <td>FCC</td>
+                            <!-- <td>FCC</td> -->
                             <td>$21.00</td>
                             <td>$24.00</td>
                         </tr>
@@ -276,7 +278,7 @@
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/_BcYBFC6zfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <h3 class="select-time-heading">Select a time:</h3>
+                <h3 class="select-time-heading">Make a booking:</h3>
                 <div class="slecect-day-time-buttons-flex">
                     <button>Monday - 12:00pm</button>
                     <button>Tuesday - 12:00pm</button>
@@ -459,11 +461,17 @@
     <footer>
         <div class="footer-wrap-flex">
             <div class="footer-content">
+                <div class="contact-dets">
+                    <span>Contact: </span>
+                    <span>Lunardo Cinema, </span>
+                    <address>123 Fake Street, Tralralgon, </address>
+                    <span>lunardo@lunardocinema.com.au</span>
+                </div>
                 <div>&copy;
                     <script>
                         document.write(new Date().getFullYear());
 
-                    </script> James Ciuciu, s3698784. Last modified
+                    </script> James Ciuciu, s3698784. https://github.com/s3698784/wp. Last modified
                     <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.
                 </div>
                 <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.

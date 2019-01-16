@@ -110,7 +110,11 @@ h3 {
 }
 
 .main-heading{
-    display: none;
+    font-family: 'Condiment', cursive, serif;
+    text-align: center;
+    color: #fff;
+    font-size: 6em;
+    margin-top: 0;
 }
 
 /*----------------------------------- Header ---------------------------------
@@ -127,14 +131,15 @@ header {
 }
 
 .logo{
-    padding-top: 5%; 
+    padding-top: 5%;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* logo created at https://www.canva.com/ */
 .logo img{
     display: block;
     margin: 0 auto;  
-    border: solid 5px  white;
 }
 
 /* ------------------------------------ Navigation --------------------------------------
@@ -502,5 +507,13 @@ footer{
 #toggleWireframeCSS{
     background-color: darkgray;
     border-color: #000;
+}
+
+address{
+    display: inline;
+}
+
+.contact-dets{
+    margin-bottom: 10px;
 }
 
