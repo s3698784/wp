@@ -16,24 +16,6 @@ body {
     padding: 0;
 }
 
-
-/* styles pseduo elements for links */
-a:link,
-a:visited {
-    color: #FFBD59;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-family: 'Staatliches', cursive, sans-serif;
-}
-
-a:hover,
-a:active {
-    color: #FFF171;
-    text-decoration: none;
-    font-size: 2em;
-    font-family: 'Staatliches', cursive, sans-serif;
-}
-
 /*set height and standard font for each section */
 section {
     min-height: 103vh;
@@ -69,6 +51,11 @@ td {
 
 .table-space {
     padding-top: 60px;
+}
+
+/* elminates some margin problems */
+.position-vert-center {
+    height: 100%
 }
 
 /*--------------- buttons --------------*/
@@ -151,6 +138,7 @@ nav {
     top: 0;
     padding: 0;
     border-bottom: solid 2px white;
+    z-index: 99;
 }
 
 nav ul {
@@ -163,12 +151,19 @@ nav ul {
     margin: 0 auto;
 }
 
-nav ul li {
+nav ul li a {
     display: inline-block;
-    padding: 5px;
-    flex-basis: 20%;
+    padding: 5px; 
+    flex-basis: 20%; 
     text-decoration: none;
     text-align: center;
+    min-width: 180px;
+    min-height: auto;
+    margin: 0 5 0 5;
+}
+
+nav ul li{
+    margin: 0 auto;
 }
 
 /*  change flex to column when viewport is smaller than 550px */
@@ -178,9 +173,26 @@ nav ul li {
     }
 }
 
+/* styles pseduo elements for nav links */
+nav a:link,
+nav a:visited {
+    color: #FFBD59;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Staatliches', cursive, sans-serif;
+}
+
+nav a:hover,
+nav a:active {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Staatliches', cursive, sans-serif;
+    background-color: #9AFF8D;
+}
+
 /* -----------------------------------------About us --------------------------------------------- 
 --------------------------------------------------------------------------------------------------*/
-
 
 #about-us {
     /* Photo by Thomas William on Unsplash */
@@ -193,9 +205,8 @@ nav ul li {
     background-color: hsla(0, 0%, 95%, .7);
     max-width: 600px;
     min-height: 700px;
-    margin: 5% 10% 0% 10%;
+    margin: 5%;
     padding: 40px;
-    overflow: auto;
     border-radius: 6px;
     border: solid 2px #8C2129;
 }
@@ -211,8 +222,23 @@ nav ul li {
     margin: 0 20px;
 }
 
-.about-us-cont ul a {
+.dolby:link,
+.dolby:visited{
     color: #000;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dolby:hover,
+.dolby:active{
+    color: #8C2129; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-us-cont h3{
+    padding-top: 30px;
 }
 
 /* --------------Seats and Prices ------------ */
@@ -224,66 +250,59 @@ nav ul li {
     background-attachment: fixed;
 }
 
-.seats-h2{
-    margin-bottom: 30px;
-}
-
 .seat-cont {
     background-color: hsla(0, 0%, 97%, .7);
-    max-width: 600px;
+    width: 500px;
     padding: 40px;
     overflow: auto;
     border-radius: 6px;
-    margin-bottom: 10px;
+    margin: 5px;
     border: solid 2px #8C2129;
     font-size: 1.1em;
 }
 
 .seat-cont img {
-    max-width: 70%;
+    max-width: 60%;
+    max-height: auto;
     padding-top: 40px;
 }
 
 .price-cont {
     background-color: hsla(0, 0%, 95%, .7);
-    max-width: 800px;
+    max-width: 500px;
     padding: 30px;
     overflow: auto;
     border-radius: 6px;
     border: solid 2px #8C2129;
+    margin: 5px;
+}
+
+.discounts {
+    margin-top: 10px;
 }
 
 .seat-prices-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 1600px;
-    max-height: 100%;
-    margin: 0 auto;
-    padding-top: 0px;
-    padding-bottom: 35px;
+    margin: 5%;
 }
 
-.seat-center{
-    margin: 0 auto;
-    border: solid 2px;
-}
-
+/* center images */
 .stand-seat,
 .first-seat{
     display: block;
     margin: 0 auto;
     padding: 10px;
-    max-width: 100%
 }
 
+/* center desription under images */
 .img-info{
     text-align: center;
 }
 
 /* -------------------------------------- now showing -----------------------------------------
 ---------------------------------------------------------------------------------------------*/
-
 
 #now-showing {
     /* https://www.pexels.com/photo/board-cinema-cinematography-clapper-board-274937/ */
@@ -297,9 +316,10 @@ nav ul li {
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 1600px;
-    height: 100%;
-    margin: 0 auto;
+    margin: 5%;
+    height: auto;
     padding-bottom: 30px
+    
 }
 
 .flex-movie1,
@@ -307,18 +327,16 @@ nav ul li {
 .flex-movie3,
 .flex-movie4 {
     background-color: hsla(0, 0%, 95%, .7);
-    max-width: 600px;
     padding-top: 30px;
     padding-bottom: 20px;
-    overflow: auto;
     border-radius: 6px;
-    margin-bottom: 10px;
-    margin-top: 30px;
     text-align: center;
     flex-basis: 300px;
     border: solid 2px #8C2129;
+    margin: 5px;
 }
 
+/* set font for movie headings */
 #now-showing h3 {
     font-size: 1.5em;
 }
@@ -389,7 +407,7 @@ nav ul li {
 .booking-wrap {
     height: 100%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 5%;
     background-color: hsla(0, 0%, 95%, .9);
     border-radius: 6px;
     border: solid 2px #8C2129;
@@ -406,9 +424,9 @@ nav ul li {
 }
 
 fieldset {
-    min-width: 400px;
+    margin-bottom: 17px;
     padding: 30px;
-    margin: 20px;
+    
 }
 
 .booking-flex-wraper {
@@ -416,6 +434,7 @@ fieldset {
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
+    margin: 5%:
 }
 
 legend {
@@ -424,8 +443,9 @@ legend {
 
 input {
     display: inline-block;
-    font-size: 1.5em;
-    width: 100%;
+    min-width: 100%;
+    font-size: 1em;
+    padding: 5px;
     border: none;
     border-bottom: solid #8C2129 3px;
     cursor: pointer;
@@ -438,7 +458,7 @@ input:focus {
 
 select {
     display: inline-block;
-    font-size: 1.1em;
+    font-size: 1em;
     border: none;
     border-bottom: solid #8C2129 3px;
     width: 160px;
@@ -457,18 +477,21 @@ label {
 }
 
 .booking-col-flex{
-    margin-top: 50px;
+   display: flex;
+justify-content: center;
 }
 
 .total-order-wrap{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 30px;
+    max-width: 100%
 }
 
 .total-order-wrap output{
     height: auto;
-    width: 150px;
+    max-width: 150px;
     height: 50px;
     padding: 12px 150px 15px 12px;
     margin: 5px 25px 5px 5px;

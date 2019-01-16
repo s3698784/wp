@@ -44,7 +44,7 @@
         <!-- contains a description of Lunardo -->
         <section id='about-us'>
             <h2>About Us</h2>
-
+           <div class="position-vert-center">
             <div class="about-us-cont">
                 <h3>So who are we?</h3>
                 <p>Lunardo is a local cinema located in the small country city of Traralgon. We do our best to give all customers a great exprience </p>
@@ -55,10 +55,11 @@
                     <li>New seats for all, including reclinable first class seats</li><br>
                     <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. </li><br>
                     <!-- external link aout the sound system upgrades-->
-                    <a href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more details</a>
+                    <a class="dolby" href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more Dolby details</a>
                 </ul>
 
                 <p>If you are a local or just visiting, you are always welcome to come by our cinema to enjoy some popcorn and a relaxing film</p>
+            </div>
             </div>
         </section>
 
@@ -68,7 +69,8 @@
             <h2 class="seats-h2">Seats and Prices</h2>
 
             <!----------- seats -------------->
-            <div class="seat-prices-flex">
+            <div class="position-vert-center">
+               <div class="seat-prices-flex">
                 <div class="seat-cont">
                     <h3>All new seating</h3>
                     <p>We have installed new seats through out the whole cinema</p>
@@ -92,8 +94,8 @@
                             <tr>
                                 <th>Seat Type</th>
                                 <!--   <th>Seat Code</th> -->
-                                <th>All day Monday and Wednesday <strong>AND</strong> 12pm Weekdays </th>
-                                <th>All other Times</th>
+                                <th>Discounted Price* </th>
+                                <th>Normal Price</th>
                             </tr>
                         </theader>
 
@@ -136,7 +138,9 @@
                             <td>$24.00</td>
                         </tr>
                     </table>
+                    <p class="discounts">*Discounts apply <strong>all</strong> day Monday and Wednesday <strong>and</strong> 12pm on Weekdays</p>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -442,14 +446,15 @@
                                     <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' required>
                                 </fieldset>
                             </div>
-                        </div>
-
                         <!-- total amount and order button -->
-                        <div class="total-order-wrap">
+                        
+                        </div>
+                     <div class="total-order-wrap">
                             <span>Total:</span>
                             <output>$</output>
                             <button class="order-button" name='order' type='submit' value='order'>Order</button>
                         </div>
+                        
                     </form>
                 </div>
             </div>
