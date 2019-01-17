@@ -23,7 +23,7 @@
     <header id='home'>
        <!-- logo was made at https://www.freelogodesign.org/ -->
         <div class="logo"><img src="../../media/logo.png" alt="logo" width="200" height="200"> </div>
-        <h1 class="main-heading">Lunardo</h1>
+        <h1>Lunardo</h1>
     </header>
 
     <!---------------------------- Navigation ------------------------------------>
@@ -44,7 +44,7 @@
         <!-- contains a description of Lunardo -->
         <section id='about-us'>
             <h2>About Us</h2>
-           <div class="position-vert-center">
+            <div class="elim-margin">
             <div class="about-us-cont">
                 <h3>So who are we?</h3>
                 <p>Lunardo is a local cinema located in the small country city of Traralgon. We do our best to give all customers a great exprience </p>
@@ -63,13 +63,13 @@
             </div>
         </section>
 
-        <!---------------seats and prices divided into 2 parts--------------------->
+        <!---------------seats and prices divided into 2 boxes--------------------->
         <!------------------------------------------------------------------------->
         <section id='seats-and-prices'>
-            <h2 class="seats-h2">Seats and Prices</h2>
-
+            <h2>Seats and Prices</h2>
+            <div class="elim-margin">
             <!----------- seats -------------->
-            <div class="position-vert-center">
+            
                <div class="seat-prices-flex">
                 <div class="seat-cont">
                     <h3>All new seating</h3>
@@ -269,7 +269,7 @@
             <!-- trailer and description of a featured moive -->
             <div class="trailer-background-cont">
                 <div class='flex-container-trailer'>
-                    <div class='flex-item-trailer1'>
+                    <div class='flex-item-trailerDescrip'>
                         <h3>Ralph Breaks the Internet</h3>
                         <spanp>PG</span>
                             <h4>Plot Description</h4>
@@ -278,7 +278,7 @@
                     </div>
                     <!-- video trailer-->
                     <!-- below code snippet taken from youtube.com-->
-                    <div class='flex-item-trailer2'>
+                    <div class='flex-item-trailer'>
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/_BcYBFC6zfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -326,7 +326,7 @@
                             <input name='movie[hour]' type='hidden' value='21'> -->
 
                         <!-- this below heading will be changeable in a3 -->
-                        <h3>Movie Title - Day - Time</h3>
+                        <h3 class="movie-selected-heading">Movie Title - Day - Time</h3>
                         <!-------------------- standard booking ------------->
                         <div class="booking-flex-wraper">
                             <div class="ticket-flex-wraper">

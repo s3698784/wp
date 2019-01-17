@@ -1,6 +1,7 @@
 /* ------------------------------ global styles -----------------------------------
 -----------------------------------------------------------------------------------*/
 
+/* add smooth scroll efffect to whole site */
 html {
     scroll-behavior: smooth;
 }
@@ -24,8 +25,7 @@ section {
     color: #000;
 }
 
-/* ---- format tables ------ */
-
+/* - format tables - */
 table {
     max-width: 100%;
     margin: 0 auto;
@@ -49,16 +49,18 @@ td {
     padding-top: 10px;
 }
 
+/* add space to seperate parts of the table*/
 .table-space {
     padding-top: 60px;
 }
 
 /* elminates some margin problems */
-.position-vert-center {
+.elim-margin {
     height: 100%
 }
 
 /*--------------- buttons --------------*/
+/* standard buttons */
 
 button {
     width: 150px;
@@ -78,8 +80,7 @@ button:active {
     cursor: pointer;
 }
 
-/* ---------------------------------- headings -------------------------------
--------------------------------------------------------------------------------*/
+/* ---------------------- headings ------------------------*/
 
 h2 {
     color: #FFBD59;
@@ -96,12 +97,13 @@ h3 {
     font-family: 'Staatliches', cursive, sans-serif;
 }
 
-.main-heading{
+/* heading under logo */
+/* there is only 1 h1, it's with logo*/
+h1 {
     font-family: 'Condiment', cursive, serif;
     text-align: center;
     color: #fff;
     font-size: 6em;
-    margin-top: 0;
 }
 
 /*----------------------------------- Header ---------------------------------
@@ -117,16 +119,15 @@ header {
     background-position: bottom;
 }
 
-.logo{
+/*logo positionoing */
+.logo {
     padding-top: 5%;
-    padding-bottom: 0;
-    margin-bottom: 0;
 }
 
 /* logo created at https://www.canva.com/ */
-.logo img{
+.logo img {
     display: block;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 
 /* ------------------------------------ Navigation --------------------------------------
@@ -136,7 +137,6 @@ nav {
     background-color: #591617;
     position: sticky;
     top: 0;
-    padding: 0;
     border-bottom: solid 2px white;
     z-index: 99;
 }
@@ -153,8 +153,8 @@ nav ul {
 
 nav ul li a {
     display: inline-block;
-    padding: 5px; 
-    flex-basis: 20%; 
+    padding: 5px;
+    flex-basis: 20%;
     text-decoration: none;
     text-align: center;
     min-width: 180px;
@@ -162,13 +162,13 @@ nav ul li a {
     margin: 0 5 0 5;
 }
 
-nav ul li{
+nav ul li {
     margin: 0 auto;
 }
 
 /*  change flex to column when viewport is smaller than 550px */
 @media screen and (max-width: 550px) {
-    nav ul{
+    nav ul {
         flex-direction: column;
     }
 }
@@ -177,7 +177,6 @@ nav ul li{
 nav a:link,
 nav a:visited {
     color: #FFBD59;
-    text-decoration: none;
     font-size: 1.5em;
     font-family: 'Staatliches', cursive, sans-serif;
 }
@@ -185,7 +184,6 @@ nav a:visited {
 nav a:hover,
 nav a:active {
     color: black;
-    text-decoration: none;
     font-size: 1.5em;
     font-family: 'Staatliches', cursive, sans-serif;
     background-color: #9AFF8D;
@@ -194,6 +192,7 @@ nav a:active {
 /* -----------------------------------------About us --------------------------------------------- 
 --------------------------------------------------------------------------------------------------*/
 
+/* set background */
 #about-us {
     /* Photo by Thomas William on Unsplash */
     background-image: url(../../media/about-back.jpg);
@@ -201,6 +200,7 @@ nav a:active {
     background-attachment: fixed;
 }
 
+/* style and positon about us continer*/
 .about-us-cont {
     background-color: hsla(0, 0%, 95%, .7);
     max-width: 600px;
@@ -209,21 +209,23 @@ nav a:active {
     padding: 40px;
     border-radius: 6px;
     border: solid 2px #8C2129;
+    font-size: 1.2em;
 }
 
+/* position about us content */
 .about-us-cont p {
-    font-size: 1.2em;
     padding: 8px;
 }
 
-.about-us-cont ul{
-    font-size: 1.2em;
+/* position list in about us*/
+.about-us-cont ul {
     padding: 8px;
     margin: 0 20px;
 }
 
+/* style Dolby link in about us */
 .dolby:link,
-.dolby:visited{
+.dolby:visited {
     color: #000;
     font-size: 1em;
     text-decoration: none;
@@ -231,18 +233,23 @@ nav a:active {
 }
 
 .dolby:hover,
-.dolby:active{
-    color: #8C2129; 
+.dolby:active {
+    color: #8C2129;
     text-decoration: none;
     font-weight: bold;
 }
 
-.about-us-cont h3{
+/* position sub-heading*/
+.about-us-cont h3 {
     padding-top: 30px;
 }
 
-/* --------------Seats and Prices ------------ */
+/* -----------------------------------Seats and Prices --------------------------------------- 
+---------------------------------------------------------------------------------------------*/
 
+/********------------------ seats ---------------*********/
+
+/* set background */
 #seats-and-prices {
     /* https://www.pexels.com/photo/curve-industry-photography-vintage-65128/ */
     background-image: url(../../media/seat-price-background.jpg);
@@ -250,6 +257,15 @@ nav a:active {
     background-attachment: fixed;
 }
 
+/* flex box for seat container and price container */
+.seat-prices-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5%;
+}
+
+/* seats container */
 .seat-cont {
     background-color: hsla(0, 0%, 97%, .7);
     width: 500px;
@@ -261,12 +277,29 @@ nav a:active {
     font-size: 1.1em;
 }
 
+/* size seat images*/
 .seat-cont img {
     max-width: 60%;
     max-height: auto;
     padding-top: 40px;
 }
 
+/* center images */
+.stand-seat,
+.first-seat {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* center desription under images */
+.img-info {
+    text-align: center;
+}
+
+/********------------------ prices ---------*********/
+
+/* prices container, contains table */
 .price-cont {
     background-color: hsla(0, 0%, 95%, .7);
     max-width: 500px;
@@ -277,33 +310,15 @@ nav a:active {
     margin: 5px;
 }
 
+/* style discount time under price table*/
 .discounts {
     margin-top: 10px;
 }
 
-.seat-prices-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 5%;
-}
-
-/* center images */
-.stand-seat,
-.first-seat{
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-/* center desription under images */
-.img-info{
-    text-align: center;
-}
-
 /* -------------------------------------- now showing -----------------------------------------
----------------------------------------------------------------------------------------------*/
+--------------------------inlcuding trailer and pick time/day buttons---------------------------*/
 
+/* set background */
 #now-showing {
     /* https://www.pexels.com/photo/board-cinema-cinematography-clapper-board-274937/ */
     background-image: url(../../media/now-showing-background.jpg);
@@ -311,6 +326,7 @@ nav a:active {
     background-attachment: fixed;
 }
 
+/* flexbox to position movie panels */
 .flex-container-now-showing {
     display: flex;
     flex-wrap: wrap;
@@ -319,9 +335,9 @@ nav a:active {
     margin: 5%;
     height: auto;
     padding-bottom: 30px
-    
 }
 
+/* style each movie panel */
 .flex-movie1,
 .flex-movie2,
 .flex-movie3,
@@ -343,6 +359,7 @@ nav a:active {
 
 /* --------------- trailer --------------- */
 
+/*flexbox to position description and trailer */
 .flex-container-trailer {
     display: flex;
     flex-wrap: wrap;
@@ -352,38 +369,42 @@ nav a:active {
     margin: 0 auto;
 }
 
-.flex-item-trailer1 {
-    max-width: 350px;
-}
-
-.flex-item-trailer1 h4 {
-    padding: 10px 10px 10px 0px;
-}
-
-.flex-item-trailer1 p {
-    padding-bottom: 30px;
-}
-
-.flex-item-trailer1 {
-    padding: 10px;
-}
-
-.flex-item-trailer2 iframe {
-    max-width: 100%;
-}
-
+/* set background of trailer section*/
 .trailer-background-cont {
     background-color: floralwhite;
     padding: 30px;
     position: relative;
 }
 
+/* trailer description*/
+.flex-item-trailerDescrip {
+    max-width: 350px;
+    padding: 10px;
+}
+
+/* trailer description heading*/
+.flex-item-trailerDescrip h4 {
+    padding: 10px 10px 10px 0px;
+}
+
+/* trailer description body*/
+.flex-item-trailerDescrip p {
+    padding-bottom: 30px;
+}
+
+/* video of trailer */
+.flex-item-trailer iframe {
+    max-width: 100%;
+}
+
+/* posotion select time/date buttons heading*/
 .select-time-heading {
     margin: 5px;
     position: inherit;
     left: 15%;
 }
 
+/* flex box to postion buttons */
 .slecect-day-time-buttons-flex {
     display: flex;
     flex-wrap: wrap;
@@ -396,7 +417,9 @@ nav a:active {
 /* ----------------------------------------Bookings ---------------------------------------- 
 --------------------------------------------------------------------------------------------*/
 
+/************** ------ positioning and background --------********/
 
+/* set background */
 #bookings {
     /*Photo by rawpixel.com from Pexels*/
     background-image: url(../../media/booking-background.jpg);
@@ -404,6 +427,14 @@ nav a:active {
     background-attachment: fixed;
 }
 
+/* posisitom booking wrap in center*/
+.booking-col-flex {
+    display: flex;
+    justify-content: center;
+}
+
+/* wrap all booking content in a box */
+/* sets background and border */
 .booking-wrap {
     height: 100%;
     max-width: 1000px;
@@ -413,34 +444,70 @@ nav a:active {
     border: solid 2px #8C2129;
 }
 
+/* flex box to position ticket and cust details */
+.booking-flex-wraper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+/* select ticket section of booking form */
+/* Set size and postion */
+/* Fits side by side customer details*/
 .ticket-flex-wraper {
     display: flex;
     flex-direction: column;
     flex-basis: 49%;
 }
 
+/* Set size of Customer details*/
 .cust-details {
     flex-basis: 49%;
 }
 
+/*************-----------------form items ------------------***********?
+/* displays movie selected */
+.movie-selected-heading {
+    margin: 30px;
+}
+
+/* set position and remove border*/
 fieldset {
     margin-bottom: 17px;
     padding: 30px;
-    
+    border: 0;
 }
 
-.booking-flex-wraper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 5%:
-}
-
+/* headings of each section of form */
 legend {
     font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
+/* labels to each input or select item */
+label {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-width: 40%;
+    padding: 10px 20px 20px 0px;
+}
+
+/* -------------- number of tickets select --------------*/
+select {
+    display: inline-block;
+    font-size: 1em;
+    border: none;
+    border-bottom: solid #8C2129 3px;
+    width: 160px;
+    cursor: pointer;
+}
+
+/* --------------- -- customer details------------------ */
+
+/* stlye text inputs */
 input {
     display: inline-block;
     min-width: 100%;
@@ -451,37 +518,20 @@ input {
     cursor: pointer;
 }
 
+/* style text inout once clicked on */
 input:focus {
-  background-color: #FFF171;
-  border: solid #FFE00C 3px;
+    background-color: #FFF171;
+    border: solid #FFE00C 3px;
 }
 
-select {
-    display: inline-block;
-    font-size: 1em;
-    border: none;
-    border-bottom: solid #8C2129 3px;
-    width: 160px;
+.cust-details label {
     cursor: pointer;
 }
 
-label {
-    display: inline-block;
-    font-size: 1.2em;
-    min-width: 40%;
-    padding: 10px 20px 20px 0px;
-}
+/***** total price and order button *****/
 
-.cust-details label{
-    cursor: pointer;
-}
-
-.booking-col-flex{
-   display: flex;
-justify-content: center;
-}
-
-.total-order-wrap{
+/* flex box to position items */
+.total-order-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -489,8 +539,8 @@ justify-content: center;
     max-width: 100%
 }
 
-.total-order-wrap output{
-    height: auto;
+/* style box which displays total price */
+.total-order-wrap output {
     max-width: 150px;
     height: 50px;
     padding: 12px 150px 15px 12px;
@@ -500,7 +550,8 @@ justify-content: center;
     border: solid #8C2129 3px;
 }
 
-.total-order-wrap span{
+/* style "Total" label next to price output */
+.total-order-wrap span {
     margin: 5px;
     padding: 15px;
     font-size: 1.3em;
@@ -510,11 +561,13 @@ justify-content: center;
 /* ----------------------------------------- footer -------------------------------------- 
 -------------------------------------------------------------------------------------------*/
 
-footer{
+/* set background */
+footer {
     background-color: grey;
 }
 
-.footer-wrap-flex{
+/* position flex items in flexbox*/
+.footer-wrap-flex {
     display: flex;
     max-width: 100%;
     margin: 0 auto;
@@ -523,20 +576,22 @@ footer{
     justify-content: center;
 }
 
-.footer-button{
+/* poistion footer button */
+.footer-button {
     margin-left: 20px;
 }
 
-#toggleWireframeCSS{
+#toggleWireframeCSS {
     background-color: darkgray;
     border-color: #000;
 }
 
-address{
+/* postion Lunardo's cont dets */
+address {
     display: inline;
 }
 
-.contact-dets{
+/* postion Lunardo's cont dets */
+.contact-dets {
     margin-bottom: 10px;
 }
-
