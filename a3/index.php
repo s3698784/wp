@@ -17,7 +17,7 @@
     <script src='../wireframe.js'></script>
 
     <style><?php include("css/style.css");  ?></style>
-    <script><?php include("js/tools.js"); ?></script>
+    
 
     <style>
         <?php
@@ -165,7 +165,7 @@
 
             <div class="flex-container-now-showing">
                 <!-- featured movies -->
-                <div class='flex-movie1'>
+                <div class='flex-movie1'id="ACT" onclick="setMovieTitle('ACT')">
                     <img src='../../media/spiders-web.jpg' alt="The girl in the spiders's web">
                     <h3>The Girl in the Spider's web</h3>
                     <p>MA15+</p>
@@ -284,20 +284,20 @@
             <div class="trailer-background-cont">
                 <div class='flex-container-trailer'>
                     <div class='flex-item-trailerDescrip'>
-                        <h3>Ralph Breaks the Internet</h3>
-                        <spanp>PG</span>
+                        <h3 id="nowShowingTitle" >Ralph Breaks the Internet</h3>
+                        <span id="rating">PG</span>
                             <h4>Plot Description</h4>
                             <!-- plot taken from: https://www.imdb.com/title/tt5848272/?ref_=nv_sr_1 -->
-                            <p>Taking place six years after saving the arcade from Turbo's vengeance, the Sugar Rush arcade cabinet has broken, forcing Ralph and Vanellope to travel to the Internet via the newly-installed Wi-Fi router in Litwak's Arcade to retrieve the piece capable of saving the game.</p>
+                            <p id="plot">Taking place six years after saving the arcade from Turbo's vengeance, the Sugar Rush arcade cabinet has broken, forcing Ralph and Vanellope to travel to the Internet via the newly-installed Wi-Fi router in Litwak's Arcade to retrieve the piece capable of saving the game.</p>
                     </div>
                     <!-- video trailer-->
                     <!-- below code snippet taken from youtube.com-->
                     <div class='flex-item-trailer'>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_BcYBFC6zfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe id="trailer" width="560" height="315" src="https://www.youtube.com/embed/_BcYBFC6zfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <h3 class="select-time-heading">Make a booking:</h3>
-                <div class="slecect-day-time-buttons-flex">
+                <div class="slecect-day-time-buttons-flex" id="time-buttons">
                     <button>Monday - 12:00pm</button>
                     <button>Tuesday - 12:00pm</button>
                     <button>Wednesday - 6:00pm</button>
@@ -503,7 +503,7 @@
                     </div>
                 </div>
         </footer>
-
+<script><?php include("js/tools.js"); ?></script>
 </body>
 
 </html>

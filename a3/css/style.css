@@ -350,6 +350,7 @@ nav a:active {
     flex-basis: 300px;
     border: solid 2px #8C2129;
     margin: 5px;
+    cursor: pointer;
 }
 
 /* set font for movie headings */
