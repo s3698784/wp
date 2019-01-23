@@ -63,7 +63,7 @@ td {
 /* standard buttons */
 
 button {
-    width: 150px;
+    width: 160px;
     height: 50px;
     padding-left: 10px;
     padding-right: 10px;
@@ -542,7 +542,7 @@ input:focus {
 
 /* style box which displays total price */
 .total-order-wrap output {
-    max-width: 150px;
+    max-width: 180px;
     height: 50px;
     padding: 12px 150px 15px 12px;
     margin: 5px 25px 5px 5px;

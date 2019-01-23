@@ -165,7 +165,7 @@
 
             <div class="flex-container-now-showing">
                 <!-- featured movies -->
-                <div class='flex-movie1'id="ACT" onclick="setMovieTitle('ACT')">
+                <div class='flex-movie1'id="ACT" onclick="selectMovie('ACT')">
                     <img src='../../media/spiders-web.jpg' alt="The girl in the spiders's web">
                     <h3>The Girl in the Spider's web</h3>
                     <p>MA15+</p>
@@ -193,8 +193,8 @@
                     </table>
                 </div>
 
-                <div class='flex-movie2'>
-                    <img src='../../media/star-is-born.jpg' alt='A star is born'>
+                <div class='flex-movie2' onclick="selectMovie('RMC')">
+                    <img src='../../media/star-is-born.jpg' alt='A star is born' >
                     <h3>A Star is Born</h3>
                     <p>M</p>
                     <table>
@@ -217,7 +217,7 @@
                     </table>
                 </div>
 
-                <div class='flex-movie3'>
+                <div class='flex-movie3' onclick="selectMovie('ANM')">
                     <img src='../../media/ralph-breaks-internet.jpg' alt='ralph breaks the internet'>
                     <h3>Ralph Breaks the Internet</h3>
                     <p>PG</p>
@@ -253,7 +253,7 @@
                     </table>
                 </div>
 
-                <div class='flex-movie4'>
+                <div class='flex-movie4' onclick="selectMovie('AHF')">
                     <img src='../../media/boy-erased.jpg' alt='boy erased'>
                     <h3>Boy Erased</h3>
                     <p>MA15+</p>
@@ -288,7 +288,7 @@
                         <span id="rating">PG</span>
                             <h4>Plot Description</h4>
                             <!-- plot taken from: https://www.imdb.com/title/tt5848272/?ref_=nv_sr_1 -->
-                            <p id="plot">Taking place six years after saving the arcade from Turbo's vengeance, the Sugar Rush arcade cabinet has broken, forcing Ralph and Vanellope to travel to the Internet via the newly-installed Wi-Fi router in Litwak's Arcade to retrieve the piece capable of saving the game.</p>
+                            <p id="plot">Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
                     </div>
                     <!-- video trailer-->
                     <!-- below code snippet taken from youtube.com-->
@@ -321,34 +321,21 @@
                     <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post'>
 
                         <!-- hidden form inputs -->
-                        <input name='movie[id]' type='hidden' value='ACT'>
-                        <!--    <input name='moive[id]' type='hidden' value='AHF'>
-                        <input name='moive[id]' type='hidden' value='ANM'>
-                        <input name='moive[id]' type='hidden' value='RMC'> -->
-
-                        <input name='movie[day]' type='hidden' value='MON'>
-                        <!--  <input name='moive[day]' type='hidden' value='TUE'>
-                         <input name='moive[day]' type='hidden' value='WED'>
-                         <input name='moive[day]' type='hidden' value='THU'>
-                         <input name='moive[day]' type='hidden' value='FRI'>
-                         <input name='moive[day]' type='hidden' value='SAT'>
-                         <input name='moive[day]' type='hidden' value='SUN'> -->
-
-                        <input name='movie[hour]' type='hidden' value='09'>
-                        <!--     <input name='movie[hour]' type='hidden' value='12'>
-                           <input name='movie[hour]' type='hidden' value='18'>
-                            <input name='movie[hour]' type='hidden' value='21'> -->
+                        <input id="movie[id]" name='movie[id]' type='hidden' value='ACT'>
+                        <input id="movie[day]" name='movie[day]' type='hidden' value='MON'>
+                        <input id="movie[hour]" name='movie[hour]' type='hidden' value='09'>
+                        
 
                         <!-- this below heading will be changeable in a3 -->
-                        <h3 class="movie-selected-heading">Movie Title - Day - Time</h3>
+                        <h3 class="movie-selected-heading"><span id="booking-movie-title">Movie Title</span> - <span id="selected-day">Day</span> - <span id="selected-time">Time</span></h3>
                         <!-------------------- standard booking ------------->
                         <div class="booking-flex-wraper">
                             <div class="ticket-flex-wraper">
                                 <fieldset>
-                                    <legend>Standard</legend>
+                                    <legend onclick='calPrice()'>Standard</legend>
                                     <!-- select standard adult tickets-->
                                     <label>Adults</label>
-                                    <select name='seats[STA]'>
+                                    <select id="seats[STA]" name='seats[STA]'>
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -363,7 +350,7 @@
                                     </select>
                                     <!-- select standard concession tickets-->
                                     <label>Concession</label>
-                                    <select name='seats[STP]'>
+                                    <select id="seats[STP]" name='seats[STP]'>
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -378,7 +365,7 @@
                                     </select>
                                     <!-- select standard children tickets-->
                                     <label>Children</label>
-                                    <select name='seats[STC]'>
+                                    <select id="seats[STC]" name='seats[STC]'>
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -398,7 +385,7 @@
                                     <legend>First Class</legend>
                                     <!-- select number of first class adult tickets-->
                                     <label>Adults</label>
-                                    <select name='seats[FCA]'>
+                                    <select id="seats[FCA]" name='seats[FCA]'>
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -413,7 +400,7 @@
                                     </select>
                                     <!-- select number of first class concession tickets-->
                                     <label>Concession</label>
-                                    <select name='seats[FCP]'>
+                                    <select id="seats[FCP]" name='seats[FCP]'>
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -428,7 +415,7 @@
                                     </select>
                                     <!-- select number of first class children tickets-->
                                     <label>Children</label>
-                                    <select name='seats[FCC]'>
+                                    <select id="seats[FCC]" name='seats[FCC]'>
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -465,7 +452,7 @@
                         </div>
                         <div class="total-order-wrap">
                             <span>Total:</span>
-                            <output>$</output>
+                            <output id="sub-total"></output>
                             <button class="order-button" name='order' type='submit' value='order'>Order</button>
                         </div>
 
