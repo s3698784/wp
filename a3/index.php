@@ -318,7 +318,7 @@
                 <div class="booking-wrap">
 
                     <!-- booking form -->
-                    <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post'>
+                    <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post' onsubmit="return formValidate()">
 
                         <!-- hidden form inputs -->
                         <input id="movie[id]" name='movie[id]' type='hidden' value='ACT'>
@@ -327,15 +327,15 @@
                         
 
                         <!-- this below heading will be changeable in a3 -->
-                        <h3 class="movie-selected-heading"><span id="booking-movie-title">Movie Title</span> - <span id="selected-day">Day</span> - <span id="selected-time">Time</span></h3>
+                        <h3 class="movie-selected-heading"><span id="booking-movie-title"></span>  <span id="selected-day"></span>  <span id="selected-time"></span></h3>
                         <!-------------------- standard booking ------------->
                         <div class="booking-flex-wraper">
                             <div class="ticket-flex-wraper">
                                 <fieldset>
-                                    <legend onclick='calPrice()'>Standard</legend>
+                                    <legend>Standard</legend>
                                     <!-- select standard adult tickets-->
                                     <label>Adults</label>
-                                    <select id="seats[STA]" name='seats[STA]'>
+                                    <select id="seats[STA]" class="clearInput" name='seats[STA]' oninput="callPrice()">
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -350,7 +350,7 @@
                                     </select>
                                     <!-- select standard concession tickets-->
                                     <label>Concession</label>
-                                    <select id="seats[STP]" name='seats[STP]'>
+                                    <select id="seats[STP]" name='seats[STP]' oninput="callPrice()">
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -365,7 +365,7 @@
                                     </select>
                                     <!-- select standard children tickets-->
                                     <label>Children</label>
-                                    <select id="seats[STC]" name='seats[STC]'>
+                                    <select id="seats[STC]" name='seats[STC]' oninput="callPrice()">
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -385,7 +385,7 @@
                                     <legend>First Class</legend>
                                     <!-- select number of first class adult tickets-->
                                     <label>Adults</label>
-                                    <select id="seats[FCA]" name='seats[FCA]'>
+                                    <select id="seats[FCA]" name='seats[FCA]' oninput="callPrice()">
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -400,7 +400,7 @@
                                     </select>
                                     <!-- select number of first class concession tickets-->
                                     <label>Concession</label>
-                                    <select id="seats[FCP]" name='seats[FCP]'>
+                                    <select id="seats[FCP]" name='seats[FCP]' oninput="callPrice()">
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -415,7 +415,7 @@
                                     </select>
                                     <!-- select number of first class children tickets-->
                                     <label>Children</label>
-                                    <select id="seats[FCC]" name='seats[FCC]'>
+                                    <select id="seats[FCC]" name='seats[FCC]' oninput="callPrice()">
                                         <option value='' selected>Please Select</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -436,23 +436,24 @@
                                 <fieldset>
                                     <legend>Customer Details</legend>
                                     <label for='name'>Name</label>
-                                    <input name='cust[name]' type='text' id='name' placeholder='Enter name' value="" required>
+                                    <input name='cust[name]' type='text' id='name' placeholder='Enter name' value="" required pattern='[a-zA-Z \-.’]{1,100}' title='Western names only'>
                                     <label for='email'>Email</label>
-                                    <input name='cust[email]' type='email' id='email' placeholder="Enter email" required>
+                                    <input name='cust[email]' type='email' id='email' placeholder="Enter email" value="" required>
                                     <label for='mob-num'>Mobile</label>
-                                    <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number" required>
+                                    <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number" value="" required pattern='((\(04\))|(04)|(\+614))( ?\d){8}' title="Australian mobile numbers only">
                                     <label for='cred-card'>Credit Card</label>
-                                    <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number' required>
+                                    <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number' value="" required pattern="[0-9 \-]{15,19}" title= "Format: 1234 5678 1234 5678 or 1234567812345678">
                                     <label for='expiry'>Expiry Date</label>
-                                    <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' required>
+                                    <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' value="" required oninput="checkExpiry()">
+                                    <p id='exp-err'></p>
                                 </fieldset>
                             </div>
                             <!-- total amount and order button -->
-
+                        <p id='no-tickets'></p>
                         </div>
                         <div class="total-order-wrap">
                             <span>Total:</span>
-                            <output id="sub-total"></output>
+                            <output name="sub-total" id="sub-total"></output>
                             <button class="order-button" name='order' type='submit' value='order'>Order</button>
                         </div>
 

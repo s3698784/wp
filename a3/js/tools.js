@@ -53,6 +53,8 @@ function selectMovie(mvID) {
     if (index > 0) {
         document.getElementById("movie[id]").value = mvID; // sets hidden input movie[id]value
         document.getElementById("nowShowingTitle").innerHTML = nowShowingMovies[index][1];
+        //title in bookings section
+        document.getElementById("booking-movie-title").innerHTML = nowShowingMovies[index][1];
         document.getElementById("rating").innerHTML = nowShowingMovies[index][2];
         document.getElementById("plot").innerHTML = nowShowingMovies[index][3];
         document.getElementById("trailer").src = nowShowingMovies[index][5];
@@ -66,7 +68,7 @@ function selectMovie(mvID) {
     } else {
         return false;
     }
-}
+};
 // gets the movie title, day, time info from day - time select buttons
 // and sets headings for movie title, day and time in booking section.
 // sets hidden values of moovie[day] and movie[hour]
@@ -76,16 +78,16 @@ function setHidden(timeInfo) {
     let dayHidden = day.substr(0, 3).toUpperCase();
     let time = dayTimeArray[1]
     let hourHidden = return24Hour(time);
-    let title = document.getElementById("nowShowingTitle").innerHTML
 
     //set hidden values
     document.getElementById("movie[day]").value = dayHidden;
     document.getElementById("movie[hour]").value = hourHidden;
 
     // set headings in booking section
-    document.getElementById("booking-movie-title").innerHTML = title;
-    document.getElementById("selected-day").innerHTML = day;
+    // document.getElementById("booking-movie-title").innerHTML = title + " - ";
+    document.getElementById("selected-day").innerHTML = " - " + day + " - ";
     document.getElementById("selected-time").innerHTML = time;
+    callPrice(); // qty's may already be selected, if so, needs to be calculated
 };
 
 //helper function
@@ -148,19 +150,18 @@ function discountOrNormal() {
     let day = document.getElementById("movie[day]").value;
     let hour = document.getElementById("movie[hour]").value;
     let priceClass = "";
- //   alert(hour);
-//    alert(day);
-    
-    
-    if (day == 'SAT' || day == 'SUN') 
+    //   alert(hour);
+    //    alert(day);
+
+    if (day == 'SAT' || day == 'SUN')
         priceClass = 'normal';
-    else if (day == 'MON' || day =='WED')  
+    else if (day == 'MON' || day == 'WED')
         priceClass = 'discount';
-    else if (hour == "12")  
-        priceClass = 'discount';   
+    else if (hour == "12")
+        priceClass = 'discount';
     else
         priceClass = 'normal';
-    
+
     return priceClass;
 };
 
@@ -207,29 +208,90 @@ function setFCCPrice() {
     return FCCPrice;
 }
 
-function calPrice() {
-    let staPrice = setSTAPrice();
-    let stpPrice = setSTPPrice();
-    let stcPrice = setSTCPrice();
-    let fcaPrice = setFCAPrice();
-    let fcpPrice = setFCPPrice();
-    let fccPrice = setFCCPrice();
-    let totPrice = staPrice + stpPrice + stcPrice + fcaPrice + fcpPrice + fccPrice;
-    document.getElementById("sub-total").innerHTML = '$' + totPrice.toFixed(2);
-}
+function callPrice() {
+    //check is a movie has been selected
+    let movieCheck = document.getElementById('booking-movie-title').innerHTML;
+    let hourCheck = document.getElementById('selected-time').innerHTML;
+    if (movieCheck == "" && hourCheck == "") {
+        document.getElementById("booking-movie-title").innerHTML = "Please select movie and time slot";
+        return false;
+    } else if (hourCheck == "") {
+        document.getElementById("selected-day").innerHTML = " - Please select time slot";
+        return false;
+    } else {
+        //if selected, calculate the prices
+        let staPrice = setSTAPrice();
+        let stpPrice = setSTPPrice();
+        let stcPrice = setSTCPrice();
+        let fcaPrice = setFCAPrice();
+        let fcpPrice = setFCPPrice();
+        let fccPrice = setFCCPrice();
+        let totPrice = staPrice + stpPrice + stcPrice + fcaPrice + fcpPrice + fccPrice;
+        document.getElementById("sub-total").innerHTML = '$' + totPrice.toFixed(2);
+        //remove no seat selected error message
+        document.getElementById("no-tickets").innerHTML ="";
+        return true;
+    }
+};
 
 //  document.getElementById("sub-total").innerHTML = STAPrice;
 
+//-----------------------------------form validation ---------------------------------------
+//------------------------------------------------------------------------------------------
 
+function checkExpiry() {
+    let currentDate = new Date();
+    let currentMonth = currentDate.getMonth() + 1;
+    let currentYear = currentDate.getFullYear();
+    let expireDate = document.getElementById('expiry').value;
+    let expiryYear = expireDate.substr(0, 4);
+    let expiryMonth = expireDate.substr(5);
+    let errorMsg = " * credit card must not expire in the next month";
+    document.getElementById('exp-err').innerHTML = ""; //clears if there is error msg
 
+    //  alert(expireDate);
+    //  alert(currentYear);
+    //  alert(expiryYear);
+    //  alert(currentMonth);
+    //  alert(expiryMonth);
 
+    if ((expiryYear >= currentYear) && (expiryMonth >= currentMonth + 1)) {
+        return true;
+    } else if (expiryYear > currentYear) {
+        return true;
+    } else {
+        document.getElementById('exp-err').innerHTML = errorMsg;
+        return false;
+    }
+};
 
+function hasPrice() {
+    let hasPrice = document.getElementById("sub-total").innerHTML
+    if ((hasPrice == "") || (hasPrice == "$0.00")) {
+        document.getElementById("no-tickets").innerHTML = " * no seats selected";
+        return false;
+    } else {
+    return true;
+    }
+};
 
+// check credit card expiry and if there is total before submitting
+// Name, e-mail, mobile and credit card are done in the HTML.
+function formValidate() {
+    let noError = true;
 
+    if (!checkExpiry()) {
+        noError = false;
+    }
 
+    if (!hasPrice()) {
+        noError = false;
+    }
 
+    if (noError) {
+        return true;
+    } else {
+        return false;
+    }
 
-
-
-
-
+};
