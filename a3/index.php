@@ -1,3 +1,152 @@
+<?php
+include_once('tools.php');
+session_start();
+
+// initialse form input variables
+$hasError = false;
+$name = "";
+$nameErrMsg = "";
+$email = "";
+$emailErrMsg = "";
+$mobNumber = $mobErrMsg ="";
+$credCardNum = $creditErrMsg= "";
+$expiryDate = $expiryErrMsg = "";
+$mvID = $mvIDErr = "";
+$day = $dayErr = "";
+$seatErr = "";
+$stanAdult = "";
+$stanConcession = "";
+$stanChild = "";
+$firstAdult = "";
+$firstConcession = "";
+$firstChild = "";
+
+// check is POST has been sent
+
+if (!empty($_POST)) {
+    // validate and sanitise 'name'.
+    if (empty($_POST['cust']['name'])){
+        $nameErrMsg = '<span style="color:red">* Please enter name</span>';
+        $hasError = true;
+    } else {
+        $name = sanName($_POST['cust']['name']);
+        if (!preg_match("/^[a-zA-z ]+$/", $name)){
+            $nameErrMsg = '<span style="color:red">* Please enter western letters</span>';
+            $hasError = true;
+        }
+     }
+    
+    //validate and sanitise 'email'
+    if (empty($_POST['cust']['email'])){
+        $emailErrMsg = '<span style="color:red">* Please enter email</span>';
+        $hasError = true;
+    } else {
+        $email = strtolower(generalSan($_POST['cust']['email']));
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $sanitizedEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+            $emailErrMsg = "<span style='color:red'>* Invalid e-mail format, did you mean: {$sanitizedEmail}? </span>"  ;
+            $hasError = true;
+        }
+    }
+    
+    //validate and sanitise 'mobile number'
+    if (empty($_POST['cust']['mobile'])){
+        $mobErrMsg = '<span style="color:red">* Please eneter a mobile number</span>';
+        $hasError = true;
+    } else {
+        $mobNumber = generalSan($_POST['cust']['mobile']);
+        if (!preg_match("#^(\(04\)|(04)|(\+614))( ?\d){8}$#", $mobNumber)){
+            $mobErrMsg = '<span style="color:red">* Please enter an australian mobile number: e.g. starts with 04, +614 or (04)</span>';
+            $hasError = true;
+        }
+     }
+    
+    //validate and sanitise 'credit card number'
+   if (empty($_POST['cust']['card'])){
+        $creditErrMsg = '<span style="color:red">* Please eneter a credit card number</span>';
+        $hasError = true;
+    } else {
+        $credCardNum = generalSan($_POST['cust']['card']);
+        if (!preg_match("#[0-9 \-]{15,19}#", $credCardNum)){
+            $creditErrMsg = '<span style="color:red">* Please enter credit card number with min 15 to max 19 numbers including spaces ';
+            $hasError = true;
+        }
+     }
+    
+    if (empty($_POST['cust']['expiry'])){
+        $expiryErrMsg = '<span style="color:red">* Please eneter a credit card expiry</span>';
+        $hasError = true;
+    } else {
+        $expiryDate = generalSan($_POST['cust']['expiry']);
+        if (!checkExpiry($expiryDate)){
+             $expiryErrMsg = '<span style="color:red">* Expiry should not be within the next month </span>';
+            $hasError = true;
+        }
+     }
+    
+    //validate and sanitise move id
+    if (empty($_POST['movie']['id'])) {
+        $hasError = true;
+        $mvIDErr = '<span style="color:red">* Please select a movie</span>';
+    } else {
+        $mvID = generalSan($_POST['movie']['id']);
+    }
+    
+    //validate and sanitise selected day
+    if (empty($_POST['movie']['day'])) {
+        $hasError = true;
+        $dayErr = '<span style="color:red">* Please select a day and time</span>';
+    } else {
+        $day = generalSan($_POST['movie']['id']);
+    }
+
+    if (empty($_POST['seats'])) {
+        $hasError = true;
+        $seatErr = '<span style="color:red">* Please select seats</span>';
+    } else {
+        //sanitze seat inputs
+        if (isset($_POST['seats']['STA'])) {
+        $stanAdult = generalSan($_POST['seats']['STA']);
+        }
+        if (isset($_POST['seats']['STP'])) {
+        $stanConcession = generalSan($_POST['seats']['STP']);
+        }
+        if (isset($_POST['seats']['STC'])) {
+        $stanChild = generalSan($_POST['seats']['STC']);
+        }
+        if (isset($_POST['seats']['FCA'])) {
+        $firstAdult = generalSan($_POST['seats']['FCA']);
+        }
+        if (isset($_POST['seats']['FCP'])) {
+        $firstConcession = generalSan($_POST['seats']['FCP']);
+        }
+        if (isset($_POST['seats']['FCC'])) {
+        $firstChild = generalSan($_POST['seats']['FCC']);
+        }
+  }
+}//end of post checks
+
+if (!empty($_POST) && $hasError == false) {
+    $_SESSION['cust']['name'] = $name;
+    $_SESSION['cust']['email'] = $email;
+    $_SESSION['cust']['mobile'] = $mobNumber;
+    $_SESSION['cust']['card'] = $credCardNum;
+    $_SESSION['cust']['expiry'] = $expiryDate;
+    $_SESSION['movie']['id'] = $mvID;
+    $_SESSION['movie']['day'] = $day;
+    $_SESSION['movie']['hour'] = $hour;
+    $_SESSION['seats']['STA'] = $stanAdult;
+    $_SESSION['seats']['STP'] = $stanConcession;
+    $_SESSION['seats']['STC'] = $stanChild;
+    $_SESSION['seats']['FCA'] = $firstAdult;
+    $_SESSION['seats']['FCP'] = $firstConcession;
+    $_SESSION['seats']['FCC'] = $firstAdult;
+
+    header("Location: receipt.php");
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -5,42 +154,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Assignment 3</title>
-
     <!-- import google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Condiment" rel="stylesheet">
-
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <!-- <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.css"> -->
     <script src='../wireframe.js'></script>
-
-    <style><?php include("css/style.css");  ?></style>
-    
-
     <style>
-        <?php
-        // This PHP code inserts CSS to style the "current page" link in the nav area
-        $here = $_SERVER['SCRIPT_NAME']; 
-        $bits = explode('/',$here); 
-        $filename = $bits[count($bits)-1]; 
-        echo "nav a[href$='$filename'] {
-        box-shadow: 1px 1px 1px 2px navy;
-      }";
-      ?>
-      
-    </style>
+        <?php include("css/style.css");
+            ?>
+        </style>
+    <style>
+        <?php // This PHP code inserts CSS to style the "current page" link in the nav area
+            $here=$_SERVER['SCRIPT_NAME'];
+            $bits=explode('/', $here);
+            $filename=$bits[count($bits)-1];
+            echo "nav a[href$='$filename'] {
+ box-shadow: 1px 1px 1px 2px navy;
+        }
+        ";
+ ?>
+        </style>
 </head>
 
 <body>
-
-    <header>
+    <header id="home">
         <!-- logo was made at https://www.freelogodesign.org/ -->
         <div class="logo"><img src="../../media/logo.png" alt="logo" width="200" height="200"> </div>
         <h1>Lunardo</h1>
     </header>
-
     <!---------------------------- Navigation ------------------------------------>
     <!---------------------------------------------------------------------------->
     <nav>
@@ -63,45 +207,36 @@
                     <h3>So who are we?</h3>
                     <p>Lunardo is a local cinema located in the small country city of Traralgon. We do our best to give all customers a great exprience </p>
                     <p>To really show this we have recently made some upgrades, we have:</p>
-
                     <ul>
-                        <li>Extensivly improved and renovated the whole cinema</li><br>
-                        <li>New seats for all, including reclinable first class seats</li><br>
-                        <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. </li><br>
-                        <!-- external link aout the sound system upgrades-->
-                        <a class="dolby" href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more Dolby details</a>
+                        <li>Extensivly improved and renovated the whole cinema</li>
+                        <br>
+                        <li>New seats for all, including reclinable first class seats</li>
+                        <br>
+                        <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. </li>
+                        <br>
+                        <!-- external link aout the sound system upgrades--><a class="dolby" href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more Dolby details</a>
                     </ul>
-
                     <p>If you are a local or just visiting, you are always welcome to come by our cinema to enjoy some popcorn and a relaxing film</p>
                 </div>
             </div>
         </section>
-
         <!---------------seats and prices divided into 2 boxes--------------------->
         <!------------------------------------------------------------------------->
         <section id='seats-and-prices'>
             <h2>Seats and Prices</h2>
             <div class="elim-margin">
                 <!----------- seats -------------->
-
                 <div class="seat-prices-flex">
                     <div class="seat-cont">
                         <h3>All new seating</h3>
                         <p>We have installed new seats through out the whole cinema</p>
-
-                        <!-- images of seats -->
-                        <img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=300>
-                        <div class="img-info">Spacious and comfortable standard seats</div>
-
-
-                        <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=300>
+                        <!-- images of seats --><img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=300>
+                        <div class="img-info">Spacious and comfortable standard seats</div> <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=300>
                         <div class="img-info">Recline to watch in style with all new first class seating</div>
                     </div>
-
                     <!------ all prices - set out in a table ------>
                     <div class="price-cont">
                         <h3>Prices:</h3>
-
                         <table>
                             <!-- table headings -->
                             <theader>
@@ -112,7 +247,6 @@
                                     <th>Normal Price</th>
                                 </tr>
                             </theader>
-
                             <!-- standard tickets -->
                             <tr>
                                 <th class="table-space">Standard Adult</th>
@@ -157,138 +291,165 @@
                 </div>
             </div>
         </section>
-
         <!-------------------------------now showing---------------------------------->
         <!---------------------------------------------------------------------------->
         <section id='now-showing'>
             <h2>Now Showing</h2>
-
             <div class="flex-container-now-showing">
                 <!-- featured movies -->
-                <div class='flex-movie1'id="ACT" onclick="selectMovie('ACT')">
-                    <img src='../../media/spiders-web.jpg' alt="The girl in the spiders's web">
+                <div class='flex-movie1' id="ACT" onclick="selectMovie('ACT')"> <img src='../../media/spiders-web.jpg' alt="The girl in the spiders's web">
                     <h3>The Girl in the Spider's web</h3>
                     <p>MA15+</p>
                     <table>
                         <tr>
                             <td>Wednesday</td>
-                            <td><time>9:00pm</time></td>
+                            <td>
+                                <time>9:00pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
-                            <td><time>9:00pm</time></td>
+                            <td>
+                                <time>9:00pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Friday</td>
-                            <td><time>9:00pm</time></td>
+                            <td>
+                                <time>9:00pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td><time>6:00pm</time></td>
+                            <td>
+                                <time>6:00pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td><time>6:00pm</time></td>
+                            <td>
+                                <time>6:00pm</time>
+                            </td>
                         </tr>
                     </table>
                 </div>
-
-                <div class='flex-movie2' onclick="selectMovie('RMC')">
-                    <img src='../../media/star-is-born.jpg' alt='A star is born' >
+                <div class='flex-movie2' onclick="selectMovie('RMC')"> <img src='../../media/star-is-born.jpg' alt='A star is born'>
                     <h3>A Star is Born</h3>
                     <p>M</p>
                     <table>
                         <tr>
                             <td>Monday</td>
-                            <td><time>6:00 pm</time></td>
+                            <td>
+                                <time>6:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Tuesday</td>
-                            <td><time>6:00 pm</time></td>
+                            <td>
+                                <time>6:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td><time>3:00 pm</time></td>
+                            <td>
+                                <time>3:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td><time>3:00 pm</time></td>
+                            <td>
+                                <time>3:00 pm</time>
+                            </td>
                         </tr>
                     </table>
                 </div>
-
-                <div class='flex-movie3' onclick="selectMovie('ANM')">
-                    <img src='../../media/ralph-breaks-internet.jpg' alt='ralph breaks the internet'>
+                <div class='flex-movie3' onclick="selectMovie('ANM')"> <img src='../../media/ralph-breaks-internet.jpg' alt='ralph breaks the internet'>
                     <h3>Ralph Breaks the Internet</h3>
                     <p>PG</p>
                     <table>
                         <tr>
                             <td>Monday</td>
-                            <td><time>12:00 pm</time></td>
+                            <td>
+                                <time>12:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Tuesday</td>
-                            <td><time>12:00 pm</time></td>
+                            <td>
+                                <time>12:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Wednesday</td>
-                            <td><time>6:00 pm</time></td>
+                            <td>
+                                <time>6:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
-                            <td><time>6:00 pm</time></td>
+                            <td>
+                                <time>6:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Friday</td>
-                            <td><time>6:00 pm</time></td>
+                            <td>
+                                <time>6:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td><time>12:00 pm</time></td>
+                            <td>
+                                <time>12:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td><time>12:00 pm</time></td>
+                            <td>
+                                <time>12:00 pm</time>
+                            </td>
                         </tr>
                     </table>
                 </div>
-
-                <div class='flex-movie4' onclick="selectMovie('AHF')">
-                    <img src='../../media/boy-erased.jpg' alt='boy erased'>
+                <div class='flex-movie4' onclick="selectMovie('AHF')"> <img src='../../media/boy-erased.jpg' alt='boy erased'>
                     <h3>Boy Erased</h3>
                     <p>MA15+</p>
                     <table>
                         <tr>
                             <td>Wednesday</td>
-                            <td><time>12:00 pm</time></td>
+                            <td>
+                                <time>12:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
-                            <td><time>12:00 pm</time></td>
+                            <td>
+                                <time>12:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td><time>9:00 pm</time></td>
+                            <td>
+                                <time>9:00 pm</time>
+                            </td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td><time>9:00 pm</time></td>
+                            <td>
+                                <time>9:00 pm</time>
+                            </td>
                         </tr>
                     </table>
                 </div>
-
             </div>
-
-
             <!-- trailer and description of a featured moive -->
             <div class="trailer-background-cont">
                 <div class='flex-container-trailer'>
                     <div class='flex-item-trailerDescrip'>
-                        <h3 id="nowShowingTitle" >Ralph Breaks the Internet</h3>
-                        <span id="rating">PG</span>
-                            <h4>Plot Description</h4>
-                            <!-- plot taken from: https://www.imdb.com/title/tt5848272/?ref_=nv_sr_1 -->
-                            <p id="plot">Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                        <h3 id="nowShowingTitle">Ralph Breaks the Internet</h3> <span id="rating">PG</span>
+                        <h4>Plot Description</h4>
+                        <!-- plot taken from: https://www.imdb.com/title/tt5848272/?ref_=nv_sr_1 -->
+                        <p id="plot">Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
                     </div>
                     <!-- video trailer-->
                     <!-- below code snippet taken from youtube.com-->
@@ -308,26 +469,21 @@
                 </div>
             </div>
         </section>
-
         <!-----------------------------------bookings--------------------------------->
         <!---------------------------------------------------------------------------->
         <section id='bookings'>
             <h2>Bookings</h2>
-
             <div class="booking-col-flex">
                 <div class="booking-wrap">
-
                     <!-- booking form -->
-                    <form action='https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php' method='post' onsubmit="return formValidate()">
-
+                    <form action='index.php' method='post' onsubmit="return formValidate()">
                         <!-- hidden form inputs -->
-                        <input id="movie[id]" name='movie[id]' type='hidden' value='ACT'>
-                        <input id="movie[day]" name='movie[day]' type='hidden' value='MON'>
-                        <input id="movie[hour]" name='movie[hour]' type='hidden' value='09'>
-                        
-
+                        <input id="movie[id]" name='movie[id]' type='hidden' value=''>
+                        <?php echo $mvIDErr ?>
+                        <input id="movie[day]" name='movie[day]' type='hidden' value=''>
+                        <input id="movie[hour]" name='movie[hour]' type='hidden' value=''>
                         <!-- this below heading will be changeable in a3 -->
-                        <h3 class="movie-selected-heading"><span id="booking-movie-title"></span>  <span id="selected-day"></span>  <span id="selected-time"></span></h3>
+                        <h3 class="movie-selected-heading"><span id="booking-movie-title"></span> <span id="selected-day"></span> <span id="selected-time"></span></h3>
                         <!-------------------- standard booking ------------->
                         <div class="booking-flex-wraper">
                             <div class="ticket-flex-wraper">
@@ -379,7 +535,6 @@
                                         <option value='10'>10</option>
                                     </select>
                                 </fieldset>
-
                                 <!--------------- first class booking --------------->
                                 <fieldset>
                                     <legend>First Class</legend>
@@ -430,68 +585,79 @@
                                     </select>
                                 </fieldset>
                             </div>
-
                             <!-- enter customer details-->
                             <div class="cust-details">
                                 <fieldset>
+                                    <!-- required pattern='[a-zA-Z \-.’]{1,100}' title='Western names only'-->
                                     <legend>Customer Details</legend>
                                     <label for='name'>Name</label>
-                                    <input name='cust[name]' type='text' id='name' placeholder='Enter name' value="" required pattern='[a-zA-Z \-.’]{1,100}' title='Western names only'>
+                                    <input name='cust[name]' type='text' id='name' placeholder='Enter name' value="">
+                                    <p><?php echo $nameErrMsg; ?></p>
+                                    
+                                    <!-- required -->
                                     <label for='email'>Email</label>
-                                    <input name='cust[email]' type='email' id='email' placeholder="Enter email" value="" required>
+                                    <input name='cust[email]' type='text' id='email' placeholder="Enter email" value="" >
+                                    <p><?php echo $emailErrMsg?></p>
+                                    
+                                    <!-- required pattern='((\(04\))|(04)|(\+614))( ?\d){8}'-->
                                     <label for='mob-num'>Mobile</label>
-                                    <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number" value="" required pattern='((\(04\))|(04)|(\+614))( ?\d){8}' title="Australian mobile numbers only">
+                                    <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number" value=""  title="Australian mobile numbers only">
+                                    <p><?php echo $mobErrMsg?></p>
+                                    
+                                    <!-- required pattern="[0-9 \-]{15,19}" title="Format: 1234 5678 1234 5678 or 1234567812345678 -->
                                     <label for='cred-card'>Credit Card</label>
-                                    <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number' value="" required pattern="[0-9 \-]{15,19}" title= "Format: 1234 5678 1234 5678 or 1234567812345678">
+                                    <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number' value="">
+                                    <p><?php echo $creditErrMsg ?></p>
+                                    
+                                    <!-- required oninput="checkExpiry()" id='exp-err' -->
                                     <label for='expiry'>Expiry Date</label>
-                                    <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' value="" required oninput="checkExpiry()">
-                                    <p id='exp-err'></p>
+                                    <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' value="" >
+                                    <p ><?php echo $expiryErrMsg ?></p>
                                 </fieldset>
                             </div>
                             <!-- total amount and order button -->
-                        <p id='no-tickets'></p>
+                            <p id='no-tickets'></p>
+                            <p><?php echo $mvIDErr;?></p>
+                            <p><?php echo $dayErr;?></p>
                         </div>
-                        <div class="total-order-wrap">
-                            <span>Total:</span>
+                        <div class="total-order-wrap"> <span>Total:</span>
                             <output name="sub-total" id="sub-total"></output>
                             <button class="order-button" name='order' type='submit' value='order'>Order</button>
                         </div>
-
                     </form>
                 </div>
             </div>
         </section>
-
-        <main>
-
-        </main>
-
         <footer>
             <div class="footer-wrap-flex">
                 <div class="footer-content">
-                    <div class="contact-dets">
-                        <span>Contact: </span>
-                        <span>Lunardo Cinema, </span>
-                        <address>123 Fake Street, Tralralgon, </address>
-                        <span>lunardo@lunardocinema.com.au</span>
-                    </div>
+                    <div class="contact-dets"> <span>Contact: </span> <span>Lunardo Cinema, </span> <address>123 Fake Street, Tralralgon, </address> <span>lunardo@lunardocinema.com.au</span> </div>
                     <div>&copy;
                         <script>
                             document.write(new Date().getFullYear());
 
-                        </script> James Ciuciu, s3698784. https://github.com/s3698784/wp. Last modified
-
-                    </div>
-                    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.
-                    </div>
-                    <div>Maintain links to your <a href='products.txt'>products spreadsheet</a> and <a href='orders.txt'>orders spreadsheet</a> here.
-                    </div>
+                        </script> James Ciuciu, s3698784. https://github.com/s3698784/wp. Last modified </div>
+                    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia. </div>
+                    <div>Maintain links to your <a href='products.txt'>products spreadsheet</a> and <a href='orders.txt'>orders spreadsheet</a> here. </div>
                     <div class="footer-button">
                         <button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button>
                     </div>
                 </div>
         </footer>
-<script><?php include("js/tools.js"); ?></script>
+        <!-- debug module -->
+        <?php
+            echo $name;
+            echo $mobNumber;
+            echo $hasError;
+            preShow($_POST);
+            preShow($_SESSION);
+            $aaarg = preShow($my_bad_array, true);
+            printMyCode();
+            ?>
+        <script>
+            <?php include("js/tools.js"); ?>
+
+        </script>
 </body>
 
 </html>

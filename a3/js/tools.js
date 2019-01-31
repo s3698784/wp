@@ -3,72 +3,71 @@
 // now showing movie info array
 // all movie info taken from https://www.imdb.com, for education purposes
 // all trailers taken from https://www.youtube.com, for education purposes
-var nowShowingMovies = [
-    //order: MovieId, Title, Rating, Plot, times[]
-        ["MovieId", "Title", "Rating", "Plot", "times[]"],
 
+var nowShowingMovies = {
     // The girl in the Spider's Web
-        ["ACT"
-        , "The girl in the Spider's Web"
-        , "MA15+"
-        , "Young computer hacker Lisbeth Salander and journalist Mikael Blomkvist find themselves caught in a web of spies, cybercriminals and corrupt government officials."
-        , ["Wednesday - 9:00pm", "Thursday - 9:00pm", "Friday - 9:00pm", "Saturday - 6:00pm", "Sunday - 6:00pm"]
-        , "https://www.youtube.com/embed/XKMSP9OKspQ"],
-
+    ACT: {
+        title: "The girl in the Spider's Web",
+        rating: "MA15+",
+        plot: "Young computer hacker Lisbeth Salander and journalist Mikael Blomkvist find themselves caught in a web of spies, cybercriminals and corrupt government officials.",
+        times: ["Wednesday - 9:00pm", "Thursday - 9:00pm", "Friday - 9:00pm", "Saturday - 6:00pm", "Sunday - 6:00pm"],
+        trailerLink: "https://www.youtube.com/embed/XKMSP9OKspQ"
+    },
     // a star is born
-        ["RMC"
-         , "A Star is Born"
-         , "M"
-         , "A musician helps a young singer find fame, even as age and alcoholism send his own career into a downward spiral."
-         , ["Monday - 12:00pm", "Tuesday - 6:00pm", "Saturday - 3:00pm", "Sunday - 3:00pm"]
-         , "https://www.youtube.com/embed/nSbzyEJ8X9E"],
+    RMC: {
+        tilte: "A Star is Born",
+        rating: "M",
+        plot: "A musician helps a young singer find fame, even as age and alcoholism send his own career into a downward spiral.",
+        times: ["Monday - 12:00pm", "Tuesday - 6:00pm", "Saturday - 3:00pm", "Sunday - 3:00pm"],
+        trailerLink: "https://www.youtube.com/embed/nSbzyEJ8X9E"
+    },
 
     // ralph breaks the internet
-        ["ANM"
-         , "Ralph Breaks the Internet"
-         , "PG"
-         , "Six years after the events of \"Wreck-It Ralph,\" Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure."
-         , ["Monday - 12:00pm", "Tuesday - 12:00pm", "Wednesday - 6:00pm", "Thursday - 6:00pm", "Friday - 6:00pm", "Saturday - 12:00pm", "Sunday - 12:00pm"]
-         , "https://www.youtube.com/embed/_BcYBFC6zfY"],
+    ANM: {
+         title: "Ralph Breaks the Internet",
+         rating: "PG",
+         plot: "Six years after the events of \"Wreck-It Ralph,\" Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.",
+         times: ["Monday - 12:00pm", "Tuesday - 12:00pm", "Wednesday - 6:00pm", "Thursday - 6:00pm", "Friday - 6:00pm", "Saturday - 12:00pm", "Sunday - 12:00pm"],
+         trailerLink: "https://www.youtube.com/embed/_BcYBFC6zfY"
+        },
 
     // boy erased
-        ["AHF"
-         , "Boy Erased"
-         , "MA15+"
-         , "The son of a Baptist preacher is forced to participate in a church-supported gay conversion program after being forcibly outed to his parents."
-         , ["Wednesday - 12:00pm", "Thursday - 12:00pm", "Friday - 12:00pm", "Saturday - 9:00pm", "Sunday - 9:00pm"]
-         , "https://www.youtube.com/embed/-B71eyB_Onw"]
-];
+    AHF: {
+         title: "Boy Erased",
+         rating: "MA15+",
+         plot: "The son of a Baptist preacher is forced to participate in a church-supported gay conversion program after being forcibly outed to his parents.",
+         times: ["Wednesday - 12:00pm", "Thursday - 12:00pm", "Friday - 12:00pm", "Saturday - 9:00pm", "Sunday - 9:00pm"],
+         trailerLink: "https://www.youtube.com/embed/-B71eyB_Onw"
+    }
+};
 //setMovieTitle(mvID) takes the movie code as parameter given in the html.
 // The funtion finds the mvID, then outputs, title, rating, plot, and select time buttons.
 // returns true is successful, false if not.
 // sets hidden movie[id] value
 function selectMovie(mvID) {
-    // find index with mvID variable
-    var index = 0;
-    for (var i = 0; i < nowShowingMovies.length; i++) {
-        if (nowShowingMovies[i][0] == mvID) index = i;
-    }
     // first check if index found
-    if (index > 0) {
+    if (mvID.length > 0) {
         document.getElementById("movie[id]").value = mvID; // sets hidden input movie[id]value
-        document.getElementById("nowShowingTitle").innerHTML = nowShowingMovies[index][1];
+        document.getElementById("nowShowingTitle").innerHTML = nowShowingMovies[mvID]['title'];
         //title in bookings section
-        document.getElementById("booking-movie-title").innerHTML = nowShowingMovies[index][1];
-        document.getElementById("rating").innerHTML = nowShowingMovies[index][2];
-        document.getElementById("plot").innerHTML = nowShowingMovies[index][3];
-        document.getElementById("trailer").src = nowShowingMovies[index][5];
+        document.getElementById("booking-movie-title").innerHTML = nowShowingMovies[mvID]['title'];    
+        document.getElementById("rating").innerHTML = nowShowingMovies[mvID]['rating'];    
+        document.getElementById("plot").innerHTML = nowShowingMovies[mvID]['plot'];
+        document.getElementById("trailer").src = nowShowingMovies[mvID]['trailerLink'];
+    
         var buttons = "";
-        var len = nowShowingMovies[index][4].length;
+        var len = nowShowingMovies[mvID]['times'].length;
         for (y = 0; y < len; y++) {
-            buttons += '<button id="timeInfo' + [y] + '" onclick=\'setHidden(this.innerHTML)\'>' + nowShowingMovies[index][4][y] + '</button>';
+            buttons += '<button id="timeInfo' + [y] + '" onclick=\'setHidden(this.innerHTML)\'>' + nowShowingMovies[mvID]['times'][y] + '</button>';
         }
         document.getElementById("time-buttons").innerHTML = buttons;
         return true;
     } else {
+        alert("No movie ID");
         return false;
     }
-};
+    
+}; 
 // gets the movie title, day, time info from day - time select buttons
 // and sets headings for movie title, day and time in booking section.
 // sets hidden values of moovie[day] and movie[hour]
@@ -229,7 +228,7 @@ function callPrice() {
         let totPrice = staPrice + stpPrice + stcPrice + fcaPrice + fcpPrice + fccPrice;
         document.getElementById("sub-total").innerHTML = '$' + totPrice.toFixed(2);
         //remove no seat selected error message
-        document.getElementById("no-tickets").innerHTML ="";
+        document.getElementById("no-tickets").innerHTML = "";
         return true;
     }
 };
@@ -271,7 +270,7 @@ function hasPrice() {
         document.getElementById("no-tickets").innerHTML = " * no seats selected";
         return false;
     } else {
-    return true;
+        return true;
     }
 };
 
