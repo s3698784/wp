@@ -15,7 +15,7 @@ var nowShowingMovies = {
     },
     // a star is born
     RMC: {
-        tilte: "A Star is Born",
+        title: "A Star is Born",
         rating: "M",
         plot: "A musician helps a young singer find fame, even as age and alcoholism send his own career into a downward spiral.",
         times: ["Monday - 12:00pm", "Tuesday - 6:00pm", "Saturday - 3:00pm", "Sunday - 3:00pm"],

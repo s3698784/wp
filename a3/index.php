@@ -1,6 +1,6 @@
 <?php
 include_once('tools.php');
-session_start();
+
 
 // initialse form input variables
 $hasError = false;
@@ -13,6 +13,7 @@ $credCardNum = $creditErrMsg= "";
 $expiryDate = $expiryErrMsg = "";
 $mvID = $mvIDErr = "";
 $day = $dayErr = "";
+$hour = $hourErr = "";
 $seatErr = "";
 $stanAdult = "";
 $stanConcession = "";
@@ -97,7 +98,15 @@ if (!empty($_POST)) {
         $hasError = true;
         $dayErr = '<span style="color:red">* Please select a day and time</span>';
     } else {
-        $day = generalSan($_POST['movie']['id']);
+        $day = generalSan($_POST['movie']['day']);
+    }
+    
+    //validate and sanitise selected hour
+    if (empty($_POST['movie']['hour'])) {
+        $hasError = true;
+        $hourErr = '<span style="color:red">* Please select a day and time</span>';
+    } else {
+        $hour = generalSan($_POST['movie']['hour']);
     }
 
     if (empty($_POST['seats'])) {
@@ -140,8 +149,11 @@ if (!empty($_POST) && $hasError == false) {
     $_SESSION['seats']['STC'] = $stanChild;
     $_SESSION['seats']['FCA'] = $firstAdult;
     $_SESSION['seats']['FCP'] = $firstConcession;
-    $_SESSION['seats']['FCC'] = $firstAdult;
+    $_SESSION['seats']['FCC'] = $firstChild;
 
+    //write booking info to spreadsheet
+    
+    
     header("Location: receipt.php");
 }
 
@@ -619,6 +631,7 @@ if (!empty($_POST) && $hasError == false) {
                             <p id='no-tickets'></p>
                             <p><?php echo $mvIDErr;?></p>
                             <p><?php echo $dayErr;?></p>
+                            <p><?php echo $hourErr;?></p>
                         </div>
                         <div class="total-order-wrap"> <span>Total:</span>
                             <output name="sub-total" id="sub-total"></output>
