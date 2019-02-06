@@ -67,15 +67,30 @@ $movieDetails = [
 // movie prices
 $prices = [
     //standard seats
-    "STA" => ["discount" => "14.00", "normal" => "19.80"],
-    "STP" => ["discount" => "12.50", "normal" => "17.50"],
-    "STC" => ["discount" => "11.00", "normal" => "15.30"],
+    "STA" => ["discount" => 14.00, "normal" => 19.80],
+    "STP" => ["discount" => 12.50, "normal" => 17.50],
+    "STC" => ["discount" => 11.00, "normal" => 15.30],
     //first class seats
-    "FCA" => ["discount" => "24.00", "normal" => "30.00"],
-    "FCP" => ["discount" => "22.50", "normal" => "27.00"],
-    "FCC" => ["discount" => "21.00", "normal" => "24.00"],
+    "FCA" => ["discount" => 24.00, "normal" => 30.00],
+    "FCP" => ["discount" => 22.50, "normal" => 27.00],
+    "FCC" => ["discount" => 21.00, "normal" => 24.00],
 ];
 
+// calculate price helper functions
+
+function discountOrNormal($day, $hour) {
+    $priceClass = "";
+    if ($day == 'SAT' || $day == 'SUN')
+        $priceClass = 'normal';
+    else if ($day == 'MON' || $day == 'WED')
+        $priceClass = 'discount';
+    else if ($hour == "12")
+        $priceClass = 'discount';
+    else
+        $priceClass = 'normal';
+
+    return $priceClass;
+};
 
 // ------------------------ validation helper functions ----------------------
 // ---------------------------------------------------------------------------

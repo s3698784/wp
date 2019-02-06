@@ -1,3 +1,3 @@
 Date	Name	Email	Mobile	MovieID	Day	Time	SA Qty	SP Qty	SC Qty	FA Qty	FP Qty	FC Qty	Total
-
-"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	ACT	THU	21	1	1	1	1	1	1
+"05/02 07:01"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	ACT	FRI	21	4						79.2
+"05/02 07:09"	"Jose Mou"	jamesaciuciu@gmail.com	0490665639	ANM	TUE	12	1	1	4	2	3	3	186
