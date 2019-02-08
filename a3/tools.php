@@ -150,4 +150,66 @@ $lineEnd="";
     echo "</script>\n\n";
 }
 
+// ---------------------- helper functions for receipt ------------------------
+// ----------------------------------------------------------------------------
+
+function printPurchasedSeats () {
+    if ($_SESSION['$priceSTA'] > 0) {
+        echo "<tr>";
+        echo "<td> STA </td>";
+        echo "<td> Standard Adult </td>";
+        echo "<td> {$_SESSION['seats']['STA']} </td>";
+        printf("<td> $%6.2f </td>", $_SESSION['$priceSTA']);
+        echo "</tr>";
+    }
+    if ($_SESSION['$priceSTP'] > 0) {
+        echo "<tr>";
+        echo "<td> STP </td>";
+        echo "<td> Standard Concession </td>";
+        echo "<td> {$_SESSION['seats']['STP']} </td>";
+        printf("<td> $%6.2f </td>", $_SESSION['$priceSTP']);
+        echo "<tr>";
+    }
+    if ($_SESSION['$priceSTC'] > 0) {
+        echo "<tr>";
+        echo "<td> STC </td>";
+        echo "<td> Standard Child </td>";
+        echo "<td> {$_SESSION['seats']['STC']} </td>";
+        printf("<td> $%6.2f </td>", $_SESSION['$priceSTC']);
+        echo "<tr>";
+    }
+    if ($_SESSION['$priceFCA'] > 0) {
+        echo "<tr>";
+        echo "<td> FCA </td>";
+        echo "<td> First Class Adult </td>";
+        echo "<td> {$_SESSION['seats']['FCA']} </td>";
+        printf("<td> $%6.2f </td>", $_SESSION['$priceFCA']);
+        echo "<tr>";
+    }
+    if ($_SESSION['$priceFCP'] > 0) {
+        echo "<tr>";
+        echo "<td> FCP </td>";
+        echo "<td> First Class Concession </td>";
+        echo "<td> {$_SESSION['seats']['FCP']} </td>";
+         printf("<td> $%6.2f </td>", $_SESSION['$priceFCP']);
+        echo "<tr>";
+    }
+    if ($_SESSION['$priceFCC'] > 0) {
+        echo "<tr>";
+        echo "<td> FCC </td>";
+        echo "<td> First Class Child </td>";
+        echo "<td> {$_SESSION['seats']['FCC']} </td>";
+        printf("<td> $%6.2f </td>", $_SESSION['$priceFCC']);
+        echo "<tr>";
+    }
+}
+
+function printSeats2ticket () {
+    foreach ($_SESSION['seats'] as $seat => $qty) {
+        if ($qty > 0)
+        echo "<p>" . $seat . " - Qty: " . $qty . "</p>";
+    
+    }
+}
+
 ?>

@@ -598,3 +598,156 @@ address {
 .contact-dets {
     margin-bottom: 10px;
 }
+
+
+/* --------------------------- receipt -------------------------------------
+----------------------------------------------------------------------------*/
+
+.receipt {
+    max-width: 800px;
+    background-color: hsla(0, 0%, 95%, .7);
+    border: solid 2px #8C2129;
+    margin: 20px auto;
+    padding: 30px 50px 80px 50px;
+}
+
+.receipt h1 {
+    font-family: serif;
+    font-size: 1.5em;
+    color: black;
+    padding: 10px;
+    border-bottom: solid black 3px;
+}
+
+.receipt h2 {
+    font-family: 'Condiment', cursive, serif;
+    background-color: transparent;
+    color: #000;
+    padding: 20px;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.receipt-header-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    padding: 20px;
+   
+}
+
+.bus-cust-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+.receipt h3 {
+    font-size: 1.3em;
+    padding-left: 0;
+}
+
+.bus-dets, .cust-dets {
+   padding: 0 20px 20px 20px;
+}
+
+.purchase-wrap {
+    padding: 0 20px 20px 20px;
+}
+
+.purchase-wrap th{
+    font-weight: bold:
+}
+
+/* -------------------------- ticket styles --------------------------------------
+---------------------------------------------------------------------------------- */
+
+.group-ticket {
+    display: flex;
+    max-width: 800px;
+    min-height: 250px;
+    background-color: hsla(0, 0%, 95%, .7);
+    border: solid 2px #8C2129;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+.grp-tick-dets {
+    flex-basis: 79%;
+}
+
+.group-ticket h1 {
+    font-family: serif;
+    font-size: 1.4em;
+    color: black;
+    padding-left: 60px;
+}
+
+.group-ticket h2{
+    background-color: transparent;
+    margin-left: 20px;
+    padding: 0px;
+    font-family: 'Condiment', cursive, serif;
+    color: #000;
+}
+
+.grp-tick-header-wrap {
+    display: flex;
+    align-items:center;
+    margin-left: 20px;
+    border-bottom: black solid 1px;
+}
+
+.admit-once {
+     flex-basis: 19%;
+    display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: black dotted 3px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.grp-tick-movie-dets {
+    display: flex;
+    height: 70%;
+    align-items: center;
+}
+.grp-tick-movie-dets > div {
+    flex-basis: 49%;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    padding-left: 20px;
+}
+
+
+/* -------------------------- print styles ---------------------------------------
+---------------------------------------------------------------------------------- */
+
+@media print {
+    
+    .receipt-buttons, footer, .debug-module {
+        display: none;
+    }
+    
+    .receipt {
+        max-width: 100%;
+        border: 0;
+        background-color: transparent;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}

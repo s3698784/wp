@@ -1,3 +1,314 @@
 Date	Name	Email	Mobile	MovieID	Day	Time	SA Qty	SP Qty	SC Qty	FA Qty	FP Qty	FC Qty	Total
 "05/02 07:01"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	ACT	FRI	21	4						79.2
 "05/02 07:09"	"Jose Mou"	jamesaciuciu@gmail.com	0490665639	ANM	TUE	12	1	1	4	2	3	3	186
+"06/02 04:17"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:22"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:28"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 04:55"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:01"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:08"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:09"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:09"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:10"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:10"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:11"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:11"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:12"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:12"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:13"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:13"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:14"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:14"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:17"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:17"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:25"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:26"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:26"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:27"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:27"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:28"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:28"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:39"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 05:40"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 06:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 06:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 06:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 06:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 06:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 06:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:00"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						0
+"06/02 07:01"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:04"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:08"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:12"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:15"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:15"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:16"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:17"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:23"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:23"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:24"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:28"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:54"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12	1						14
+"06/02 07:54"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 07:56"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 07:57"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 07:57"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 07:59"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:03"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:03"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:08"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:08"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:09"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:10"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:10"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:10"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:10"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:10"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:11"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:11"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:11"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:12"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:13"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	1					37.3
+"06/02 08:14"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	ACT	FRI	21	1	2	3	4	5	5	355.7
+"06/02 08:25"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	ACT	FRI	21	1	2	3	4	5	5	355.7
+"06/02 08:25"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	ANM	WED	18							0
+"06/02 08:27"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	ANM	THU	18							0
+"06/02 08:28"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	5	5					186.5
+"06/02 08:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18							0
+"06/02 08:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	27
+"06/02 08:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	27
+"06/02 08:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	27
+"06/02 08:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	27
+"06/02 08:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	27
+"06/02 08:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	27
+"06/02 08:40"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:46"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:46"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:48"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:50"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 08:59"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 09:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 09:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 09:06"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"06/02 09:08"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 09:07"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 12:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:00"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:04"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:08"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:10"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:12"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:42"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:43"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 01:56"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:19"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:20"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:25"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:28"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:28"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:42"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:43"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:43"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:54"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:55"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:59"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:59"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 02:59"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:38"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:38"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:38"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:38"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:39"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:40"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:41"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:41"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:43"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:43"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:43"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:46"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:46"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:46"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:48"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:48"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:48"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:50"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:50"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:50"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:52"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:53"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:58"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:58"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:58"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:58"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:59"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:59"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 07:59"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:00"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:01"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:16"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:19"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:19"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:20"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:22"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:22"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:24"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:24"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:26"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:31"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"07/02 08:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51

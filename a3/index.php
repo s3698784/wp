@@ -659,9 +659,7 @@ if (!empty($_POST) && $hasError == false) {
         </footer>
         <!-- debug module -->
         <?php
-            echo $name;
-            echo $mobNumber;
-            echo $hasError;
+           
             preShow($_POST);
             preShow($_SESSION);
             $aaarg = preShow($my_bad_array, true);
