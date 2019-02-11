@@ -208,8 +208,55 @@ function printSeats2ticket () {
     foreach ($_SESSION['seats'] as $seat => $qty) {
         if ($qty > 0)
         echo "<p>" . $seat . " - Qty: " . $qty . "</p>";
-    
     }
 }
+
+function printSingleTickets ()
+{
+    $mvID = $_SESSION['movie']['id'];
+    $day = $_SESSION['movie']['day'];
+    $hour = $_SESSION['movie']['hour'];
+    $movieTitle = $_SESSION['$movieTitle'];
+    $movieRating = $_SESSION['$movieRating'];
+    foreach ($_SESSION['seats'] as $seat => $qty) 
+    {
+        if ($qty > 0) 
+        {
+            for ($i = 0; $i < $qty; $i++) 
+            {
+                
+                $singleTicket=<<<"TICKET"
+                    <article class="single-tickets">
+                        <div class="grp-tick-dets">
+                            <div class="grp-tick-header-wrap">
+                                <div><img src="../../media/logo.png" alt="logo" width="55" height="55"> 
+                                </div>
+                                <h2>Lunardo</h2>
+                               <h1>Single Ticket</h1>
+                             </div>
+                            <div class="grp-tick-movie-dets">
+                                <div>
+                                    <p> $movieTitle - $movieRating</p>
+                                    <p> $day - {$hour}:00</p>
+                                </div>
+                                <div>
+                                    <p> $seat  - Qty: 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admit-once">
+                            <p>Admit</p>
+                            <p>One</p>
+                            <p>Person</p>
+                        </div>
+                    </article>
+TICKET;
+                echo $singleTicket;
+            }
+        }
+    }
+}
+
+
 
 ?>

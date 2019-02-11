@@ -312,3 +312,114 @@ Date	Name	Email	Mobile	MovieID	Day	Time	SA Qty	SP Qty	SC Qty	FA Qty	FP Qty	FC Qt
 "07/02 08:32"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
 "07/02 08:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
 "07/02 08:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18					1	1	51
+"08/02 12:38"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:02"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:03"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:24"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:30"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:30"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:31"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:42"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:42"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 01:52"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:08"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:08"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:10"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:18"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:19"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:21"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:22"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:22"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:22"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:26"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:26"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:29"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:30"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:32"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:45"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:48"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:49"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:49"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:49"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:50"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:54"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2		1		1	1	81.9
+"08/02 02:58"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:23"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:24"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:29"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:33"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:33"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:35"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:37"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:42"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:42"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:42"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:43"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:44"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:45"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:46"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:46"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:46"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"08/02 03:46"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"09/02 09:29"	"Mary Ciuciu"	gam@ga.com	0490665336	ANM	FRI	18				2	2	2	162
+"10/02 12:17"													0
+"11/02 09:00"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18							0
+"11/02 09:21"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	AHF	THU	12							0
+"11/02 09:24"	"James Ciuciu"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18							0
+"11/02 09:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18							0
+"11/02 09:43"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1						19.8
+"11/02 10:27"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	2						39.6
+"11/02 10:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 10:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 10:49"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 10:50"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 10:51"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:02"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:03"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:06"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:07"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:09"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:10"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:10"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:12"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	4						79.2
+"11/02 11:13"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:17"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:17"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:18"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:19"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:19"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:20"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:20"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:21"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:22"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:22"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:25"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:27"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:29"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:30"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:33"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:34"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:35"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:36"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:37"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:38"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:39"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:39"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:40"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:42"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:42"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:44"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:45"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:46"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7
+"11/02 11:47"	"Viorel Capris"	jamesaciuciu@gmail.com	0490665639	RMC	TUE	18	1	4	3	3	3	3	402.7

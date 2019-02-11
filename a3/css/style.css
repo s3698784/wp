@@ -138,20 +138,17 @@ nav {
     position: sticky;
     top: 0;
     border-bottom: solid 2px white;
-    z-index: 99;
-}
-
-nav ul {
+    z-index: 2;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
     align-content: center;
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
-nav ul li a {
+nav a {
     display: inline-block;
     padding: 5px;
     flex-basis: 20%;
@@ -162,21 +159,25 @@ nav ul li a {
     margin: 0 5 0 5;
 }
 
-nav ul li {
-    margin: 0 auto;
-}
-
 /*  change flex to column when viewport is smaller than 550px */
 @media screen and (max-width: 550px) {
-    nav ul {
+    nav {
         flex-direction: column;
     }
 }
 
 /* styles pseduo elements for nav links */
+
+/*
 nav a:link,
 nav a:visited {
-    color: #FFBD59;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Staatliches', cursive, sans-serif;
+}*/
+
+nav a {
+    color: white;
     font-size: 1.5em;
     font-family: 'Staatliches', cursive, sans-serif;
 }
@@ -187,6 +188,13 @@ nav a:active {
     font-size: 1.5em;
     font-family: 'Staatliches', cursive, sans-serif;
     background-color: #9AFF8D;
+}
+
+.active {
+    font-size: 1.5em;
+    font-family: 'Staatliches', cursive, sans-serif;
+    background-color: #9AFF8D;
+    color: black;
 }
 
 /* -----------------------------------------About us --------------------------------------------- 
@@ -338,10 +346,7 @@ nav a:active {
 }
 
 /* style each movie panel */
-.flex-movie1,
-.flex-movie2,
-.flex-movie3,
-.flex-movie4 {
+.now-showing-a:visited, .now-showing-a:link {
     background-color: hsla(0, 0%, 95%, .7);
     padding-top: 30px;
     padding-bottom: 20px;
@@ -350,7 +355,13 @@ nav a:active {
     flex-basis: 300px;
     border: solid 2px #8C2129;
     margin: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.now-showing-a:hover {
     cursor: pointer;
+    transform: scale(1.05, 1.05);
 }
 
 /* set font for movie headings */
@@ -375,6 +386,7 @@ nav a:active {
     background-color: floralwhite;
     padding: 30px;
     position: relative;
+    display: none;
 }
 
 /* trailer description*/
@@ -403,6 +415,7 @@ nav a:active {
     margin: 5px;
     position: inherit;
     left: 15%;
+    display: flex;
 }
 
 /* flex box to postion buttons */
@@ -561,6 +574,32 @@ input:focus {
     font-weight: bold;
 }
 
+/* ---- error messgaes ----- */
+#no-tickets p, #no-tickets, #no-seats{
+    padding-bottom: 10px;
+    color: red;
+}
+/*
+#no-tickets p:link, #no-tickets p:visited,
+#no-tickets:link, #no-tickets:visited{
+    padding-bottom: 10px;
+    color: red;
+}*/
+
+#exp-err{
+    color:red;
+}
+
+#no-tickets p a:link, #no-tickets p a:visited,
+#no-tickets a:link, #no-tickets a:visited{
+    color: red;
+}
+
+#no-tickets p a:hover, #no-tickets p a:active,
+#no-tickets a:hover, #no-tickets a:active{
+    color: blue;
+    background-color: #9AFF8D;
+}
 /* ----------------------------------------- footer -------------------------------------- 
 -------------------------------------------------------------------------------------------*/
 
@@ -599,6 +638,11 @@ address {
     margin-bottom: 10px;
 }
 
+.print-but {
+    background-color: #27A5FA;
+    border-color: #2361DE;
+}
+
 
 /* --------------------------- receipt -------------------------------------
 ----------------------------------------------------------------------------*/
@@ -608,7 +652,12 @@ address {
     background-color: hsla(0, 0%, 95%, .7);
     border: solid 2px #8C2129;
     margin: 20px auto;
-    padding: 30px 50px 80px 50px;
+    padding: 30px 50px 80px 50px; 
+}
+
+.receipt-buttons {
+    display: flex;
+    justify-content: center;
 }
 
 .receipt h1 {
@@ -667,9 +716,23 @@ address {
 ---------------------------------------------------------------------------------- */
 
 .group-ticket {
+    display: none;
+    max-width: 800px;
+    min-height: 242px;
+    background-color: hsla(0, 0%, 95%, .7);
+    border: solid 2px #8C2129;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+#single-tickets-wrap {
+    display: none;
+}
+
+.single-tickets {
     display: flex;
     max-width: 800px;
-    min-height: 250px;
+    min-height: 242px;
     background-color: hsla(0, 0%, 95%, .7);
     border: solid 2px #8C2129;
     margin: 20px auto;
@@ -680,14 +743,14 @@ address {
     flex-basis: 79%;
 }
 
-.group-ticket h1 {
+.group-ticket h1, .single-tickets h1 {
     font-family: serif;
     font-size: 1.4em;
     color: black;
     padding-left: 60px;
 }
 
-.group-ticket h2{
+.group-ticket h2, .single-tickets h2{
     background-color: transparent;
     margin-left: 20px;
     padding: 0px;
@@ -723,6 +786,7 @@ address {
     font-size: 1.3em;
     line-height: 1.6em;
     padding-left: 20px;
+    padding-top: 20px;
 }
 
 
@@ -739,8 +803,14 @@ address {
         max-width: 100%;
         border: 0;
         background-color: transparent;
+        page-break-after:auto;
     }
     
+    .group-ticket, .single-tickets {
+        
+        background-color: transparent;
+        page-break-after: auto;
+    }
     
     
     

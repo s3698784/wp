@@ -1,5 +1,35 @@
-// ------------------ change movie details when clicking on mpvie panel -------------------------
-//--------------------------and up-date booking heading -----------------------------------------
+// --------------------- navigation programming ------------------------------------------
+// ---------------------------------------------------------------------------------------
+/*
+function navProgram () {
+    let navlinks = document.getElementsByTagName("nav")[0].children;
+    let sections = document.getElementsByTagName("main")[0].children;
+    last = sections[sections.length - 1].getBoundingClientRect().top;
+    if (last <= 0) {
+        console.log('last');
+        navlinks[navlinks.length - 1].classList.add.('active');
+        for (let i = 0; j < navlinks.length - 1: i++)
+            navlinks[i].classList.remove('active');
+    } else {
+        navlinks[sections.length - 1].classList.remove('active');
+        for (let y = 0; y < sections.length; y++){
+            prev = sections[y - 1].getBoundingClientRect().top;
+            next = sections[y].getBoundingClientRect().top;
+            log = prev + ' ' + next;
+            if (prev <= 1-- && next > 0) {
+                log += '<---' + (i - 1);
+                navlinks[i - 1].classList.add('active');
+            } else {
+                log +- ' xx ';
+                navlinks[y - 1].classList.remove('active');
+            }
+            console.log(log);
+        }
+    }
+} */
+
+// ------------------ change movie details when clicking on movie panel -------------------
+//--------------------------and up-date booking heading -----------------------------------
 // now showing movie info array
 // all movie info taken from https://www.imdb.com, for education purposes
 // all trailers taken from https://www.youtube.com, for education purposes
@@ -45,29 +75,30 @@ var nowShowingMovies = {
 // returns true is successful, false if not.
 // sets hidden movie[id] value
 function selectMovie(mvID) {
+    
     // first check if index found
     if (mvID.length > 0) {
         document.getElementById("movie[id]").value = mvID; // sets hidden input movie[id]value
         document.getElementById("nowShowingTitle").innerHTML = nowShowingMovies[mvID]['title'];
         //title in bookings section
-        document.getElementById("booking-movie-title").innerHTML = nowShowingMovies[mvID]['title'];    
-        document.getElementById("rating").innerHTML = nowShowingMovies[mvID]['rating'];    
+        document.getElementById("booking-movie-title").innerHTML = nowShowingMovies[mvID]['title'];
+        document.getElementById("rating").innerHTML = nowShowingMovies[mvID]['rating'];
         document.getElementById("plot").innerHTML = nowShowingMovies[mvID]['plot'];
         document.getElementById("trailer").src = nowShowingMovies[mvID]['trailerLink'];
     
         var buttons = "";
         var len = nowShowingMovies[mvID]['times'].length;
         for (y = 0; y < len; y++) {
-            buttons += '<button id="timeInfo' + [y] + '" onclick=\'setHidden(this.innerHTML)\'>' + nowShowingMovies[mvID]['times'][y] + '</button>';
+            buttons += '<a href="#bookings"><button id="timeInfo' + [y] + '" onclick=\'setHidden(this.innerHTML)\'>' + nowShowingMovies[mvID]['times'][y] + '</button></a>';
         }
         document.getElementById("time-buttons").innerHTML = buttons;
+        document.getElementById("toggle-mov-dets").style.display = "inherit";
         return true;
     } else {
         alert("No movie ID");
         return false;
     }
-    
-}; 
+};
 // gets the movie title, day, time info from day - time select buttons
 // and sets headings for movie title, day and time in booking section.
 // sets hidden values of moovie[day] and movie[hour]
@@ -212,10 +243,10 @@ function callPrice() {
     let movieCheck = document.getElementById('booking-movie-title').innerHTML;
     let hourCheck = document.getElementById('selected-time').innerHTML;
     if (movieCheck == "" && hourCheck == "") {
-        document.getElementById("booking-movie-title").innerHTML = "Please select movie and time slot";
+        document.getElementById("no-tickets").innerHTML = '<a href="#now-showing">* Please select a movie and time</a>';
         return false;
     } else if (hourCheck == "") {
-        document.getElementById("selected-day").innerHTML = " - Please select time slot";
+        document.getElementById("no-tickets").innerHTML = '<a href="#now-showing">* Please select a movie and time</a>';
         return false;
     } else {
         //if selected, calculate the prices
@@ -267,7 +298,7 @@ function checkExpiry() {
 function hasPrice() {
     let hasPrice = document.getElementById("sub-total").innerHTML
     if ((hasPrice == "") || (hasPrice == "$0.00")) {
-        document.getElementById("no-tickets").innerHTML = " * no seats selected";
+        document.getElementById("no-seats").innerHTML = " * no seats selected";
         return false;
     } else {
         return true;
@@ -294,3 +325,25 @@ function formValidate() {
     }
 
 };
+
+// ---------------- toggle between receipt and tickets ---------------------
+// -------------------------------------------------------------------------
+
+function  showReceipt() {
+    document.getElementById('receipt').style.display = 'block';
+    document.getElementById('group-ticket').style.display = 'none';
+    document.getElementById('single-tickets-wrap').style.display = 'none';
+}
+
+function  showGroupTicket() {
+    document.getElementById('receipt').style.display = 'none';
+    document.getElementById('group-ticket').style.display = 'flex';
+    document.getElementById('single-tickets-wrap').style.display = 'none';
+}
+
+function  showSingleTickets() {
+    document.getElementById('receipt').style.display = 'none';
+    document.getElementById('group-ticket').style.display = 'none';
+    document.getElementById('single-tickets-wrap').style.display = 'block';
+}
+

@@ -12,8 +12,8 @@ $mobNumber =$_SESSION['cust']['mobile'];
 $credCardNum = $_SESSION['cust']['card'];
 $expiryDate = $_SESSION['cust']['expiry'];
 $mvID = $_SESSION['movie']['id'];
-$movieTitle = $movieDetails[$mvID]['title'];
-$movieRating = $movieDetails[$mvID]['rating'];
+$_SESSION['$movieTitle'] = $movieDetails[$mvID]['title'];
+$_SESSION['$movieRating'] = $movieDetails[$mvID]['rating'];
 $day = $_SESSION['movie']['day'];
 $hour = $_SESSION['movie']['hour'];
 
@@ -92,10 +92,12 @@ box-shadow: 1px 1px 1px 2px navy;
 
 <body>
     <div class="receipt-buttons">
-        <button>Show receipt</button>
-        <button onclick="window.print()">Print receipt</button>
+        <button onclick="showReceipt()">Show receipt</button>
+        <button onclick="showGroupTicket()">Show Group Ticket</button>
+        <button onclick="showSingleTickets()">Show Single Tickets</button>
+        <button class="print-but" onclick="window.print()">Print</button>
     </div>
-    <article class="receipt">
+    <article id="receipt" class="receipt">
         <h1>Receipt</h1>
 
         <!-- letter header -->
@@ -148,13 +150,13 @@ box-shadow: 1px 1px 1px 2px navy;
                         <?php echo $mvID; ?>
                     </td>
                     <td>
-                        <?php echo $movieTitle; ?>
+                        <?php echo $_SESSION['$movieTitle']; ?>
                     </td>
                     <td>
                         <?php echo $day;?>
                     </td>
                     <td>
-                        <?php echo $hour;?>
+                        <?php echo $hour . ":00";?>
                     </td>
                 </tr>
             </table>
@@ -189,7 +191,7 @@ box-shadow: 1px 1px 1px 2px navy;
         </div>
     </article>
 
-    <article class="group-ticket">
+    <article id="group-ticket" class="group-ticket">
         <div class="grp-tick-dets">
             
             <div class="grp-tick-header-wrap">
@@ -200,8 +202,8 @@ box-shadow: 1px 1px 1px 2px navy;
             
             <div class="grp-tick-movie-dets">
                 <div>
-                <p> <?php echo $movieTitle ?> - <?php echo $movieRating ?></p>
-                <p><?php echo $day ?> - <?php echo $hour ?></p>
+                <p> <?php echo $_SESSION['$movieTitle'] ?> - <?php echo $_SESSION['$movieRating']; ?></p>
+                <p><?php echo $day ?> - <?php echo $hour . ":00"?></p>
                 </div>
                 <div>
                 <?php printSeats2ticket (); ?>
@@ -216,6 +218,9 @@ box-shadow: 1px 1px 1px 2px navy;
             </div>
     </article>
 
+    <article id='single-tickets-wrap'>
+        <?php printSingleTickets (); ?>
+    </article>
 
     <footer>
         <div class="footer-wrap-flex">
