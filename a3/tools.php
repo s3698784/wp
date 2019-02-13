@@ -1,9 +1,10 @@
 <?php
   session_start();
 
-// -------------------- arrays with movie and price data ---------------------
-// ---------------------------------------------------------------------------
+// ------------------ arrays with movie and price data ---------------------
+// -------------------------------------------------------------------------
 
+// detaail of each movie
 $movieDetails = [
     // The girl in the Spider's Web
     "ACT" => [
@@ -63,7 +64,6 @@ $movieDetails = [
     ],
 ];
 
-
 // movie prices
 $prices = [
     //standard seats
@@ -76,7 +76,9 @@ $prices = [
     "FCC" => ["discount" => 21.00, "normal" => 24.00],
 ];
 
-// calculate price helper functions
+// calculate price rate helper functions
+// takes the day and hour are paramater and returns
+// a string of 'discount' or 'normal' depending on the price rate.
 
 function discountOrNormal($day, $hour) {
     $priceClass = "";
@@ -92,39 +94,47 @@ function discountOrNormal($day, $hour) {
     return $priceClass;
 };
 
-// ------------------------ validation helper functions ----------------------
-// ---------------------------------------------------------------------------
+// ------------------- validation helper functions ----------------------
+// ----------------------------------------------------------------------
 
-  function checkExpiry($expDate){
-      $currMonth = intval(date("m"));
-      $currYear = intval(date("Y"));
-      $expMonth = intval(substr($expDate, 5));
-      $expYear = intval(substr($expDate, 0, 4));
+//checks if the credit card is valid, i.e. will not expire in the next month.
+//returns true if it will not expire in the next month
+//returns falase if it will expire in the next month
+function checkExpiry($expDate){
+    $currMonth = intval(date("m"));
+    $currYear = intval(date("Y"));
+    $expMonth = intval(substr($expDate, 5));
+    $expYear = intval(substr($expDate, 0, 4));
       
-      if ($expYear > $currYear) {
+    if ($expYear > $currYear) {
         return true;
-      } else if (($expYear >= $currYear) && ($expMonth >= $currMonth )) {
+    } else if (($expYear >= $currYear) && ($expMonth >= $currMonth )) {
         return true;
-     } else {
+    } else {
         return false;
-     }
-  }
+    }
+}
 
-  function sanName($name) {
-      $sanitizedName = generalSan($name);
-      $sanitizedName = strtolower($sanitizedName);
-      $sanitizedName = ucwords($sanitizedName);
-      return $sanitizedName;
-  }
+//validates and sanitizes name input from form
+//cleans up messy input
+function sanName($name) {
+    $sanitizedName = generalSan($name);
+    $sanitizedName = strtolower($sanitizedName);
+    $sanitizedName = ucwords($sanitizedName);
+    return $sanitizedName;
+}
 
-  function generalSan($input) {
-      $sanitizedInput = trim($input);
-      $sanitizedInput = htmlspecialchars($sanitizedInput);
-      return $sanitizedInput;
-  }
+//validates and sanitizes input from form
+function generalSan($input) {
+    $sanitizedInput = trim($input);
+    $sanitizedInput = htmlspecialchars($sanitizedInput);
+    return $sanitizedInput;
+}
 
-// --------------- functions taken from assignment 3 brief. ------------------
-//----------------------------------------------------------------------------
+// ------------- functions taken from assignment 3 brief. ----------------
+//------------------------------------------------------------------------
+
+// used on debug modules at the bottom web site pages
 
 //preShow()" function prints data and shape/structure of data:
 function preShow( $arr, $returnAsString=false ) {
@@ -150,113 +160,85 @@ $lineEnd="";
     echo "</script>\n\n";
 }
 
-// ---------------------- helper functions for receipt ------------------------
-// ----------------------------------------------------------------------------
+// ------------------ receipt helper functions --------------------------
+// ----------------------------------------------------------------------
 
-function printPurchasedSeats () {
-    if ($_SESSION['$priceSTA'] > 0) {
+// takes index ($i) as parameter, which is the current order number in the 'cart' array.
+//checks that particular order and each seat if one or more is purchased.
+//If purchased, ticket details and price is printed as a table.
+function purchasedSeats ($i) {
+    if ($_SESSION['cart'][$i]['seats']['STA'] > 0) {
         echo "<tr>";
-        echo "<td> STA </td>";
-        echo "<td> Standard Adult </td>";
-        echo "<td> {$_SESSION['seats']['STA']} </td>";
-        printf("<td> $%6.2f </td>", $_SESSION['$priceSTA']);
+        echo "<td class='remove-bord'> STA </td>";
+        echo "<td class='remove-bord'> Standard Adult </td>";
+        echo "<td class='remove-bord'> {$_SESSION['cart'][$i]['seats']['STA']} </td>";
+        printf("<td class='remove-bord'> $%6.2f </td>", $_SESSION['cart'][$i]['prices']['STA']);
         echo "</tr>";
     }
-    if ($_SESSION['$priceSTP'] > 0) {
+    if ($_SESSION['cart'][$i]['seats']['STP'] > 0) {
         echo "<tr>";
-        echo "<td> STP </td>";
-        echo "<td> Standard Concession </td>";
-        echo "<td> {$_SESSION['seats']['STP']} </td>";
-        printf("<td> $%6.2f </td>", $_SESSION['$priceSTP']);
-        echo "<tr>";
+        echo "<td class='remove-bord'> STP </td>";
+        echo "<td class='remove-bord'> Standard Concession </td>";
+        echo "<td class='remove-bord'> {$_SESSION['cart'][$i]['seats']['STP']} </td>";
+        printf("<td class='remove-bord'> $%6.2f </td>", $_SESSION['cart'][$i]['prices']['STP']);
+        echo "</tr>";
     }
-    if ($_SESSION['$priceSTC'] > 0) {
+    if ($_SESSION['cart'][$i]['seats']['STC'] > 0) {
         echo "<tr>";
-        echo "<td> STC </td>";
-        echo "<td> Standard Child </td>";
-        echo "<td> {$_SESSION['seats']['STC']} </td>";
-        printf("<td> $%6.2f </td>", $_SESSION['$priceSTC']);
-        echo "<tr>";
+        echo "<td class='remove-bord'> STC </td>";
+        echo "<td class='remove-bord'> Standard Child </td>";
+        echo "<td class='remove-bord'> {$_SESSION['cart'][$i]['seats']['STC']} </td>";
+        printf("<td class='remove-bord'> $%6.2f </td>", $_SESSION['cart'][$i]['prices']['STC']);
+        echo "</tr>";
     }
-    if ($_SESSION['$priceFCA'] > 0) {
+    if ($_SESSION['cart'][$i]['seats']['FCA'] > 0) {
         echo "<tr>";
-        echo "<td> FCA </td>";
-        echo "<td> First Class Adult </td>";
-        echo "<td> {$_SESSION['seats']['FCA']} </td>";
-        printf("<td> $%6.2f </td>", $_SESSION['$priceFCA']);
-        echo "<tr>";
+        echo "<td class='remove-bord'> FCA </td>";
+        echo "<td class='remove-bord'> First Class Adult </td>";
+        echo "<td class='remove-bord'> {$_SESSION['cart'][$i]['seats']['FCA']} </td>";
+        printf("<td class='remove-bord'> $%6.2f </td>", $_SESSION['cart'][$i]['prices']['FCA']);
+        echo "</tr>";
     }
-    if ($_SESSION['$priceFCP'] > 0) {
+    if ($_SESSION['cart'][$i]['seats']['FCP'] > 0) {
         echo "<tr>";
-        echo "<td> FCP </td>";
-        echo "<td> First Class Concession </td>";
-        echo "<td> {$_SESSION['seats']['FCP']} </td>";
-         printf("<td> $%6.2f </td>", $_SESSION['$priceFCP']);
-        echo "<tr>";
+        echo "<td class='remove-bord'> FCP </td>";
+        echo "<td class='remove-bord'> First Class Concession </td>";
+        echo "<td class='remove-bord'> {$_SESSION['cart'][$i]['seats']['FCP']} </td>";
+        printf("<td class='remove-bord'> $%6.2f </td>", $_SESSION['cart'][$i]['prices']['FCP']);
+        echo "</tr>";
     }
-    if ($_SESSION['$priceFCC'] > 0) {
+    if ($_SESSION['cart'][$i]['seats']['FCC'] > 0) {
         echo "<tr>";
-        echo "<td> FCC </td>";
-        echo "<td> First Class Child </td>";
-        echo "<td> {$_SESSION['seats']['FCC']} </td>";
-        printf("<td> $%6.2f </td>", $_SESSION['$priceFCC']);
-        echo "<tr>";
-    }
-}
-
-function printSeats2ticket () {
-    foreach ($_SESSION['seats'] as $seat => $qty) {
-        if ($qty > 0)
-        echo "<p>" . $seat . " - Qty: " . $qty . "</p>";
+        echo "<td class='remove-bord'> FCC </td>";
+        echo "<td class='remove-bord'> First Class Child </td>";
+        echo "<td class='remove-bord'> {$_SESSION['cart'][$i]['seats']['FCC']} </td>";
+        printf("<td class='remove-bord'> $%6.2f </td>", $_SESSION['cart'][$i]['prices']['FCC']);
+        echo "</tr>";
     }
 }
 
-function printSingleTickets ()
-{
-    $mvID = $_SESSION['movie']['id'];
-    $day = $_SESSION['movie']['day'];
-    $hour = $_SESSION['movie']['hour'];
-    $movieTitle = $_SESSION['$movieTitle'];
-    $movieRating = $_SESSION['$movieRating'];
-    foreach ($_SESSION['seats'] as $seat => $qty) 
-    {
-        if ($qty > 0) 
-        {
-            for ($i = 0; $i < $qty; $i++) 
-            {
-                
-                $singleTicket=<<<"TICKET"
-                    <article class="single-tickets">
-                        <div class="grp-tick-dets">
-                            <div class="grp-tick-header-wrap">
-                                <div><img src="../../media/logo.png" alt="logo" width="55" height="55"> 
-                                </div>
-                                <h2>Lunardo</h2>
-                               <h1>Single Ticket</h1>
-                             </div>
-                            <div class="grp-tick-movie-dets">
-                                <div>
-                                    <p> $movieTitle - $movieRating</p>
-                                    <p> $day - {$hour}:00</p>
-                                </div>
-                                <div>
-                                    <p> $seat  - Qty: 1</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="admit-once">
-                            <p>Admit</p>
-                            <p>One</p>
-                            <p>Person</p>
-                        </div>
-                    </article>
-TICKET;
-                echo $singleTicket;
-            }
-        }
-    }
+//calculates all prices from each seat in the session and prints the
+// total price of the receipt/session.
+//print to 2 decimal places
+function printAllTotalPrice() {
+    $totalPrice = 0;
+    $length = count($_SESSION['cart']);
+    for ($i = 0; $i < $length; $i++)
+        $totalPrice += $_SESSION['cart'][$i]['grandPrice']['totalPrice'];
+    printf("Total Price: $ %6.2f", $totalPrice);
 }
 
+//calculates all prices from each seat in the session, gets the
+//total price of the receipt/session, and then calculate the gst.
+//the GST total is printed to 2 deimal places
+//GST rate is set to 10%
+function printGST(){
+    $totalPrice = 0;
+    $length = count($_SESSION['cart']);
+    for ($i = 0; $i < $length; $i++)
+        $totalPrice += $_SESSION['cart'][$i]['grandPrice']['totalPrice'];
 
-
+    $GST = $totalPrice * 0.1;
+    printf("Total GST:  $ %6.2f", $GST);
+}
 ?>

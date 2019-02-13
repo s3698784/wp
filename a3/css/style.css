@@ -1,5 +1,5 @@
-/* ------------------------------ global styles -----------------------------------
------------------------------------------------------------------------------------*/
+/* --------------------------- global styles -----------------------------------
+-------------- ---------------------------------------------------------------*/
 
 /* add smooth scroll efffect to whole site */
 html {
@@ -57,6 +57,15 @@ td {
 /* elminates some margin problems */
 .elim-margin {
     height: 100%
+}
+
+.remove-bord {
+    border-bottom: 0;
+    padding-top: 8px;
+}
+
+.add-bord {
+    border-bottom: solid 2px #8C2129;
 }
 
 /*--------------- buttons --------------*/
@@ -130,8 +139,8 @@ header {
     margin: 0 auto;
 }
 
-/* ------------------------------------ Navigation --------------------------------------
------------------------------------------------------------------------------------------*/
+/* ------------------------------- Navigation --------------------------------
+-----------------------------------------------------------------------------*/
 
 nav {
     background-color: #591617;
@@ -166,16 +175,6 @@ nav a {
     }
 }
 
-/* styles pseduo elements for nav links */
-
-/*
-nav a:link,
-nav a:visited {
-    color: white;
-    font-size: 1.5em;
-    font-family: 'Staatliches', cursive, sans-serif;
-}*/
-
 nav a {
     color: white;
     font-size: 1.5em;
@@ -197,8 +196,8 @@ nav a:active {
     color: black;
 }
 
-/* -----------------------------------------About us --------------------------------------------- 
---------------------------------------------------------------------------------------------------*/
+/* -----------------------------About us --------------------------------------- 
+-------------------------------------------------------------------------------*/
 
 /* set background */
 #about-us {
@@ -252,8 +251,8 @@ nav a:active {
     padding-top: 30px;
 }
 
-/* -----------------------------------Seats and Prices --------------------------------------- 
----------------------------------------------------------------------------------------------*/
+/* -------------------------Seats and Prices ---------------------------------- 
+------------------------------------------------------------------------------*/
 
 /********------------------ seats ---------------*********/
 
@@ -305,7 +304,7 @@ nav a:active {
     text-align: center;
 }
 
-/********------------------ prices ---------*********/
+/********--------------- prices ---------*********/
 
 /* prices container, contains table */
 .price-cont {
@@ -323,8 +322,8 @@ nav a:active {
     margin-top: 10px;
 }
 
-/* -------------------------------------- now showing -----------------------------------------
---------------------------inlcuding trailer and pick time/day buttons---------------------------*/
+/* ---------------------------- now showing -----------------------------------
+------------------inlcuding trailer and pick time/day buttons-----------------*/
 
 /* set background */
 #now-showing {
@@ -428,8 +427,8 @@ nav a:active {
     flex-basis: 10%;
 }
 
-/* ----------------------------------------Bookings ---------------------------------------- 
---------------------------------------------------------------------------------------------*/
+/* ------------------------------Bookings -------------------------------------- 
+-------------------------------------------------------------------------------*/
 
 /************** ------ positioning and background --------********/
 
@@ -452,7 +451,7 @@ nav a:active {
 .booking-wrap {
     height: 100%;
     max-width: 1000px;
-    margin: 5%;
+    margin: 3% 5% 10px 5%;
     background-color: hsla(0, 0%, 95%, .9);
     border-radius: 6px;
     border: solid 2px #8C2129;
@@ -578,16 +577,15 @@ input:focus {
 #no-tickets p, #no-tickets, #no-seats{
     padding-bottom: 10px;
     color: red;
+    text-align: center;
 }
-/*
-#no-tickets p:link, #no-tickets p:visited,
-#no-tickets:link, #no-tickets:visited{
-    padding-bottom: 10px;
-    color: red;
-}*/
 
 #exp-err{
     color:red;
+}
+
+#no-tickets {
+    text-align: center;
 }
 
 #no-tickets p a:link, #no-tickets p a:visited,
@@ -600,8 +598,40 @@ input:focus {
     color: blue;
     background-color: #9AFF8D;
 }
-/* ----------------------------------------- footer -------------------------------------- 
--------------------------------------------------------------------------------------------*/
+
+/* --------------- purchase summary ------------------- */
+.pur-sum-flex-wrap{
+    display: flex;
+    justify-content: center;
+}
+.purchase-sum {
+    margin: 0 auto;
+    min-width: 500px;
+    max-width: 1000px;
+    display: inline-block;
+    background-color: hsla(0, 0%, 95%, .9);
+    border-radius: 6px;
+    border: solid 2px #8C2129;
+    padding: 20px;
+}
+
+.purchase-sum h3 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.purchase-sum p{
+    text-align: right;
+    font-size: 1.2em;
+    padding: 2px 10px 5px 10px;
+}
+
+#cartCheck {
+    display: none;
+}
+
+/* -------------------------------- footer ----------------------------------- 
+------------------------------------------------------------------------------*/
 
 /* set background */
 footer {
@@ -647,17 +677,20 @@ address {
 /* --------------------------- receipt -------------------------------------
 ----------------------------------------------------------------------------*/
 
+/* buttons on top of the receipt */
+.receipt-buttons {
+    display: flex;
+    justify-content: center;
+    background-color: #591617;
+}
+
+/* container for receipt */
 .receipt {
     max-width: 800px;
     background-color: hsla(0, 0%, 95%, .7);
     border: solid 2px #8C2129;
     margin: 20px auto;
     padding: 30px 50px 80px 50px; 
-}
-
-.receipt-buttons {
-    display: flex;
-    justify-content: center;
 }
 
 .receipt h1 {
@@ -712,24 +745,19 @@ address {
     font-weight: bold:
 }
 
-/* -------------------------- ticket styles --------------------------------------
----------------------------------------------------------------------------------- */
-
-.group-ticket {
-    display: none;
-    max-width: 800px;
-    min-height: 242px;
-    background-color: hsla(0, 0%, 95%, .7);
-    border: solid 2px #8C2129;
-    margin: 20px auto;
-    padding: 5px;
+.rec-tot-price {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
-#single-tickets-wrap {
-    display: none;
-}
+/* -------------------------- ticket styles -----------------------------------
+----------------------------------------------------------------------------- */
 
-.single-tickets {
+/* container for each ticket */
+.group-ticket, .single-tickets {
     display: flex;
     max-width: 800px;
     min-height: 242px;
@@ -737,6 +765,11 @@ address {
     border: solid 2px #8C2129;
     margin: 20px auto;
     padding: 5px;
+}
+
+/* this setting changes with javascript when called */
+#group-ticket-wrap, #single-tickets-wrap {
+    display: none;
 }
 
 .grp-tick-dets {
@@ -781,24 +814,38 @@ address {
     height: 70%;
     align-items: center;
 }
-.grp-tick-movie-dets > div {
-    flex-basis: 49%;
+.tickMovDets {
+    flex-basis: 69%;
     font-size: 1.3em;
     line-height: 1.6em;
     padding-left: 20px;
     padding-top: 20px;
 }
 
+.tickSeatDets {
+    flex-basis: 29%;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    padding-left: 20px;
+    padding-top: 20px;
+}
 
-/* -------------------------- print styles ---------------------------------------
----------------------------------------------------------------------------------- */
+.group-ticket span, .single-tickets span {
+    font-weight: bold;
+}
+
+
+/* -------------------------- print styles ------------------------------------
+------------------------------------------------------------------------------ */
 
 @media print {
     
+    /* removes elements which are not needed */
     .receipt-buttons, footer, .debug-module {
         display: none;
     }
     
+    /* removes border and background color when printing receipt */
     .receipt {
         max-width: 100%;
         border: 0;
@@ -806,18 +853,10 @@ address {
         page-break-after:auto;
     }
     
+    /* removes background color when printing tickets */
     .group-ticket, .single-tickets {
         
         background-color: transparent;
         page-break-after: auto;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

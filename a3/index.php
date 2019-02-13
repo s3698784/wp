@@ -1,32 +1,60 @@
 <?php
 include_once('tools.php');
 
-
-// initialse form input variables
+// initialse variables to save form input variables and error messages/checks
 $hasError = false;
-$name = "";
-$nameErrMsg = "";
-$email = "";
-$emailErrMsg = "";
+$name =  $nameErrMsg = "";
+$email = $emailErrMsg = "";
 $mobNumber = $mobErrMsg ="";
 $credCardNum = $creditErrMsg= "";
 $expiryDate = $expiryErrMsg = "";
-$mvID = $mvErr = "";
-$mvTitle = "";
+$mvID = $mvErr  = $mvTitle = "";
 $day = $dayErr = "";
 $hour = $hourErr = "";
 $seatErr = "";
-$stanAdult = "";
-$stanConcession = "";
-$stanChild = "";
-$firstAdult = "";
-$firstConcession = "";
-$firstChild = "";
+$stanAdult = $stanConcession = $stanChild = "";
+$firstAdult = $firstConcession = $firstChild = "";
+$notSameErr = "";
+$failedFirstCheck = false;
 
-// check is POST has been sent
+//used while developing to reset session.
+//if(isset($_POST['reset_session'])){
+//              session_unset();
+//            } 
 
 if (!empty($_POST)) {
-    // validate and sanitise 'name'.
+//check if customer details the same as previous ticket
+    //cannot have different customers in the same session.
+    
+    if (isset($_SESSION['cart'][0]['cust']['name'])){
+        if(($_SESSION['cart'][0]['cust']['name'] != $_POST['cust']['name']) ||
+           ($_SESSION['cart'][0]['cust']['email'] != $_POST['cust']['email']) ||
+           ($_SESSION['cart'][0]['cust']['mobile'] != $_POST['cust']['mobile'])){
+            $hasError = true;
+            $failedFirstCheck = true;
+            $notSameErr = '<span>* Must use same customer details as last ticket</span>';
+        }
+    }
+    
+    //if checkout and no movie or seat selected, go to receipt page
+    $seatCheck = 0;
+    foreach ($_POST['seats'] as $seat => $numSeats)
+        $seatCheck += $numSeats;
+    
+    $movieDetCheck = 0;
+    foreach ($_POST['movie'] as $det => $detSet)
+        if ($detSet != "")
+           $movieDetCheck++;
+    
+    if ((isset($_POST['check-out'])) && (!$hasError) &&
+       ($movieDetCheck == 0) && ($seatCheck == 0)){
+           header("Location: receipt.php");
+    }
+}
+
+// check is POST has been sent
+if (!empty($_POST) && (!$failedFirstCheck)) {
+    // validate and sanitise 'name'. //send error message if not valid
     if (empty($_POST['cust']['name'])){
         $nameErrMsg = '<span style="color:red">* Please enter name</span>';
         $hasError = true;
@@ -38,7 +66,7 @@ if (!empty($_POST)) {
         }
      }
     
-    //validate and sanitise 'email'
+    //validate and sanitise 'email'. //send error message if not valid
     if (empty($_POST['cust']['email'])){
         $emailErrMsg = '<span style="color:red">* Please enter email</span>';
         $hasError = true;
@@ -51,7 +79,7 @@ if (!empty($_POST)) {
         }
     }
     
-    //validate and sanitise 'mobile number'
+    //validate and sanitise 'mobile number'. //send error message if not valid
     if (empty($_POST['cust']['mobile'])){
         $mobErrMsg = '<span style="color:red">* Please eneter a mobile number</span>';
         $hasError = true;
@@ -63,7 +91,7 @@ if (!empty($_POST)) {
         }
      }
     
-    //validate and sanitise 'credit card number'
+    //validate and sanitise 'credit card number'. //send error message if not valid
    if (empty($_POST['cust']['card'])){
         $creditErrMsg = '<span style="color:red">* Please eneter a credit card number</span>';
         $hasError = true;
@@ -74,7 +102,8 @@ if (!empty($_POST)) {
             $hasError = true;
         }
      }
-    
+   
+    //validate 'credit card number'. //send error message if not valid
     if (empty($_POST['cust']['expiry'])){
         $expiryErrMsg = '<span style="color:red">* Please eneter a credit card expiry</span>';
         $hasError = true;
@@ -86,7 +115,7 @@ if (!empty($_POST)) {
         }
      }
     
-    //validate and sanitise move id
+    //validate and sanitise move id. //send error message if not valid
     if (empty($_POST['movie']['id'])) {
         $hasError = true;
         $mvErr = '<a href="#now-showing"><span style="color:red">* Please select a movie and time</span></a>';
@@ -94,7 +123,7 @@ if (!empty($_POST)) {
         $mvID = generalSan($_POST['movie']['id']);
     }
     
-    //validate and sanitise selected day
+    //validate and sanitise selected day. //send error message if not valid
     if (empty($_POST['movie']['day'])) {
         $hasError = true;
         $mvErr = '<a href="#now-showing"><span style="color:red">* Please select a movie and time</span></a>';
@@ -102,14 +131,15 @@ if (!empty($_POST)) {
         $day = generalSan($_POST['movie']['day']);
     }
     
-    //validate and sanitise selected hour
+    //validate and sanitise selected hour. //send error message if not valid
     if (empty($_POST['movie']['hour'])) {
         $hasError = true;
         $mvErr = '<a href="#now-showing"><span style="color:red">* Please select a movie and time</span></a>';
     } else {
         $hour = generalSan($_POST['movie']['hour']);
     }
-     
+    
+    //validate and sanitise seat inputs. //send error message if not valid
     $hasAmount = false;
     foreach ($_POST['seats'] as $seat => $qty) {
         if ($qty > 0){
@@ -142,28 +172,67 @@ if (!empty($_POST)) {
   }
 }//end of post checks
 
+// organise sanitised input stored in variables to array.
 if (!empty($_POST) && $hasError == false) {
-    $_SESSION['cust']['name'] = $name;
-    $_SESSION['cust']['email'] = $email;
-    $_SESSION['cust']['mobile'] = $mobNumber;
-    $_SESSION['cust']['card'] = $credCardNum;
-    $_SESSION['cust']['expiry'] = $expiryDate;
-    $_SESSION['movie']['id'] = $mvID;
-    $_SESSION['movie']['day'] = $day;
-    $_SESSION['movie']['hour'] = $hour;
-    $_SESSION['seats']['STA'] = $stanAdult;
-    $_SESSION['seats']['STP'] = $stanConcession;
-    $_SESSION['seats']['STC'] = $stanChild;
-    $_SESSION['seats']['FCA'] = $firstAdult;
-    $_SESSION['seats']['FCP'] = $firstConcession;
-    $_SESSION['seats']['FCC'] = $firstChild;
-      
-    header("Location: receipt.php");
+    $order['cust']['name'] = $name;
+    $order['cust']['email'] = $email;
+    $order['cust']['mobile'] = $mobNumber;
+    $order['cust']['card'] = $credCardNum;
+    $order['cust']['expiry'] = $expiryDate;
+    $order['movie']['id'] = $mvID;
+    $order['movie']['title'] =
+        $movieDetails[$mvID]['title'];
+    $order['movie']['rating'] =
+        $movieDetails[$mvID]['rating'];
+    $order['movie']['day'] = $day;
+    $order['movie']['hour'] = $hour;
+    $order['seats']['STA'] = $stanAdult;
+    $order['seats']['STP'] = $stanConcession;
+    $order['seats']['STC'] = $stanChild;
+    $order['seats']['FCA'] = $firstAdult;
+    $order['seats']['FCP'] = $firstConcession;
+    $order['seats']['FCC'] = $firstChild;
+    
+    //determine pay rate: normal or discounted
+    $priceRate = discountOrNormal($day, $hour);
+    
+    //calculate price for each seat and store price in current order array
+    $order['prices']['STA'] =
+        $prices['STA'][$priceRate] * $stanAdult;
+    $order['prices']['STP'] =
+        $prices['STP'][$priceRate] * $stanConcession;
+    $order['prices']['STC'] =
+        $prices['STC'][$priceRate] * $stanChild;
+    $order['prices']['FCA'] =
+        $prices['FCA'][$priceRate] * $firstAdult;;
+    $order['prices']['FCP'] =
+        $prices['FCP'][$priceRate] * $firstConcession;
+    $order['prices']['FCC'] =
+        $prices['FCC'][$priceRate] * $firstChild;
+
+    //calculate current order total price
+    $currTotPrice = 0;
+   foreach ($order['prices'] as $seat => $price){
+       $currTotPrice += $price;
+   }
+    //set prices in the current order array
+    $order['grandPrice']['totalPrice'] = $currTotPrice;
+    $order['grandPrice']['gst'] = $currTotPrice * 0.1;
+    
+    //add current order array to cart
+    $_SESSION['cart'][] = $order;
+    
+    //if checkout selected, send to receipt page.
+    if (isset($_POST['check-out'])) {
+        header("Location: receipt.php");
+    } else {
+        header("Location: index.php#now-showing");
+    }
 }
 
 ?>
-    <!DOCTYPE html>
-    <html lang='en'>
+<!DOCTYPE html>
+<html lang='en'>
 
     <head>
         <meta charset="utf-8">
@@ -177,9 +246,7 @@ if (!empty($_POST) && $hasError == false) {
         <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
         <!-- <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.css"> -->
         <script src='../wireframe.js'></script>
-        <style>
-            <?php include("css/style.css");
-            ?>
+        <style><?php include("css/style.css");?>
         </style>
         <style>
         <?php // This PHP code inserts CSS to style the "current page" link in the nav area
@@ -187,45 +254,44 @@ if (!empty($_POST) && $hasError == false) {
             $bits=explode('/', $here);
             $filename=$bits[count($bits)-1];
             echo "nav a[href$='$filename'] {
- box-shadow: 1px 1px 1px 2px navy;
-        }
-        ";
+                 box-shadow: 1px 1px 1px 2px navy;
+            }";
  ?>
         </style>
+        <!-- navigation change active button efect program -->
+        <!-- code taken from Trevor's tutorial -->
         <script>
-                window.onscroll = function () {
-                   
-                    console.clear();
-                    let navlinks = document.getElementsByTagName("nav")[0].children;
-                    console.log(navlinks);
-                    let sections = document.getElementsByTagName("main")[0].children;
-                    console.log(sections);
-                    var last = sections[sections.length - 1].getBoundingClientRect().top;
-                    if (last <= 0) {
-                        console.log('last');
-                        navlinks[navlinks.length - 1].classList.add("active");
-                        for (let j = 0; j < navlinks.length - 1; j++) 
-                            navlinks[j].classList.remove("active");
-                    }
-                    else {
+            window.onscroll = function () {
+            console.clear();
+            let navlinks = document.getElementsByTagName("nav")[0].children;
+            console.log(navlinks);
+            let sections = document.getElementsByTagName("main")[0].children;
+            console.log(sections);
+            var last = sections[sections.length - 1].getBoundingClientRect().top;
+            if (last <= 4) {
+                console.log('last');
+                navlinks[navlinks.length - 1].classList.add("active");
+                for (let j = 0; j < navlinks.length - 1; j++) 
+                    navlinks[j].classList.remove("active");
+                } 
+                else {
                         navlinks[sections.length - 1].classList.remove("active");
                         for (let i = 1; i < sections.length; i++) {
                             let prev = sections[i - 1].getBoundingClientRect().top;
                             let next = sections[i].getBoundingClientRect().top;
                             let log = prev + ' ' + next;
-                            if (prev <= 100 && next > 10) {
+                            if (prev <= 100 && next > 0) {
                                 log += '<--- ' + (i - 1);
                                 navlinks[i - 1].classList.add("active");
-                            }
+                            } 
                             else {
-                                log += ' xxx ';
-                                navlinks[i - 1].classList.remove("active");
-                            }
+                                    log += ' xxx ';
+                                    navlinks[i - 1].classList.remove("active");
+                                 }
                             console.log(log);
                         }
                     }
-                }
-            
+            }
             </script>
     </head>
 
@@ -244,6 +310,13 @@ if (!empty($_POST) && $hasError == false) {
             <a href='#bookings'>Bookings</a> 
         </nav>
         
+        <!-- used while testing to reset session data-->
+       <!--  <div>
+             <form method="post" action="index.php">
+                 <button name ="reset_session" type="submit">reset session</button>
+             </form>
+         </div>-->
+        
         <main>
             <!------------------------about us-------------------------->
             <!---------------------------------------------------------->
@@ -256,13 +329,12 @@ if (!empty($_POST) && $hasError == false) {
                         <p>Lunardo is a local cinema located in the small country city of Traralgon. We do our best to give all customers a great exprience </p>
                         <p>To really show this we have recently made some upgrades, we have:</p>
                         <ul>
-                            <li>Extensivly improved and renovated the whole cinema</li>
-                            <br>
-                            <li>New seats for all, including reclinable first class seats</li>
-                            <br>
-                            <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. </li>
-                            <br>
-                            <!-- external link aout the sound system upgrades--><a class="dolby" href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more Dolby details</a> </ul>
+                            <li>Extensivly improved and renovated the whole cinema</li><br>
+                            <li>New seats for all, including reclinable first class seats</li><br>
+                            <li>Major projection and sound systems upgrades with top off the range 3D Dolby Vision projection and Dolby Atmos sound. </li><br>
+                            <!-- external link aout the sound system upgrades-->
+                            <a class="dolby" href="https://www.dolby.com/us/en/cinema" target="_blank">Cick here for more Dolby details</a> 
+                        </ul>
                         <p>If you are a local or just visiting, you are always welcome to come by our cinema to enjoy some popcorn and a relaxing film</p>
                     </div>
                 </div>
@@ -277,8 +349,10 @@ if (!empty($_POST) && $hasError == false) {
                         <div class="seat-cont">
                             <h3>All new seating</h3>
                             <p>We have installed new seats through out the whole cinema</p>
-                            <!-- images of seats --><img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=300>
-                            <div class="img-info">Spacious and comfortable standard seats</div> <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=300>
+                            <!-- images of seats -->
+                            <img class="stand-seat" src='../../media/standard-seats.jpeg' alt='standard seats' width=300>
+                            <div class="img-info">Spacious and comfortable standard seats</div> 
+                            <img class="first-seat" src='../../media/first-class-seats.png' alt='first class seats' width=300>
                             <div class="img-info">Recline to watch in style with all new first class seating</div>
                         </div>
                         <!------ all prices - set out in a table ------>
@@ -289,7 +363,6 @@ if (!empty($_POST) && $hasError == false) {
                                 <theader>
                                     <tr>
                                         <th>Seat Type</th>
-                                        <!--   <th>Seat Code</th> -->
                                         <th>Discounted Price* </th>
                                         <th>Normal Price</th>
                                     </tr>
@@ -297,38 +370,32 @@ if (!empty($_POST) && $hasError == false) {
                                 <!-- standard tickets -->
                                 <tr>
                                     <th class="table-space">Standard Adult</th>
-                                    <!--  <td class="table-space">STA</td> -->
                                     <td class="table-space">$14.00</td>
                                     <td class="table-space">$19.80</td>
                                 </tr>
                                 <tr>
                                     <th>Standard Concession</th>
-                                    <!-- <td>STP</td> -->
                                     <td>$12.50</td>
                                     <td>$17.50</td>
                                 </tr>
                                 <tr>
                                     <th>Standard Child</th>
-                                    <!-- <td>STC</td> -->
                                     <td>$11.00</td>
                                     <td>$15.30</td>
                                 </tr>
                                 <!-- first class tickets -->
                                 <tr>
                                     <th class="table-space">First Class Adult</th>
-                                    <!-- <td class="table-space">FCA</td> -->
                                     <td class="table-space">$24.00</td>
                                     <td class="table-space">$30.00</td>
                                 </tr>
                                 <tr>
                                     <th>First Class Concession</th>
-                                    <!-- <td>FCP</td> -->
                                     <td>$22.50</td>
                                     <td>$27.00</td>
                                 </tr>
                                 <tr>
                                     <th>First Class Child</th>
-                                    <!-- <td>FCC</td> -->
                                     <td>$21.00</td>
                                     <td>$24.00</td>
                                 </tr>
@@ -373,7 +440,7 @@ if (!empty($_POST) && $hasError == false) {
                                 <td><time>6:00pm</time></td>
                             </tr>
                         </table>
-                    </div>
+                      </div>
                     </a>
                    
                     <a class='now-showing-a' href='#toggle-mov-dets'>
@@ -513,7 +580,7 @@ if (!empty($_POST) && $hasError == false) {
                                             <!-- select standard adult tickets-->
                                             <label>Adults</label>
                                             <select id="seats[STA]" name='seats[STA]' oninput="callPrice()">
-                                                <option value='' selected>Please Select</option>
+                                                <option value='0' selected>Please Select</option>
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>
@@ -528,7 +595,7 @@ if (!empty($_POST) && $hasError == false) {
                                             <!-- select standard concession tickets-->
                                             <label>Concession</label>
                                             <select id="seats[STP]" name='seats[STP]' oninput="callPrice()">
-                                                <option value='' selected>Please Select</option>
+                                                <option value='0' selected>Please Select</option>
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>
@@ -543,7 +610,7 @@ if (!empty($_POST) && $hasError == false) {
                                             <!-- select standard children tickets-->
                                             <label>Children</label>
                                             <select id="seats[STC]" name='seats[STC]' oninput="callPrice()">
-                                                <option value='' selected>Please Select</option>
+                                                <option value='0' selected>Please Select</option>
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>
@@ -562,7 +629,7 @@ if (!empty($_POST) && $hasError == false) {
                                             <!-- select number of first class adult tickets-->
                                             <label>Adults</label>
                                             <select id="seats[FCA]" name='seats[FCA]' oninput="callPrice()">
-                                                <option value='' selected>Please Select</option>
+                                                <option value='0' selected>Please Select</option>
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>
@@ -577,7 +644,7 @@ if (!empty($_POST) && $hasError == false) {
                                             <!-- select number of first class concession tickets-->
                                             <label>Concession</label>
                                             <select id="seats[FCP]" name='seats[FCP]' oninput="callPrice()">
-                                                <option value='' selected>Please Select</option>
+                                                <option value='0' selected>Please Select</option>
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>
@@ -592,7 +659,7 @@ if (!empty($_POST) && $hasError == false) {
                                             <!-- select number of first class children tickets-->
                                             <label>Children</label>
                                             <select id="seats[FCC]" name='seats[FCC]' oninput="callPrice()">
-                                                <option value='' selected>Please Select</option>
+                                                <option value='0' selected>Please Select</option>
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>
@@ -611,55 +678,105 @@ if (!empty($_POST) && $hasError == false) {
                                         <fieldset>
                                             <legend>Customer Details</legend>
                                             <label for='name'>Name</label>
-                                            <input name='cust[name]' type='text' id='name' placeholder='Enter name' value="<?php echo $name; ?>" required pattern='[a-zA-Z \-.’]{1,100}' title='Western names only'>
+                                            <input name='cust[name]' type='text' id='name' placeholder='Enter name' 
+                                            value="<?php echo (isset($_SESSION['cart'])) ? $_SESSION['cart'][0]['cust']['name'] : ""; ?>" 
+                                            required pattern='[a-zA-Z \-.’]{1,100}' title='Western names only'>
                                             <p><?php echo $nameErrMsg; ?></p>
                                             
                                             <label for='email'>Email</label>
-                                            <input name='cust[email]' type='email' id='email' placeholder="Enter email" value="<?php echo $email; ?>" required>
-                                            <p>
-                                                <?php echo $emailErrMsg?>
-                                            </p>
-                                            <!-- required pattern='((\(04\))|(04)|(\+614))( ?\d){8}'-->
+                                            <input name='cust[email]' type='email' id='email' placeholder="Enter email" 
+                                            value="<?php echo (isset($_SESSION['cart'])) ? $_SESSION['cart'][0]['cust']['email'] : ""; ?>" 
+                                            required>
+                                            <p><?php echo $emailErrMsg?></p>
+                                            
                                             <label for='mob-num'>Mobile</label>
-                                            <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number" value="<?php echo $mobNumber; ?>" title="Australian mobile numbers only: e.g. start with 04" required pattern='((\(04\))|(04)|(\+614))( ?\d){8}'>
-                                            <p>
-                                                <?php echo $mobErrMsg?>
-                                            </p>
+                                            <input name='cust[mobile]' type='tel' id='mob-num' placeholder="Enter mobile number" 
+                                            value="<?php echo (isset($_SESSION['cart'])) ? $_SESSION['cart'][0]['cust']['mobile'] : ""; ?>" 
+                                            title="Australian mobile numbers only: e.g. start with 04" required pattern='((\(04\))|(04)|(\+614))( ?\d){8}'>
+                                            <p><?php echo $mobErrMsg?></p>
                                             
                                             <label for='cred-card'>Credit Card</label>
-                                            <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number' value="<?php echo $credCardNum; ?>" required pattern="[0-9 \-]{15,19}" title="* Please enter credit card number with min 15 to max 19 numbers including spaces">
-                                            <p>
-                                                <?php echo $creditErrMsg ?>
-                                            </p>
-                                            <!-- required oninput="checkExpiry()" id='exp-err' -->
+                                            <input name='cust[card]' type='text' id='cred-card' placeholder='Enter credit card number' 
+                                            value="<?php echo (isset($_SESSION['cart'])) ? $_SESSION['cart'][0]['cust']['card'] : ""; ?>" 
+                                            required pattern="[0-9 \-]{15,19}" title="* Please enter credit card number with min 15 to max 19 numbers including spaces">
+                                            <p><?php echo $creditErrMsg ?></p>
+                                            
                                             <label for='expiry'>Expiry Date</label>
-                                            <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' value="<?php echo $expiryDate; ?>" required oninput="checkExpiry()" >
+                                            <input name='cust[expiry]' type='month' id='expiry' placeholder='YYYY-MM' 
+                                            value="<?php echo (isset($_SESSION['cart'])) ? $_SESSION['cart'][0]['cust']['expiry'] : ""; ?>" 
+                                            required oninput="checkExpiry()" >
                                             <p id='exp-err'>
                                                 <?php echo $expiryErrMsg ?>
                                             </p>
                                         </fieldset>
                                     </div>
+                                    
                                     <!-- total amount and order button -->
-                                    <div id='no-tickets'>
-                                    <p><?php echo $mvErr;?></p>
-                                    <p><?php echo $seatErr;?></p>
+                                    
+                                </div>
+                                <div id='no-tickets'>
+                                    <?php echo $mvErr;?>
+                                    <?php echo $seatErr;?>
+                                    <?php echo $notSameErr;?>
                                     </div>
                                     <p id="no-seats"></p>
-                                </div>
                                 <div class="total-order-wrap"> <span>Total:</span>
                                     <output name="sub-total" id="sub-total"></output>
-                                    <button class="order-button" name='order' type='submit' value='order'>Order</button>
+                                    <!-- add to cart -->
+                                    <button class="add-cart-button" name='add-cart' type='submit' value='add-cart'>Add to Cart</button>
+                                    <!-- check out -->
+                                    <button class="check-out-button" name='check-out' type='submit' value='check-out'>Check Out</button>
                                 </div>
                         </form>
                     </div>
+                </div>
+                <?php //used to check is there is session data when checking out and not adding another movie. A checkout will be allowed if another movies has been already added to cart - keep display hidden?>
+                <div id='cartCheck'>
+                <?php
+                    if (isset($_SESSION['cart']))
+                        echo $_SESSION['cart'][0]['movie']['id'];
+                    else
+                        echo "";
+                    ?>
+                </div>
+                <div class='pur-sum-flex-wrap'>
+                 <div class="purchase-sum">
+                    <h3 onclick='subPriceSum()'>Cart Summary</h3>
+                    <div>
+                       <?php
+                        if (isset($_SESSION['cart'])){
+                            $length = count($_SESSION['cart']);
+                            for ($i=0; $i < $length; $i++){
+                                echo "<p>";
+                                echo $_SESSION['cart'][$i]['movie']['title'] . ' - ';
+                                echo $_SESSION['cart'][$i]['movie']['rating'] . ' - ';
+                                echo $_SESSION['cart'][$i]['movie']['day'] . ' - ';
+                                echo $_SESSION['cart'][$i]['movie']['hour'] . ':00 - ';
+                                foreach ($_SESSION['cart'][$i]['seats'] as $seat => $qty)
+                                    if ($qty > 0)
+                                        echo 'Seat: ' . $seat .' - Qty: ' . $qty . ' - ';
+                                printf("Sub Total: $ %6.2f", $_SESSION['cart'][$i]['grandPrice']['totalPrice']);
+                                echo "</p>";
+                            }
+                        } else
+                            echo "";
+                          echo "<p>";
+                          if (isset($_SESSION['cart']))
+                              printf (printAllTotalPrice());
+                          echo "</p>";
+                        ?>
+                    </div>
+                </div>
                 </div>
             </section>
         </main>
         <footer>
             <div class="footer-wrap-flex">
                 <div class="footer-content">
+                   <!-- contact details -->
                     <div class="contact-dets"> <span>Contact: </span> <span>Lunardo Cinema, </span> <address>123 Fake Street, Tralralgon, </address> <span>lunardo@lunardocinema.com.au</span> </div>
                     <div>&copy;
+                        <!-- student details -->
                         <script>
                             document.write(new Date().getFullYear());
                         </script> James Ciuciu, s3698784. https://github.com/s3698784/wp. Last modified </div>
@@ -672,16 +789,12 @@ if (!empty($_POST) && $hasError == false) {
         </footer>
         <!-- debug module -->
         <?php
-           
             preShow($_POST);
             preShow($_SESSION);
-            $aaarg = preShow($my_bad_array, true);
             printMyCode();
             ?>
             <script>
                 <?php include("js/tools.js"); ?>
             </script>
-            
     </body>
-
-    </html>
+</html>

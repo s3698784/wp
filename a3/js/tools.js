@@ -1,35 +1,6 @@
-// --------------------- navigation programming ------------------------------------------
-// ---------------------------------------------------------------------------------------
-/*
-function navProgram () {
-    let navlinks = document.getElementsByTagName("nav")[0].children;
-    let sections = document.getElementsByTagName("main")[0].children;
-    last = sections[sections.length - 1].getBoundingClientRect().top;
-    if (last <= 0) {
-        console.log('last');
-        navlinks[navlinks.length - 1].classList.add.('active');
-        for (let i = 0; j < navlinks.length - 1: i++)
-            navlinks[i].classList.remove('active');
-    } else {
-        navlinks[sections.length - 1].classList.remove('active');
-        for (let y = 0; y < sections.length; y++){
-            prev = sections[y - 1].getBoundingClientRect().top;
-            next = sections[y].getBoundingClientRect().top;
-            log = prev + ' ' + next;
-            if (prev <= 1-- && next > 0) {
-                log += '<---' + (i - 1);
-                navlinks[i - 1].classList.add('active');
-            } else {
-                log +- ' xx ';
-                navlinks[y - 1].classList.remove('active');
-            }
-            console.log(log);
-        }
-    }
-} */
+// ---------- change movie details when clicking on movie panel ---------------
+//----------------------and up-date booking heading ---------------------------
 
-// ------------------ change movie details when clicking on movie panel -------------------
-//--------------------------and up-date booking heading -----------------------------------
 // now showing movie info array
 // all movie info taken from https://www.imdb.com, for education purposes
 // all trailers taken from https://www.youtube.com, for education purposes
@@ -70,13 +41,12 @@ var nowShowingMovies = {
          trailerLink: "https://www.youtube.com/embed/-B71eyB_Onw"
     }
 };
+
 //setMovieTitle(mvID) takes the movie code as parameter given in the html.
 // The funtion finds the mvID, then outputs, title, rating, plot, and select time buttons.
 // returns true is successful, false if not.
 // sets hidden movie[id] value
 function selectMovie(mvID) {
-    
-    // first check if index found
     if (mvID.length > 0) {
         document.getElementById("movie[id]").value = mvID; // sets hidden input movie[id]value
         document.getElementById("nowShowingTitle").innerHTML = nowShowingMovies[mvID]['title'];
@@ -85,7 +55,6 @@ function selectMovie(mvID) {
         document.getElementById("rating").innerHTML = nowShowingMovies[mvID]['rating'];
         document.getElementById("plot").innerHTML = nowShowingMovies[mvID]['plot'];
         document.getElementById("trailer").src = nowShowingMovies[mvID]['trailerLink'];
-    
         var buttons = "";
         var len = nowShowingMovies[mvID]['times'].length;
         for (y = 0; y < len; y++) {
@@ -99,6 +68,7 @@ function selectMovie(mvID) {
         return false;
     }
 };
+
 // gets the movie title, day, time info from day - time select buttons
 // and sets headings for movie title, day and time in booking section.
 // sets hidden values of moovie[day] and movie[hour]
@@ -121,7 +91,7 @@ function setHidden(timeInfo) {
 };
 
 //helper function
-//returns the hour from 12hr in 24hr. Must have am or pm included
+//returns the hour from 12hr in 24hr. Must have am or pm included e.g. '3:00 pm'
 function return24Hour(time) {
     let hour = time.substr(0, 2);
     if (time.includes("pm") && hour != 12) {
@@ -142,9 +112,10 @@ function return24Hour(time) {
     }
 };
 
-//-------------------------------- calculate prices -----------------------------------------
-//-------------------------------------------------------------------------------------------
+//-------------------------- calculate prices -------------------------------
+//---------------------------------------------------------------------------
 
+//current prices
 var prices = {
     //standard seats
     STA: {
@@ -175,13 +146,11 @@ var prices = {
     }
 };
 
-
+//checks day and time, then returns price rate as a string
 function discountOrNormal() {
     let day = document.getElementById("movie[day]").value;
     let hour = document.getElementById("movie[hour]").value;
     let priceClass = "";
-    //   alert(hour);
-    //    alert(day);
 
     if (day == 'SAT' || day == 'SUN')
         priceClass = 'normal';
@@ -195,7 +164,7 @@ function discountOrNormal() {
     return priceClass;
 };
 
-// return standard seat price
+// return standard adult seat price as a number
 function setSTAPrice() {
     let qty = document.getElementById("seats[STA]").value;
     let priceClass = discountOrNormal();
@@ -203,6 +172,7 @@ function setSTAPrice() {
     return STAPrice;
 };
 
+// return standard concession seat price as a number
 function setSTPPrice() {
     let qty = document.getElementById("seats[STP]").value;
     let priceClass = discountOrNormal();
@@ -210,6 +180,7 @@ function setSTPPrice() {
     return STPPrice;
 };
 
+// return standard child seat price as a number
 function setSTCPrice() {
     let qty = document.getElementById("seats[STC]").value;
     let priceClass = discountOrNormal();
@@ -217,6 +188,7 @@ function setSTCPrice() {
     return STCPrice;
 };
 
+// return first class adult seat price as a number
 function setFCAPrice() {
     let qty = document.getElementById("seats[FCA]").value;
     let priceClass = discountOrNormal();
@@ -224,6 +196,7 @@ function setFCAPrice() {
     return FCAPrice;
 };
 
+// return first class concession seat price as a number
 function setFCPPrice() {
     let qty = document.getElementById("seats[FCP]").value;
     let priceClass = discountOrNormal();
@@ -231,12 +204,16 @@ function setFCPPrice() {
     return FCPPrice;
 };
 
+// return first class child seat price as a number
 function setFCCPrice() {
     let qty = document.getElementById("seats[FCC]").value;
     let priceClass = discountOrNormal();
     let FCCPrice = qty * Number(prices['FCC'][priceClass]);
     return FCCPrice;
 }
+
+//calculates and displays total price of all tickets
+//also, returns error message if tickets selected but no movie.
 
 function callPrice() {
     //check is a movie has been selected
@@ -264,11 +241,12 @@ function callPrice() {
     }
 };
 
-//  document.getElementById("sub-total").innerHTML = STAPrice;
+//------------------------form validation -------------------------------
+//-----------------------------------------------------------------------
 
-//-----------------------------------form validation ---------------------------------------
-//------------------------------------------------------------------------------------------
-
+//checks if the credit card is valid, i.e. will not expire in the next month.
+//returns true if it will not expire in the next month
+//returns falase if it will expire in the next month
 function checkExpiry() {
     let currentDate = new Date();
     let currentMonth = currentDate.getMonth() + 1;
@@ -278,12 +256,6 @@ function checkExpiry() {
     let expiryMonth = expireDate.substr(5);
     let errorMsg = " * credit card must not expire in the next month";
     document.getElementById('exp-err').innerHTML = ""; //clears if there is error msg
-
-    //  alert(expireDate);
-    //  alert(currentYear);
-    //  alert(expiryYear);
-    //  alert(currentMonth);
-    //  alert(expiryMonth);
 
     if ((expiryYear >= currentYear) && (expiryMonth >= currentMonth + 1)) {
         return true;
@@ -295,6 +267,7 @@ function checkExpiry() {
     }
 };
 
+//displays error message if the user tries to submit form without selecting seats
 function hasPrice() {
     let hasPrice = document.getElementById("sub-total").innerHTML
     if ((hasPrice == "") || (hasPrice == "$0.00")) {
@@ -313,7 +286,14 @@ function formValidate() {
     if (!checkExpiry()) {
         noError = false;
     }
-
+    
+    // the following added so a user can 'check-out' if no more to add.
+    //if true, this means there is no movie being  currently input, but there has been one previously added and is in the session array. It will allow the user to pass to the receipt page. Customer deatail must be the same or server side validation wont left it thorugh.
+    let cartTest = document.getElementById('cartCheck').innerHTML;
+    let priceTest = document.getElementById('sub-total').innerHTML;
+    if ((priceTest == "") && (cartTest != ""))
+        return true;
+    
     if (!hasPrice()) {
         noError = false;
     }
@@ -323,27 +303,45 @@ function formValidate() {
     } else {
         return false;
     }
-
 };
+
+// --------------------------------------------------------------------
+
+function subPriceSum (){
+   // for (let i = 0; i < curPriceList.length; i++){
+        document.getElementById('subPrice').innerHTML = curPriceList[0];
+                                //curPriceList[i]
+    
+}
+
+// ----------- validation when leaving receipt page
+
+function leaveCheck() {
+    $leave = confirm("Print receipt and tickets before leaving this page. \nAll session data will be lost when leaving this page. \nLeave Page?")
+    return $leave;
+}
 
 // ---------------- toggle between receipt and tickets ---------------------
 // -------------------------------------------------------------------------
 
+//onclick it shows receipt and hides tickets
 function  showReceipt() {
     document.getElementById('receipt').style.display = 'block';
-    document.getElementById('group-ticket').style.display = 'none';
+    document.getElementById('group-ticket-wrap').style.display = 'none';
     document.getElementById('single-tickets-wrap').style.display = 'none';
 }
 
+//onclick it shows group tickets and hides single tickets and receipt
 function  showGroupTicket() {
     document.getElementById('receipt').style.display = 'none';
-    document.getElementById('group-ticket').style.display = 'flex';
+    document.getElementById('group-ticket-wrap').style.display = 'block';
     document.getElementById('single-tickets-wrap').style.display = 'none';
 }
 
+//onclick it shows single tickets and hides group tickets and receipt
 function  showSingleTickets() {
     document.getElementById('receipt').style.display = 'none';
-    document.getElementById('group-ticket').style.display = 'none';
+    document.getElementById('group-ticket-wrap').style.display = 'none';
     document.getElementById('single-tickets-wrap').style.display = 'block';
 }
 
